@@ -46,6 +46,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "./style.css",
     }),
+    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPugPlugin(),
   ],
   output: {
