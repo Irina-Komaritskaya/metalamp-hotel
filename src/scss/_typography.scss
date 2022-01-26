@@ -1,0 +1,64 @@
+@import "../fonts/fonts.scss";
+
+%title-base {
+  font-family: $monsterrat;
+  font-style: normal;
+  font-weight: bold;
+  color: $dark100;
+}
+
+.H1 {
+  @extend %title-base;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.H2 {
+  @extend %title-base;
+  font-size: 19px;
+  line-height: 23px;
+}
+
+.H3 {
+  @extend %title-base;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+}
+body {
+  font-family: $monsterrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: $dark75;
+}
+
+.material-icons {
+  font-family: $icon;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+.soсial{
+  
+}
