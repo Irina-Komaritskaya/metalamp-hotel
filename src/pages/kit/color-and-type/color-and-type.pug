@@ -1,0 +1,26 @@
+include ../../../element/color-palette/color-palette
+include ../../../element/typography/type-title
+html
+  head 
+  body 
+    //- span "test"
+    //- h1.H1 "test" 
+    //- h2.H2 test
+    //- h3.H3 test
+    //- i.material-icons home 
+    .logo
+      include ../../../icon/logo
+    .wrap
+      .wrap-color
+        +color-palette({name:"Dark Shade 100%", value:"#1F2041"})
+        +color-palette({name:"Dark Shade 75%", value:"#1F2041"})
+        +color-palette({name:"Dark Shade 50%", value:"#1F2041"})
+        +color-palette({name:"Dark Shade 25%", value:"#1F2041"})
+        +color-palette({name:"Dark Shade 5%", value:"#1F2041"})
+        +color-palette({name:"Purple", value:"#BC9CFF"})
+        +color-palette({name:"Green", value:"#6FCF97"})
+      .wrap-title
+        +type-title({tag: 'H1', variant: "H1", text: "This one is the sub-section <br> or widget title"})
+        +type-title({tag: 'H2', variant: "H2",text: "Next one is the item title inside widgets"})
+        +type-title({tag: 'H3', variant: "H3",text: "This is a label or CTA text"})
+        +type-title({tag: 'Body',text: "This is the body text which is used for most of the design, like paragraphs, lists, etc."})

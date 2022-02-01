@@ -1,0 +1,11 @@
+mixin type-title({tag, text, variant})
+  - var style_text = "text-title";
+  - var types_title = ["H1","H2", "H3","body"];
+
+  - if (types_title.includes(variant)) { style_text += ` ${variant}` }
+
+  .title
+    .tag=tag 
+    div(class='test')
+    div(class=style_text) !{text}
+

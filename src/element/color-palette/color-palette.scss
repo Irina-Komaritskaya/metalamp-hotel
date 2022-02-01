@@ -1,0 +1,27 @@
+.color-palette {
+	display: flex;
+	padding-top: 20px;
+	&:first-child {
+		padding-top: 0px;
+	}
+}
+
+.square {
+	width: 70px;
+	height: 70px;
+	background-color: $dark100;
+	border-radius: 6px;
+	margin-right: 40px;
+}
+.caption-square {
+	align-self: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.name-color {
+	@extend .H2;
+}
+.value-color {
+	@extend .H2;
+	font-weight: 400;
+}

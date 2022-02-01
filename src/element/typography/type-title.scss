@@ -1,0 +1,13 @@
+.title {
+	display: flex;
+	padding-top: 51px;
+	&:first-child {
+		padding-top: 0px;
+	}
+}
+.tag {
+	@extend .H1;
+	font-weight: 400;
+	color: $dark25;
+	margin-right: 30px;
+}
