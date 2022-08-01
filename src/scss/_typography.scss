@@ -2,8 +2,7 @@
 
 %title-base {
   font-family: $monsterrat;
-  font-style: normal;
-  font-weight: bold;
+
   color: $dark100;
 }
 
@@ -11,10 +10,12 @@
   @extend %title-base;
   font-size: 24px;
   line-height: 29px;
+  font-weight: 700;
 }
 
 .H2 {
   @extend %title-base;
+  font-weight: 700;
   font-size: 19px;
   line-height: 23px;
 }
@@ -23,12 +24,13 @@
   @extend %title-base;
   font-size: 12px;
   line-height: 15px;
+  font-weight: 700;
   text-transform: uppercase;
 }
 body {
   font-family: $monsterrat;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 14px;
   line-height: 24px;
   color: $dark75;
