@@ -1,4 +1,5 @@
-$monsterrat: "Conv_Montserrat-Regular";
+$monsterrat-regular: "Conv_Montserrat-Regular";
+$monsterrat-bold: "Conv_Montserrat-Regular";
 $brand: "Conv_fa-brands-400";
 $icon:  "Conv_MaterialIcons-Regular";
 
@@ -7,6 +8,15 @@ $icon:  "Conv_MaterialIcons-Regular";
   src: local("☺"), url("../fonts/Montserrat-Regular.woff") format("woff"),
     url("../fonts/Montserrat-Regular.ttf") format("truetype"),
     url("../fonts/Montserrat-Regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Conv_Montserrat-Bold";
+  src: local("☺"), url("../fonts/Montserrat-Bold.woff") format("woff"),
+    url("../fonts/Montserrat-Bold.ttf") format("truetype"),
+    url("../fonts/Montserrat-Bold.svg") format("svg");
   font-weight: normal;
   font-style: normal;
 }

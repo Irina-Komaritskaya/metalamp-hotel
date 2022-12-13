@@ -1,34 +1,32 @@
 @import "../fonts/fonts.scss";
 
-%title-base {
-  font-family: $monsterrat;
-
-  color: $dark100;
-}
-
 .H1 {
-  @extend %title-base;
+  font-family: $monsterrat-bold;
+  color: $dark100;
   font-size: 24px;
   line-height: 29px;
   font-weight: 700;
 }
 
 .H2 {
-  @extend %title-base;
+  font-family: $monsterrat-bold;
+  color: $dark100;
   font-weight: 700;
   font-size: 19px;
   line-height: 23px;
 }
 
 .H3 {
-  @extend %title-base;
+  font-family: $monsterrat-bold;
+  color: $dark100;
   font-size: 12px;
   line-height: 15px;
   font-weight: 700;
   text-transform: uppercase;
 }
+
 body {
-  font-family: $monsterrat;
+  font-family: $monsterrat-regular;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;

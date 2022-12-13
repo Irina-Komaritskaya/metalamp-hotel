@@ -1,7 +1,12 @@
-mixin color-palette({name, value})
+mixin color-palette({name, value, variant})
+  - var color_swatch = "";
+  - var types_title = ["dark100","dark75", "dark50","dark25", "dark5", "purple", "green"];
+
+  - if (types_title.includes(variant)) { color_swatch += ` ${variant}` }
+
 
   .color-palette
-    .square
-    .caption-square
+    .swatch(class=color_swatch)
+    .caption-swatch
       .name-color=name
       .value-color=value

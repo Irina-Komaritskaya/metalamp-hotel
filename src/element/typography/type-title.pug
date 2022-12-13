@@ -5,7 +5,6 @@ mixin type-title({tag, text, variant})
   - if (types_title.includes(variant)) { style_text += ` ${variant}` }
 
   .title
-    .tag=tag 
-    div(class='test')
-    div(class=style_text) !{text}
+    .tag(class=style_text)=tag 
+    .text(class=style_text) !{text}
 

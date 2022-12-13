@@ -1,5 +1,6 @@
 @import "../../../element/color-palette/color-palette.scss";
 @import "../../../element/typography/type-title.scss";
+
 .logo {
 	position: absolute;
 	top: 30px;
@@ -8,6 +9,10 @@
 .wrap {
 	margin-left: 150px;
 	margin-top: 145px;
+	margin-bottom: 145px;
+	margin-right: 150px;
 	display: flex;
 	justify-content: space-between;
+	
 }
+

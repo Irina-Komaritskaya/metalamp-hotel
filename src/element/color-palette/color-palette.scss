@@ -6,14 +6,34 @@
 	}
 }
 
-.square {
+.swatch {
 	width: 70px;
 	height: 70px;
-	background-color: $dark100;
 	border-radius: 6px;
 	margin-right: 40px;
 }
-.caption-square {
+.dark100{
+	background-color: $dark100;
+}
+.dark75{
+	background-color: $dark75;
+}
+.dark50{
+	background-color: $dark50;
+}
+.dark25{
+	background-color: $dark25;
+}
+.dark5{
+	background-color: $dark5;
+}
+.purple{
+	background-color: $purple;
+}
+.green{
+	background-color: $green;
+}
+.caption-swatch {
 	align-self: center;
 	padding-top: 5px;
 	padding-bottom: 5px;
