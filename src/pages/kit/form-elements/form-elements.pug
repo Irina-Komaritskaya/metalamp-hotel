@@ -1,0 +1,9 @@
+include ../../../element/form-elements/text-field/text-field
+html
+    head 
+    body 
+        .logo
+            include ../../../icon/logo
+
+        .wrap_form_element
+            +text-field({title:"text field", state:"default", id:"email", type:"email", name:"email", placeholder:"Email"})

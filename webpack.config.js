@@ -14,7 +14,7 @@ module.exports = {
         open: true,
         port: 4000,
         historyApiFallback: {
-            index: "cards.html",
+            index: "form-elements.html",
         },
     },
     module: {
@@ -46,8 +46,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./src/pages/kit/cards/cards.pug",
-            filename: "./html/cards.html",
+            template: "./src/pages/kit/form-elements/form-elements.pug",
+            filename: "./html/form-elements.html",
         }),
         new MiniCssExtractPlugin({
             filename: "./style.css",

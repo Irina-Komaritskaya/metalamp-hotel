@@ -1,0 +1,43 @@
+.text-field {
+    width: 320px;
+}
+
+.text-field_input {
+    padding-top: 13px;
+    padding-left: 15px;
+    padding-bottom: 13px;
+    border: 1px solid $dark25;
+    border-radius: 4px;
+    width: 100%;
+    @extend body;
+}
+
+::placeholder {
+    color: $dark25;
+}
+
+.text-field_input:focus,
+.text-field_input:hover {
+    border: 1px solid $dark50;
+    outline: none;
+}
+
+.text-field_label {
+    margin-bottom: 5px;
+}
+
+.caption_label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title_label {
+    @extend .H3;
+}
+
+.state_text_field {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $dark50;
+}
