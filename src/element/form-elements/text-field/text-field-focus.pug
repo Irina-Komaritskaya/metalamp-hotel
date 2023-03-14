@@ -1,0 +1,4 @@
+include ./text-field
+mixin text-field-focus({title, state, id, type, name, placeholder})
+    .text-field__focus
+        +text-field({title: title, state: state, id: id, type: type, name: name, placeholder: placeholder})

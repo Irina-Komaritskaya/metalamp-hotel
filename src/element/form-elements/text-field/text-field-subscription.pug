@@ -1,0 +1,6 @@
+include ./text-field
+mixin text-field-subscription({title, id, type, name, placeholder})
+    .text-field__subscription
+
+        +text-field({title: title, id: id, type: type, name: name, placeholder: placeholder})
+        .input-arrow-forward

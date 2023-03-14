@@ -1,13 +1,14 @@
+//- title, state for label
+//-пути в переменные??
 mixin text-field ({title, state, id, type, name, placeholder})
     .text-field
-        label.text-field_label
-            .caption_label
-                .title_label=title
-                .state_text_field=state
-
-            input.text-field_input(
+        include ../label/label
+            input.text-field__input(
                 type=type
                 id=id
                 name=name
                 placeholder=placeholder
     )
+
+
+

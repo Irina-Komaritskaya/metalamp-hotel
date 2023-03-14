@@ -1,5 +1,8 @@
 @import "../../../element/form-elements/text-field/text-field.scss";
-
-.wrap_form_element{
+@import "../../../element/form-elements/text-field/text-field-focus.scss";
+@import "../../../element/form-elements/text-field/text-field-subscription.scss";
+@import "../../../element/form-elements/label/label.scss";
+.wrap_form_element {
     margin-top: 143px;
+    width: 320px;
 }

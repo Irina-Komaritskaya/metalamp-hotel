@@ -1,0 +1,45 @@
+.input_defoult {
+    padding-left: 13px;
+    border: 1px solid $dark25;
+    border-radius: 4px;
+    width: 100%;
+    height: 44px;
+    @extend body;
+}
+
+.placeholder_defoult {
+    color: $dark25;
+}
+
+.input_defoult_focus_hover {
+    border: 1px solid $dark50;
+    outline: none;
+    &::placeholder {
+        color: $dark75;
+    }
+}
+
+.arrow-forward {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    &:after {
+        font-family: $icon;
+        content: "\e5c8";
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 24px;
+        text-transform: none;
+        /* Support for all WebKit browsers. */
+        -webkit-font-smoothing: antialiased;
+        /* Support for Safari and Chrome. */
+        text-rendering: optimizeLegibility;
+        /* Support for Firefox. */
+        -moz-osx-font-smoothing: grayscale;
+        /* Support for IE. */
+        font-feature-settings: "liga";
+    }
+}
