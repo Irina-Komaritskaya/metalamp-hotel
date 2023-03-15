@@ -1,14 +1,26 @@
-//- title, state for label
-//-пути в переменные??
-mixin text-field ({title, state, id, type, name, placeholder})
+//-заменить параметры просто на options?
+include ../label/label
+mixin text-field ({title, state, id, type, name, placeholder, isMask, isFocus, withButton})
+    -
+        let inputBaseClass = 'input__defoult';
+        if(isFocus) {
+            inputBaseClass +=' input__focus';
+        }
+        if(withButton){
+            inputBaseClass +=' .input__subscription';
+        }
+
     .text-field
-        include ../label/label
-            input.text-field__input(
-                type=type
-                id=id
-                name=name
-                placeholder=placeholder
+        +label({for: name, title:title, state:state}) 
+        input(
+            class=inputBaseClass
+            type=type
+            id=id
+            name=name
+            placeholder=placeholder
     )
+        if withButton
+            button.input__button(type='submit')
 
 
 

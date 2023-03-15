@@ -1,0 +1,62 @@
+@import "../form-elements-input.scss";
+.dropdown_wrap {
+    width: 100%;
+    position: relative;
+}
+.dropdown {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid $dark25;
+    border-radius: 4px;
+}
+
+.dropdown__option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dropdown__option:nth-child(1) {
+    @extend .input_defoult;
+}
+
+.dropdown__option:not(:first-child) {
+    padding-left: 15px;
+    padding-right: 7px;
+    padding-top: 7px;
+    @extend .H3;
+}
+
+.dropdown__btn-group {
+    display: flex;
+    align-items: center;
+}
+.dropdown__btn-group_btn {
+    border: 1px solid $dark25;
+    border-radius: 22px;
+    width: 30px;
+    height: 30px;
+}
+.dropdown__btn-group__counter {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.dropdown__btn-group_btn--btn-right {
+    @include icon_button("\e5cf");
+}
+.dropdown__btn-group_btn--btn-left {
+    @include icon_button("\e5cf");
+}
+
+.button-expand-more {
+    border: none;
+    position: absolute;
+    color: $dark50;
+    right: 0;
+    top: 20px;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    @include icon_button("\e5cf");
+}

@@ -1,4 +1,4 @@
-block label
-    label.label
+mixin label ({title, state, name})
+    label.label(for=name)
         .label__title=title
         .label__state=state

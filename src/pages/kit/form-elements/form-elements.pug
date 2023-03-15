@@ -1,6 +1,5 @@
 include ../../../element/form-elements/text-field/text-field
-include ../../../element/form-elements/text-field/text-field-focus
-include ../../../element/form-elements/text-field/text-field-subscription
+include ../../../element/form-elements/dropdown/dropdown
 html
     head 
     body 
@@ -9,5 +8,7 @@ html
 
         .wrap_form_element
             +text-field({title:"text field", state:"default", id:"email", type:"email", name:"email", placeholder:"Email"})
-            +text-field-focus({title:"text ", state:"Hover/Focus", id:"focus", type:"text", name:"text", placeholder:"This is pretty awersome"})
-            +text-field-subscription({title:"text ", state:"Hover/Focus", id:"focus", type:"text", name:"text", placeholder:"This is pretty awersome"})
+            +text-field({title:"text field", state:"Hover / Focus", id:"focus", placeholder:"This is pretty awesome", isFocus:true})
+            +text-field({title:"subscription", id:"subscription", placeholder:"Email", withButton:true})
+            +dropdown({title:"subscription", id:"subscription", placeholder:"Email"})
+

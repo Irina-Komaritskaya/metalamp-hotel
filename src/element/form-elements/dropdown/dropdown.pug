@@ -1,0 +1,23 @@
+//-value и текст передавать как объект и циклом добавлять.
+//-если открыт - нижний радиус 0
+include ../label/label
+mixin dropdown({name, id, state, title})
+    .dropdown_wrap
+        +label({for: name, title:title, state:state}) 
+        ul.dropdown
+            li.dropdown__option
+                .dropdown__text Сколько гостей
+            li.dropdown__option
+                .dropdown__text Взрослые
+                .dropdown__btn-group 
+                    .dropdown__btn-group_btn.dropdown__btn-group_btn--btn-right
+                    .dropdown__btn-group__counter 0 
+                    .dropdown__btn-group_btn.dropdown__btn-group_btn--btn-left 
+            li.dropdown__option
+                .dropdown__text Дети
+                .dropdown__btn-group 
+                    .dropdown__btn-group_btn.dropdown__btn-group_btn--btn-right
+                    .dropdown__btn-group_btn.dropdown__btn-group_btn--btn-left                 
+
+
+        button.button-expand-more  

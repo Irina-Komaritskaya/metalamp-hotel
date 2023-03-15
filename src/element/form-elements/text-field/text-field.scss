@@ -1,17 +1,55 @@
 @import "../form-elements-input.scss";
 .text-field {
     width: 100%;
+    position: relative;
 }
 
-.text-field__input {
-    @extend .input_defoult;
+.input__defoult {
+    padding-left: 13px;
+    border: 1px solid $dark25;
+    border-radius: 4px;
+    width: 100%;
+    height: 44px;
+    @extend body;
 }
 
 ::placeholder {
-    @extend .placeholder_defoult;
+    color: $dark25;
 }
 
-.text-field__input:focus,
-.text-field__input:hover {
-    @extend .input_defoult_focus_hover;
+.input__defoult:focus,
+.input__defoult:hover {
+    border: 1px solid $dark50;
+    outline: none;
+    &::placeholder {
+        color: $dark75;
+    }
+}
+
+.input__focus {
+    border: 1px solid $dark50;
+    outline: none;
+    &::placeholder {
+        color: $dark75;
+    }
+}
+
+.input__subscription {
+    position: relative;
+}
+
+.input__button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 44px;
+    height: 44px;
+    background: $primary-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: $purple;
+    @include icon_button("\e5c8");
 }
