@@ -1,5 +1,6 @@
 include ../../../element/form-elements/text-field/text-field
 include ../../../element/form-elements/dropdown/dropdown
+include ../../../element/form-elements/button/button
 html
     head 
     body 
@@ -11,4 +12,12 @@ html
             +text-field({title:"text field", state:"Hover / Focus", id:"focus", placeholder:"This is pretty awesome", isFocus:true})
             +text-field({title:"subscription", id:"subscription", placeholder:"Email", withButton:true})
             +dropdown({title:"subscription", id:"subscription", placeholder:"Email"})
+
+            +button({size: 'medium', text: "click me", type:"primary"})
+            +button({size: 'medium', text: "click me", type:"secondary"})
+            +button({size: "large", text:"перейти к оплате", type:"with-arrow"})
+            +button({size: 'medium', text: "click me", type:"only-text"})
+            +button({size: 'medium', text: "click me", type:"only-text", isDisabled:true})
+            +button({size: 'medium', text: "click me", type:"primary", isDisabled:true})
+            +button({size: 'medium', text: "click me", type:"secondary", isDisabled:true})
 

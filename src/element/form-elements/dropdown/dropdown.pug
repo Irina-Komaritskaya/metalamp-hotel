@@ -1,5 +1,6 @@
 //-value и текст передавать как объект и циклом добавлять.
 //-если открыт - нижний радиус 0
+//-отделить низ от верха
 include ../label/label
 mixin dropdown({name, id, state, title})
     .dropdown_wrap
@@ -12,11 +13,6 @@ mixin dropdown({name, id, state, title})
                 .dropdown__btn-group 
                     .dropdown__btn-group_btn.dropdown__btn-group_btn--btn-right
                     .dropdown__btn-group__counter 0 
-                    .dropdown__btn-group_btn.dropdown__btn-group_btn--btn-left 
-            li.dropdown__option
-                .dropdown__text Дети
-                .dropdown__btn-group 
-                    .dropdown__btn-group_btn.dropdown__btn-group_btn--btn-right
                     .dropdown__btn-group_btn.dropdown__btn-group_btn--btn-left                 
 
 

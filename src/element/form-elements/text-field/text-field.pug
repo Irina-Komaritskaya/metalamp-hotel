@@ -18,9 +18,9 @@ mixin text-field ({title, state, id, type, name, placeholder, isMask, isFocus, w
             id=id
             name=name
             placeholder=placeholder
-    )
-        if withButton
-            button.input__button(type='submit')
+        )
+    if withButton
+        button.input__button(type='submit')
 
 
 

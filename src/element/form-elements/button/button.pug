@@ -1,0 +1,15 @@
+
+//- secondary, primary, primary with button, onlyText
+
+mixin button({type, isDisabled, text})
+    -
+        let buttonClass = 'button'
+        let typeButton = ['primary','secondary', 'with-arrow', 'only-text']
+
+        if (typeButton.includes(type)) { buttonClass+= ' button__'+`${type}` }
+        if(isDisabled){buttonClass+= ' button__disabled'}
+
+    button(class=buttonClass type="submit")
+        .button__text=text
+        if(type =='with-arrow')
+            .button__arrow_forward

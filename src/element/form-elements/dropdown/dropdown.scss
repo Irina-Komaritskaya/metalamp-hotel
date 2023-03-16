@@ -25,6 +25,7 @@
     padding-left: 15px;
     padding-right: 7px;
     padding-top: 7px;
+    padding-bottom: 7px;
     @extend .H3;
 }
 
@@ -35,18 +36,18 @@
 .dropdown__btn-group_btn {
     border: 1px solid $dark25;
     border-radius: 22px;
-    width: 30px;
-    height: 30px;
 }
 .dropdown__btn-group__counter {
     padding-left: 15px;
     padding-right: 15px;
 }
 .dropdown__btn-group_btn--btn-right {
-    @include icon_button("\e5cf");
+    @include icon_button("\e15b", 30px, 30px, 18px, 22px);
+    cursor: pointer;
 }
 .dropdown__btn-group_btn--btn-left {
-    @include icon_button("\e5cf");
+    @include icon_button("\e145", 30px, 30px, 18px, 22px);
+    cursor: pointer;
 }
 
 .button-expand-more {
@@ -55,8 +56,6 @@
     color: $dark50;
     right: 0;
     top: 20px;
-    width: 44px;
-    height: 44px;
     background: transparent;
     @include icon_button("\e5cf");
 }
