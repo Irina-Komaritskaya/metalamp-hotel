@@ -1,11 +1,13 @@
 include ../../../element/form-elements/text-field/text-field
 include ../../../element/form-elements/dropdown/dropdown
 include ../../../element/form-elements/button/button
+include ../../../element/form-elements/checkbox/checkbox
+include ../../../element/form-elements/radio-button/radio-button
 html
     head 
     body 
         .logo
-            include ../../../icon/logo
+            include ../../../icons/logo
 
         .wrap_form_element
             +text-field({title:"text field", state:"default", id:"email", type:"email", name:"email", placeholder:"Email"})
@@ -13,11 +15,16 @@ html
             +text-field({title:"subscription", id:"subscription", placeholder:"Email", withButton:true})
             +dropdown({title:"subscription", id:"subscription", placeholder:"Email"})
 
-            +button({size: 'medium', text: "click me", type:"primary"})
-            +button({size: 'medium', text: "click me", type:"secondary"})
-            +button({size: "large", text:"перейти к оплате", type:"with-arrow"})
-            +button({size: 'medium', text: "click me", type:"only-text"})
-            +button({size: 'medium', text: "click me", type:"only-text", isDisabled:true})
-            +button({size: 'medium', text: "click me", type:"primary", isDisabled:true})
-            +button({size: 'medium', text: "click me", type:"secondary", isDisabled:true})
+            +button({text: "click me", type:"primary"})
+            +button({text: "click me", type:"secondary"})
+            +button({text:"перейти к оплате", type:"with-arrow"})
+            +button({text: "click me", type:"only-text"})
+            +button({text: "click me", type:"only-text", isDisabled:true})
+            +button({text: "click me", type:"primary", isDisabled:true})
+            +button({text: "click me", type:"secondary", isDisabled:true})
+
+            +checkbox({name:"checkbox", id:"checkbox1", text: "Можно пригласить гостей (до 10 человек)"})
+            +radio-button({name:"radio", id:"radio1", text: "Мужчина"})
+            +radio-button({name:"radio", id:"radio2", text: "Женщина"})
+
 

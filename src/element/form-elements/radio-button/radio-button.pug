@@ -1,0 +1,4 @@
+mixin radio-button({name, id, text})
+    .radio__inner
+        input.radio__input(type="radio" name=name id=id)
+        label.radio__label(for=id)=text

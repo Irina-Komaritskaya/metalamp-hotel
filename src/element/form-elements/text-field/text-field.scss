@@ -34,10 +34,6 @@
     }
 }
 
-.input__subscription {
-    position: relative;
-}
-
 .input__button {
     cursor: pointer;
     border: none;
@@ -45,8 +41,6 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 44px;
-    height: 44px;
     background: $primary-gradient;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

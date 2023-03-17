@@ -11,7 +11,7 @@ mixin text-field ({title, state, id, type, name, placeholder, isMask, isFocus, w
         }
 
     .text-field
-        +label({for: name, title:title, state:state}) 
+        +label({for: id, title:title, state:state}) 
         input(
             class=inputBaseClass
             type=type
@@ -19,8 +19,8 @@ mixin text-field ({title, state, id, type, name, placeholder, isMask, isFocus, w
             name=name
             placeholder=placeholder
         )
-    if withButton
-        button.input__button(type='submit')
+        if withButton
+            button.input__button(type='submit')
 
 
 
