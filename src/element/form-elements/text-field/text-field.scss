@@ -4,7 +4,7 @@
     position: relative;
 }
 
-.input__defoult {
+.input {
     padding-left: 13px;
     border: 1px solid $dark25;
     border-radius: 4px;
@@ -17,8 +17,8 @@
     color: $dark25;
 }
 
-.input__defoult:focus,
-.input__defoult:hover {
+.input:focus,
+.input:hover {
     border: 1px solid $dark50;
     outline: none;
     &::placeholder {
@@ -26,7 +26,7 @@
     }
 }
 
-.input__focus {
+.input_focused {
     border: 1px solid $dark50;
     outline: none;
     &::placeholder {

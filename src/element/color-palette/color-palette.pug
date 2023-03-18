@@ -1,6 +1,7 @@
+//- переименовать в swatch
 mixin color-palette({name, value, variant})
   - var color_swatch = "";
-  - var types_title = ["dark100","dark75", "dark50","dark25", "dark5", "purple", "green"];
+  - var types_title = ["dark100", "dark75", "dark50", "dark25", "dark5", "purple", "green"];
 
   - if (types_title.includes(variant)) { color_swatch += ` ${variant}` }
 

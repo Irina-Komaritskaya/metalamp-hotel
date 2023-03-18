@@ -1,17 +1,21 @@
-//-заменить параметры просто на options?
+//-if label 
+//-text-field__button.text-fild__button_icon_arrow 
+//-input subscription
+//-массив с типами
+//-сделать маску
 include ../label/label
-mixin text-field ({title, state, id, type, name, placeholder, isMask, isFocus, withButton})
+mixin text-field ({title, state, id, type, name, placeholder, mask, isFocus, withButton})
     -
-        let inputBaseClass = 'input__defoult';
+        let inputBaseClass = 'input';
         if(isFocus) {
-            inputBaseClass +=' input__focus';
+            inputBaseClass +=' input_focused';
         }
         if(withButton){
             inputBaseClass +=' .input__subscription';
         }
 
     .text-field
-        +label({for: id, title:title, state:state}) 
+        +label({id:id, title:title, state:state}) 
         input(
             class=inputBaseClass
             type=type

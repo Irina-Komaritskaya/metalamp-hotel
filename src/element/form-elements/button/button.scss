@@ -42,7 +42,7 @@
     justify-content: center;
 }
 
-.button__disabled {
+.button_disabled {
     opacity: 0.5;
 }
 
@@ -53,11 +53,13 @@
     }
 }
 
-.button__arrow_forward {
+.button__icon {
     width: 44px;
     height: 44px;
     color: white;
     position: absolute;
     right: 0;
+}
+.button__icon_arrow {
     @include icon_button("\e5c8");
 }

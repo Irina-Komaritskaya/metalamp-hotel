@@ -1,10 +1,17 @@
 //-value и текст передавать как объект и циклом добавлять.
 //-если открыт - нижний радиус 0
 //-отделить низ от верха
+//- верх input, низ див или календарь  
+//-ul.dropdown__content
+//-li.dropdawn__option
+//- dropdown__btn-inner
+//-
 include ../label/label
 mixin dropdown({name, id, state, title})
     .dropdown_wrap
         +label({for: name, title:title, state:state}) 
+
+
         ul.dropdown
             li.dropdown__option
                 .dropdown__text Сколько гостей

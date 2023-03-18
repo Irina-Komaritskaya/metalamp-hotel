@@ -5,6 +5,7 @@
     height: 0;
     width: 0;
 }
+
 .radio__label {
     line-height: 18px;
     color: $dark50;
@@ -24,6 +25,10 @@
     background: white;
     border: 1px solid $dark25;
     border-radius: 10px;
+}
+
+.radio__input:checked + .radio__label {
+    color: $dark75;
 }
 
 .radio__input:checked + .radio__label:before {
