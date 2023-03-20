@@ -1,10 +1,10 @@
 mixin button({type, text, isDisabled})
     -
         let buttonClass = 'button'
-        let typeButton = ['primary','secondary', 'with-arrow', 'only-text']
+        let typeButton = ['primary','secondary','with-arrow','only-text']
 
         if (typeButton.includes(type)) { buttonClass+= ` button__${type}` }
-        if(isDisabled){buttonClass+= ' button_disabled'}
+        if(isDisabled){buttonClass+=' button_disabled'}
 
     button(class=buttonClass type="submit")
         span.button__text=text

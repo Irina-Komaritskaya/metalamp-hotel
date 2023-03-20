@@ -7,8 +7,8 @@ html
 
         .wrap_form_element
             +text-field({title:"text field", state:"default", id:"email", type:"email", name:"email", placeholder:"Email"})
-            +text-field({title:"text field", state:"Hover / Focus", id:"focus", placeholder:"This is pretty awesome", isFocus:true})
-            +text-field({title:"subscription", id:"subscription", placeholder:"Email", withButton:true})
+            +text-field({title:"text field", state:"Hover / Focus", id:"focus", placeholder:"This is pretty awesome", variant: "focused"})
+            +text-field({title:"subscription", id:"subscription", placeholder:"Email", withButton:true, variant: "subscription"})
             +dropdown({title:"subscription", id:"subscription", placeholder:"Email"})
 
             +button({text: "click me", type:"primary"})

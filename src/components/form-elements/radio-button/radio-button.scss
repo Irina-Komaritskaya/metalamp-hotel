@@ -1,7 +1,6 @@
 .radio__input {
     position: absolute;
     opacity: 0;
-    cursor: pointer;
     height: 0;
     width: 0;
 }
@@ -23,7 +22,7 @@
     width: 20px;
     height: 20px;
     background: white;
-    border: 1px solid $dark25;
+    border: $border-gray;
     border-radius: 10px;
 }
 
@@ -32,7 +31,7 @@
 }
 
 .radio__input:checked + .radio__label:before {
-    border: 1px solid $purple;
+    border: $border-purple;
 }
 
 .radio__input:checked + .radio__label:after {

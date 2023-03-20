@@ -1,30 +1,26 @@
-//-if label 
 //-text-field__button.text-fild__button_icon_arrow 
-//-input subscription
-//-массив с типами
+//-input subscription name????
 //-сделать маску
+//-вернуть for или вложить 
 include ../label/label
-mixin text-field ({title, state, id, type, name, placeholder, mask, isFocus, withButton})
+mixin text-field ({title, state, type, name, placeholder, variant, withButton})
     -
-        let inputBaseClass = 'input';
-        if(isFocus) {
-            inputBaseClass +=' input_focused';
-        }
-        if(withButton){
-            inputBaseClass +=' .input__subscription';
-        }
+        let inputClass = 'input';
+        let variantInput = ['focused','subscription','mask']
+        if (variantInput.includes(variant)) { inputClass+=` input__${variant}` }
 
     .text-field
-        +label({id:id, title:title, state:state}) 
+        if state
+            +label({title:title, state:state}) 
         input(
-            class=inputBaseClass
+            class=inputClass
             type=type
             id=id
             name=name
             placeholder=placeholder
         )
         if withButton
-            button.input__button(type='submit')
+            button.text-field__button(type='submit').text-fild__button_icon_arrow 
 
 
 

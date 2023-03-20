@@ -1,8 +1,6 @@
 @import "./colors.scss";
 @import "./typography.scss";
-@import "../pages/kit/cards/cards.scss";
-@import "../pages/kit/color-and-type/color-and-type.scss";
-@import "../pages/kit/form-elements/form-elements.scss";
+@import "../pages/kit/index.scss";
 
 *,
 *:before,
@@ -13,4 +11,16 @@
 
 body {
     @extend .body-text;
+}
+
+h1 {
+    @extend .H1;
+}
+
+h2 {
+    @extend .H2;
+}
+
+h3 {
+    @extend .H3;
 }

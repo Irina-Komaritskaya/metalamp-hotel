@@ -1,5 +1,4 @@
-//- вложить в лейбл
-mixin checkbox({name, id, text})
-    .checkbox
+mixin checkbox({name, text})
+    label.checkbox__label
         input.checkbox__input(type="checkbox" name=name id=id)
-        label.checkbox__label(for=id)=text
+        span.checkbox__value=text

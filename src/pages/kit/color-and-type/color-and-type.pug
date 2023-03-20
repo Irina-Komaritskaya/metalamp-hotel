@@ -1,4 +1,5 @@
-//- wrap-color  - color palette
+//-
+//-генерировать миксины циклом????
 include ../../../components/index
 html
   head 
@@ -6,15 +7,15 @@ html
     .logo
       include ../../../icons/logo
     .wrap
-      .wrap-color
-        +color-palette({name:"Dark Shade 100%", value:"#1F2041", variant:'dark100'})
-        +color-palette({name:"Dark Shade 75%", value:"#1F2041", variant:'dark75'})
-        +color-palette({name:"Dark Shade 50%", value:"#1F2041", variant:'dark50'})
-        +color-palette({name:"Dark Shade 25%", value:"#1F2041", variant:'dark25'})
-        +color-palette({name:"Dark Shade 5%", value:"#1F2041", variant:'dark5'})
-        +color-palette({name:"Purple", value:"#BC9CFF", variant:'purple'})
-        +color-palette({name:"Green", value:"#6FCF97", variant:'green'})
-      .wrap-title
+      .color-palette
+        +swatch({name:"Dark Shade 100%", value:"#1F2041", variant:'dark100'})
+        +swatch({name:"Dark Shade 75%", value:"#1F2041", variant:'dark75'})
+        +swatch({name:"Dark Shade 50%", value:"#1F2041", variant:'dark50'})
+        +swatch({name:"Dark Shade 25%", value:"#1F2041", variant:'dark25'})
+        +swatch({name:"Dark Shade 5%", value:"#1F2041", variant:'dark5'})
+        +swatch({name:"Purple", value:"#BC9CFF", variant:'purple'})
+        +swatch({name:"Green", value:"#6FCF97", variant:'green'})
+      .typography
         +type-title({tag: 'H1', variant: "H1", text: "This one is the sub-section <br> or widget title"})
         +type-title({tag: 'H2', variant: "H2", text: "Next one is the item title inside widgets"})
         +type-title({tag: 'H3', variant: "H3", text: "This is a label or CTA text"})
