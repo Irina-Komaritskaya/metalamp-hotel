@@ -1,3 +1,4 @@
+@import "../../icons/icon.scss";
 .button {
     cursor: pointer;
     border: none;
@@ -54,8 +55,6 @@
 }
 
 .button__icon {
-    width: 44px;
-    height: 44px;
     color: white;
     position: absolute;
     right: 0;
