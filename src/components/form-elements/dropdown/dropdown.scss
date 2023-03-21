@@ -1,7 +1,6 @@
 @import "../../icons/icon.scss";
 .dropdown__inner {
     width: 100%;
-    position: relative;
 }
 .dropdown__content {
     list-style: none;
@@ -43,10 +42,4 @@
 .dropdown__option__counter {
     padding: 0 15px;
     @extend .H3;
-}
-.dropdown__button {
-    @include icon_button__inner($dark75);
-}
-.dropdown__button_icon_expand-more {
-    @include icon_button("\e5cf");
 }

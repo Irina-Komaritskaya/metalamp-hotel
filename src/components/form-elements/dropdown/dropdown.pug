@@ -1,7 +1,6 @@
 //-длинный value
 //-value и текст передавать как объект и циклом добавлять.
 //-если открыт - нижний радиус 0
-//-отделить низ от верха
 //- верх input, низ див или календарь  
 //- запретить редактирование
 //-button.dropdown__button - плохое название
@@ -9,10 +8,20 @@
 include ../text-field/text-field
 
 mixin dropdown({name, id, state, title, value})
+    -
+        let textFildOptions={
+            name:name, 
+            title:title, 
+            value:value,
+            withButton:true, 
+            variantButton: "gray", 
+            symbolButton:"expand_more", 
+            typeButton:"button"
+        }
 
     .dropdown__inner
-        +text-field({name:name, title:title, value:value})
-        button.dropdown__button(type="button", onclick=`test(\"saysmth\")`).dropdown__button_icon_expand-more
+        +text-field(textFildOptions)
+        //- button.dropdown__button(type="button", onclick=`test(\"saysmth\")`).dropdown__button_icon_expand-more
 
     ul.dropdown__content
         li.dropdown__option
