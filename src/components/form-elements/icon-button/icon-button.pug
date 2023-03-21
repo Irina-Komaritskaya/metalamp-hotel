@@ -1,0 +1,7 @@
+mixin icon-button({symbol, variant})
+    -
+        let iconClass = "icon-button"
+        let variants = ["white","purple","gray"]
+        if (variants.includes(variant)) { iconClass+=` icon-button__${variant}` }
+
+    div(class=iconClass)=symbol

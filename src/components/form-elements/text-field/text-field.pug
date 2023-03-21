@@ -1,26 +1,33 @@
-//-text-field__button.text-fild__button_icon_arrow 
 //-input subscription name????
 //-сделать маску
-//-вернуть for или вложить 
+//-слепить withButton с параметрами кнопки
+//- if title ???
+//- стиль текста инпута
 include ../label/label
-mixin text-field ({title, state, type, name, placeholder, variant, withButton})
+include ../icon-button/icon-button
+mixin text-field ({title, state, type, name, placeholder, variant, withButton, variantButton, symbolButton, value})
     -
         let inputClass = 'input';
         let variantInput = ['focused','subscription','mask']
         if (variantInput.includes(variant)) { inputClass+=` input__${variant}` }
 
-    .text-field
-        if state
-            +label({title:title, state:state}) 
-        input(
-            class=inputClass
-            type=type
-            id=id
-            name=name
-            placeholder=placeholder
-        )
-        if withButton
-            button.text-field__button(type='submit').text-fild__button_icon_arrow 
+    if title
+        label.label
+            .label__inner
+                .label__title=title
+                .label__state=state
+            .input__inner    
+                input(
+                    class=inputClass
+                    type=type
+                    id=id
+                    name=name
+                    placeholder=placeholder
+                    value=value
+                )
+                if withButton
+                    button.text-field__button(type='submit')
+                        +icon-button({symbol:symbolButton, variant: variantButton}) 
 
 
 

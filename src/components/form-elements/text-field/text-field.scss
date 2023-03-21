@@ -1,31 +1,32 @@
 @import "../../icons/icon.scss";
-.text-field {
-    width: 100%;
+.label {
+    @extend .H3;
+}
+.label__inner {
+    margin-bottom: 5px;
+    display: flex;
+}
+.label__state {
+    margin-left: auto;
+    font-family: $monsterrat-regular;
+    font-weight: 400;
+    color: $dark50;
+}
+.input__inner {
     position: relative;
 }
-
 .input {
     padding-left: 13px;
+    padding-right: 44px;
     border: $border-gray;
     border-radius: 4px;
     width: 100%;
     height: 44px;
     @extend .body-text;
 }
-
 ::placeholder {
     color: $dark25;
 }
-
-.input:focus,
-.input:hover {
-    border: 1px solid $dark50;
-    outline: none;
-    &::placeholder {
-        color: $dark75;
-    }
-}
-
 .input__focused {
     border: 1px solid $dark50;
     outline: none;
@@ -33,20 +34,16 @@
         color: $dark75;
     }
 }
-
+.input:focus,
+.input:hover {
+    @extend .input__focused;
+}
 .text-field__button {
-    cursor: pointer;
     border: none;
-    outline: none;
     position: absolute;
     right: 0;
-    bottom: 0;
-    background: $primary-gradient;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: $purple;
-}
-
-.text-fild__button_icon_arrow {
-    @include icon_button("\e5c8");
+    top: 0;
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
 }

@@ -1,62 +1,52 @@
-@import "../form-elements-input.scss";
 @import "../../icons/icon.scss";
-.dropdown_wrap {
+.dropdown__inner {
     width: 100%;
     position: relative;
 }
-.dropdown {
+.dropdown__content {
     list-style: none;
     margin: 0;
-    padding: 0;
-    border: $border-gray;
-    border-radius: 4px;
+    padding: 7px 7px 7px 15px;
+    border: solid $dark25;
+    border-width: 0px 1px 1px 1px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
 }
-
 .dropdown__option {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-
-.dropdown__option:nth-child(1) {
-    @extend .input_defoult;
-}
-
-.dropdown__option:not(:first-child) {
-    padding-left: 15px;
-    padding-right: 7px;
-    padding-top: 7px;
-    padding-bottom: 7px;
+.dropdown__option_caption {
     @extend .H3;
 }
-
-.dropdown__btn-group {
+.dropdown__option_btn_inner {
     display: flex;
     align-items: center;
 }
-.dropdown__btn-group_btn {
+.dropdown__option_btn {
+    color: $dark50;
     border: $border-gray;
     border-radius: 22px;
-}
-.dropdown__btn-group__counter {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-.dropdown__btn-group_btn--btn-right {
-    @include icon_button("\e15b", 30px, 30px, 18px, 22px);
     cursor: pointer;
+    font-size: 18px;
+    line-height: 22px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    text-transform: none;
+    padding: 3px;
 }
-.dropdown__btn-group_btn--btn-left {
-    @include icon_button("\e145", 30px, 30px, 18px, 22px);
-    cursor: pointer;
+.dropdown__option_btn_disabled {
+    opacity: 0.5;
 }
-
-.button-expand-more {
-    border: none;
-    position: absolute;
-    color: $dark50;
-    right: 0;
-    top: 20px;
-    background: transparent;
+.dropdown__option__counter {
+    padding: 0 15px;
+    @extend .H3;
+}
+.dropdown__button {
+    @include icon_button__inner($dark75);
+}
+.dropdown__button_icon_expand-more {
     @include icon_button("\e5cf");
 }

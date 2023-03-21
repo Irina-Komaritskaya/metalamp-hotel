@@ -1,16 +1,4 @@
-.label {
-    margin-bottom: 5px;
-    display: flex;
-}
 
-.label__title {
-    @extend .H3;
-}
 
-.label__state {
-    margin-left: auto;
-    font-family: $monsterrat-regular;
-    font-weight: 400;
-    color: $dark50;
-    @extend .H3;
-}
+
+

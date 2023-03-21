@@ -1,3 +1,13 @@
+@mixin icon_button__inner($color) {
+    border: none;
+    position: absolute;
+    color: $color;
+    right: 0;
+    top: 0;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+}
 @mixin icon_button(
     $icon_button,
     $width: 44px,

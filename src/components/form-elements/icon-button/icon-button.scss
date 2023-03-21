@@ -1,0 +1,25 @@
+.icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    font-family: $icon-font;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 24px;
+    text-transform: none;
+}
+.icon-button__purple {
+    background: $primary-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.icon-button__gray {
+    color: $dark50;
+}
+
+.icon-button__white {
+    color: white;
+}
