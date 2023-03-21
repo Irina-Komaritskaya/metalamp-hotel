@@ -1,0 +1,22 @@
+.like-button {
+    display: flex;
+    width: 40px;
+    height: 20px;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    color: $dark25;
+    border: $border-gray;
+    border-radius: 10px;
+    background: white;
+    font-size: 10px;
+}
+
+.like-button__count {
+    align-self: center;
+}
+
+.like-button_clicked {
+    color: $purple;
+    border: $border-purple;
+}

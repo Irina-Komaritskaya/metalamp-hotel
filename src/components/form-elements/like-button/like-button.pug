@@ -1,0 +1,9 @@
+mixin like-button({count, isClicked})
+    -
+        let symbol = isClicked ? "favorite" : "favorite_border"
+        let symbolColor = isClicked ? "purple" : "light-gray"
+        let buttonClass = isClicked ? "like-button like-button_clicked" : "like-button"
+
+    button(class=buttonClass type="submit")
+        +icon-button({symbol:symbol, variant: symbolColor, size:"small"}) 
+        span.like-button__count=count

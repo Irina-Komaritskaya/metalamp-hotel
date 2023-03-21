@@ -2,14 +2,17 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    @extend .material-icons;
+}
+.icon-button__large {
     width: 44px;
     height: 44px;
-    font-family: $icon-font;
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px;
-    line-height: 24px;
-    text-transform: none;
+}
+.icon-button__small {
+    font-size: 10px;
+    line-height: 8.5px;
+    width: 20px;
+    height: 20px;
 }
 .icon-button__purple {
     background: $primary-gradient;
@@ -19,7 +22,9 @@
 .icon-button__gray {
     color: $dark50;
 }
-
+.icon-button__light-gray {
+    color: $dark25;
+}
 .icon-button__white {
     color: white;
 }

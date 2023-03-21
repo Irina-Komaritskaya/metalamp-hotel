@@ -38,13 +38,14 @@
     font-family: $icon-font;
     font-weight: normal;
     font-style: normal;
-    display: inline-block;
     text-transform: none;
     letter-spacing: normal;
     word-wrap: normal;
     white-space: nowrap;
     direction: ltr;
-
+    font-size: 24px;
+    line-height: 24px;
+    text-transform: none;
     /* Support for all WebKit browsers. */
     -webkit-font-smoothing: antialiased;
     /* Support for Safari and Chrome. */

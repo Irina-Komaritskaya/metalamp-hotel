@@ -1,7 +1,9 @@
-mixin icon-button({symbol, variant})
+mixin icon-button({symbol, variant, size='large'})
     -
         let iconClass = "icon-button"
-        let variants = ["white","purple","gray"]
+        let variants = ["white","purple","gray","light-gray"]
+        let sizes = ["large", "small"]
         if (variants.includes(variant)) { iconClass+=` icon-button__${variant}` }
+        if (sizes.includes(size)) { iconClass+=` icon-button__${size}` }
 
     div(class=iconClass)=symbol
