@@ -1,3 +1,4 @@
+include ../icon-button/icon-button
 mixin button({type, text, isDisabled})
     -
         let buttonClass = 'button'
@@ -9,4 +10,5 @@ mixin button({type, text, isDisabled})
     button(class=buttonClass type="submit")
         span.button__text=text
         if(type ==='with-arrow')
-            .button__icon.button__icon_arrow
+            .button__icon
+                +icon-button({symbol:"arrow_forward", variant:"white"})

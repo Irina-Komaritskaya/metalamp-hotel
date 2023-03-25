@@ -10,7 +10,7 @@ html
             +text-field({title:"text field", state:"default", type:"email", name:"email", placeholder:"Email"})
             +text-field({type:"email", name:"email", placeholder:"Email"})
             +text-field({title:"text field", state:"Hover / Focus", placeholder:"This is pretty awesome", variant:"focused"})
-            +text-field({title:"subscription", placeholder:"Email", withButton:true, variant: "subscription", variantButton:"purple", symbolButton:"arrow_forward"})
+            +text-field({title:"subscription", placeholder:"Email", withButton:true, variant:"subscription", variantButton:"purple", symbolButton:"arrow_forward"})
 
             +dropdown({title:"dropdown", value: "Сколько гостей"})
 
@@ -28,6 +28,9 @@ html
             +checkbox({name:"checkbox", text: "Можно пригласить гостей (до 10 человек)"})
             +radio-button({name:"radio", id:"radio1", text: "Мужчина"})
             +radio-button({name:"radio", id:"radio2", text: "Женщина"})
-
+            +list({text:"expandable checkbox list", button:{symbol:"expand_more",variant:"gray"}, type:"checkbox"}) 
+            +list({text:"rich Checkbox Buttons", button:{symbol:"expand_more",variant:"gray"}})
+            +list({text:"bullet list", type:"bullet"})
+            +button({text: "click me", type:"secondary", isDisabled:true})
 
 

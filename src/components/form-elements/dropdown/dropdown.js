@@ -1,3 +1,4 @@
-function test(mymessage) {
-    alert($(".button__text").first().text());
-}
+$("#MYBTN").on("click", () => {
+    alert($(".input").first().attr("name"));
+    alert($(".input").first().attr("name"));
+});

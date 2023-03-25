@@ -2,9 +2,7 @@
 //-value и текст передавать как объект и циклом добавлять.
 //-если открыт - нижний радиус 0
 //- верх input, низ див или календарь  
-//- запретить редактирование
-//-button.dropdown__button - плохое название
-
+//- запретить редактирование - ридонли
 include ../text-field/text-field
 
 mixin dropdown({name, id, state, title, value})
@@ -14,14 +12,15 @@ mixin dropdown({name, id, state, title, value})
             title:title, 
             value:value,
             withButton:true, 
-            variantButton: "gray", 
+            variantButton: "", 
             symbolButton:"expand_more", 
-            typeButton:"button"
+            typeButton:"button",
+            fcButton:`alert(1)`
         }
 
     .dropdown__inner
         +text-field(textFildOptions)
-        //- button.dropdown__button(type="button", onclick=`test(\"saysmth\")`).dropdown__button_icon_expand-more
+        button.dropdown__button(type="button" id='MYBTN').dropdown__button_icon_expand-more
 
     ul.dropdown__content
         li.dropdown__option
@@ -30,9 +29,4 @@ mixin dropdown({name, id, state, title, value})
                 .dropdown__option_btn.dropdown__option_btn_disabled.dropdown__option_btn_minus -
                 span.dropdown__option__counter 0 
                 .dropdown__option_btn.dropdown__option_btn_plus +
-
-
-    script
-        include dropdown.js
-
 

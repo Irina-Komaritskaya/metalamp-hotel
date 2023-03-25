@@ -1,0 +1,18 @@
+//-кнопке сделать кнопку
+include ../icon-button/icon-button
+include ../checkbox/checkbox
+mixin list({text, button, type}) 
+    -
+        let itemClass="list__content-item"
+        if (type===("bullet")) { itemClass+= ` list__content-item_bullet` }
+    .list 
+        .list__label 
+            .list__label-text=text
+            if(button)
+                +icon-button(button)
+        ul.list__content
+            li(class=itemClass)
+                if (type==="checkbox")
+                    +checkbox({name:"checkbox", text: "Можно пригласить гостей (до 10 человек)"})
+                else
+                    text

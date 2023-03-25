@@ -5,8 +5,13 @@ const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-    entry: path.resolve(__dirname, "./src/index.js"),
+    entry: {
+        index: path.resolve(__dirname, "./src/index.js"),
+    },
     mode: "development",
+    devServer: {
+        hot: true,
+    },
     devServer: {
         watchFiles: ["src/**/*"],
         static: { directory: path.join(__dirname, "./dist/html/") },
@@ -27,7 +32,11 @@ module.exports = {
                 test: /\.css$/,
                 use: ["css-loader", MiniCssExtractPlugin.loader],
             },
-            { test: /\.(js)$/, use: "babel-loader" },
+            {
+                test: /\.js$/,
+                use: "babel-loader",
+                exclude: /node_modules/,
+            },
             {
                 test: /\.pug$/,
                 loader: "pug-loader",
@@ -54,9 +63,19 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPugPlugin(),
+        new webpack.ProvidePlugin({
+            $: "jquery/dist/jquery.min.js",
+            jQuery: "jquery/dist/jquery.min.js",
+            "window.jQuery": "jquery/dist/jquery.min.js",
+        }),
     ],
     output: {
+        filename: "[name].bundle.js",
         path: path.resolve(__dirname, "dist"),
-        filename: "index_bundle.js",
     },
+    // optimization: {
+    //     splitChunks: {
+    //         chunks: "all",
+    //     },
+    // },
 };
