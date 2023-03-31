@@ -5,5 +5,5 @@ mixin like-button({count, isClicked})
         let buttonClass = isClicked ? "like-button like-button_clicked" : "like-button"
 
     button(class=buttonClass type="submit")
-        +icon-button({symbol:symbol, variant: symbolColor, size:"small"}) 
+        +icon-button({symbol:symbol, variant: symbolColor, size:"s"}) 
         span.like-button__count=count

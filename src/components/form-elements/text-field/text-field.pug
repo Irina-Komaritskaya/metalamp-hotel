@@ -10,7 +10,7 @@ mixin text-field (options)
         if (variantInput.includes(options.variant)) { inputClass+=` input__${options.variant}` }
 
     //- if title
-    label.label
+    label.label-text-field
         .label__inner
             .label__title=options.title
             .label__state=options.state
@@ -21,6 +21,7 @@ mixin text-field (options)
                 name=options.name
                 placeholder=options.placeholder
                 value=options.value
+                id=options.variant==="mask" ? "mask" : ""
             )
             if options.withButton
                 button.text-field__button(type=options.typeButton, onclick=options.fcButton)

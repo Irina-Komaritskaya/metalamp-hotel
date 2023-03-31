@@ -1,14 +1,18 @@
+//-прописать весь сброс для кнопок?
 .list__label {
     display: flex;
     @extend .H3;
     justify-content: space-between;
     align-items: center;
+    height: 44px;
 }
-
-.list__label-text {
-    margin-top: 3px;
+.list__expand-button {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
 }
-
 .list__content {
     list-style: none;
     margin: 0;
@@ -21,4 +25,6 @@
     height: 10px;
     background: $dark25;
     display: inline-block;
+    border-radius: 10px;
+    margin-right: 10.43px;
 }

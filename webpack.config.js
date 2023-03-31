@@ -68,6 +68,9 @@ module.exports = {
             jQuery: "jquery/dist/jquery.min.js",
             "window.jQuery": "jquery/dist/jquery.min.js",
         }),
+        // new webpack.ProvidePlugin({
+        //     inputmask: "inputmask/dist/jquery.inputmask.js",
+        // }),
     ],
     output: {
         filename: "[name].bundle.js",

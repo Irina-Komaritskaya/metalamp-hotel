@@ -26,6 +26,7 @@
         "dev": "webpack --watch | webpack serve"
     },
     "dependencies": {
+        "inputmask": "^5.0.8",
         "node-sass": "^7.0.1"
     }
 }

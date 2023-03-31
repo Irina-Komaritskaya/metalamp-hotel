@@ -1,4 +1,9 @@
-mixin checkbox({name, text})
+//- не нравится две обертки
+mixin checkbox({name, text, title})
     label.checkbox__label
         input.checkbox__input(type="checkbox" name=name)
-        span.checkbox__value=text
+        .checkbox__inner
+            .checkbox-text__inner
+                if title
+                    .checkbox__title=title
+                .checkbox__text=text
