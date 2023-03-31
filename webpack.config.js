@@ -3,6 +3,7 @@ var HtmlWebpackPugPlugin = require("html-webpack-pug-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
     entry: {
@@ -42,11 +43,26 @@ module.exports = {
                 loader: "pug-loader",
             },
             {
-                test: /\.(png|jpg|gif)$/i,
+                test: /(\.(woff2?|ttf|eot|otf)$|font.*\.svg$)/,
                 use: [
                     {
                         loader: "file-loader",
-                        options: { name: "./[name].[ext]" },
+                        options: {
+                            outputPath: "fonts",
+                            name: "[name].[ext]",
+                        },
+                    },
+                ],
+            },
+            {
+                test: /(\.(png|jpe?g|gif)$|^((?!font).)*\.svg$)/,
+                use: [
+                    {
+                        loader: "file-loader",
+                        options: {
+                            outputPath: "imgs",
+                            name: "[name]-[sha1:hash:7].[ext]",
+                        },
                     },
                 ],
             },
@@ -67,6 +83,13 @@ module.exports = {
             $: "jquery/dist/jquery.min.js",
             jQuery: "jquery/dist/jquery.min.js",
             "window.jQuery": "jquery/dist/jquery.min.js",
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: path.resolve(__dirname, "src/fonts"), to: `fonts` },
+                //   { from: `${PATHS.src}/favicons`, to: 'favicons' },
+                { from: path.resolve(__dirname, "src/imgs"), to: `imgs` },
+            ],
         }),
         // new webpack.ProvidePlugin({
         //     inputmask: "inputmask/dist/jquery.inputmask.js",

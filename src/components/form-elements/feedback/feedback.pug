@@ -1,0 +1,11 @@
+//-text p?
+include ../like-button/like-button
+mixin feedback
+    .feedback__inner 
+        .feedback__img
+            img(src=("imgs/avatar.png") alt="avatar") 
+        .feedback__title-inner
+            .feedback__name="Мурад Сафронов" 
+            .feedback__date="5 дней назад"
+        +like-button({count:"12"})    
+        .feedback__text="Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."

@@ -11,7 +11,7 @@ mixin list({text, button, type})
         .list__label 
             .list__label-text=text
             if(button)
-                button.list__expand-button
+                button.list__expand-button(type="button")
                     +icon-button(button)
         ul.list__content
             li(class=itemClass)
