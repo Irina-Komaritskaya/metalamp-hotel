@@ -1,9 +1,11 @@
 const path = require("path");
-var HtmlWebpackPugPlugin = require("html-webpack-pug-plugin");
+const HtmlWebpackPugPlugin = require("html-webpack-pug-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const LiveReloadPlugin = require("webpack-livereload-plugin");
 
 module.exports = {
     entry: {
@@ -42,18 +44,18 @@ module.exports = {
                 test: /\.pug$/,
                 loader: "pug-loader",
             },
-            {
-                test: /(\.(woff2?|ttf|eot|otf)$|font.*\.svg$)/,
-                use: [
-                    {
-                        loader: "file-loader",
-                        options: {
-                            outputPath: "fonts",
-                            name: "[name].[ext]",
-                        },
-                    },
-                ],
-            },
+            // {
+            //     test: /(\.(woff2?|ttf|eot|otf)$|font.*\.svg$)/,
+            //     use: [
+            //         {
+            //             loader: "file-loader",
+            //             options: {
+            //                 outputPath: "fonts",
+            //                 name: "[name].[ext]",
+            //             },
+            //         },
+            //     ],
+            // },
             {
                 test: /(\.(png|jpe?g|gif)$|^((?!font).)*\.svg$)/,
                 use: [
@@ -70,6 +72,8 @@ module.exports = {
         ],
     },
     plugins: [
+        // new CleanWebpackPlugin(),
+        new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             template: "./src/pages/kit/form-elements/form-elements.pug",
             filename: "./html/form-elements.html",
@@ -77,7 +81,6 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "./style.css",
         }),
-        new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPugPlugin(),
         new webpack.ProvidePlugin({
             $: "jquery/dist/jquery.min.js",

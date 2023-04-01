@@ -1,11 +1,12 @@
 //-text p?
 include ../like-button/like-button
+include ../avatar/avatar
 mixin feedback
-    .feedback__inner 
-        .feedback__img
-            img(src=("imgs/avatar.png") alt="avatar") 
-        .feedback__title-inner
-            .feedback__name="Мурад Сафронов" 
-            .feedback__date="5 дней назад"
-        +like-button({count:"12"})    
+    .feedback
+        .feedback__avatar
+            +avatar({srcImg:"imgs/avatar.png"})
+        .feedback__like    
+            +like-button({count:"12", isClicked:true})   
+        span.feedback__name="Мурад Сафронов" 
+        span.feedback__date="5 дней назад"
         .feedback__text="Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."

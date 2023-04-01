@@ -1,0 +1,35 @@
+//-body bold??? .feedback__name
+.feedback {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+    gap: 0px 10px;
+    grid-template-areas:
+        "avatar name"
+        "avatar date"
+        "like text";
+}
+.feedback__avatar {
+    grid-area: avatar;
+}
+.feedback__name {
+    grid-area: name;
+    font-family: $monsterrat-bold;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    color: $dark75;
+}
+.feedback__date {
+    grid-area: date;
+}
+.feedback__like {
+    grid-area: like;
+    justify-self: center;
+    margin-top: 12px;
+}
+.feedback__text {
+    grid-area: text;
+    margin-top: 10px;
+}
