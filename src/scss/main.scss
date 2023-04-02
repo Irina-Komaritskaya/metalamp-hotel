@@ -25,3 +25,11 @@ h2 {
 h3 {
     @extend .H3;
 }
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+}

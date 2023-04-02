@@ -38,11 +38,7 @@
     @extend .input__focused;
 }
 .text-field__button {
-    border: none;
     position: absolute;
     right: 0;
     top: 0;
-    padding: 0;
-    cursor: pointer;
-    background: transparent;
 }

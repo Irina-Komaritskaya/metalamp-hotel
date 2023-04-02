@@ -1,7 +1,4 @@
 .button {
-    cursor: pointer;
-    border: none;
-    outline: none;
     .button__text {
         @extend .H3;
     }
@@ -25,7 +22,6 @@
 }
 
 .button__secondary {
-    background: transparent;
     background-image: linear-gradient(90deg, white, white), $primary-gradient;
     background-clip: padding-box, border-box;
     background-origin: border-box;
@@ -47,14 +43,12 @@
 }
 
 .button__only-text {
-    background-color: transparent;
     .button__text {
         color: $purple;
     }
 }
 
 .button__icon {
-    color: white;
     position: absolute;
     right: 0;
 }
