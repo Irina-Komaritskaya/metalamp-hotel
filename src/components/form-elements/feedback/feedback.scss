@@ -14,12 +14,7 @@
 }
 .feedback__name {
     grid-area: name;
-    font-family: $monsterrat-bold;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 24px;
-    color: $dark75;
+    @extend .body-text-bold;
 }
 .feedback__date {
     grid-area: date;

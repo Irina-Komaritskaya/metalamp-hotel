@@ -4,6 +4,12 @@
     justify-content: center;
     @extend .material-icons;
 }
+.icon-button__xl {
+    width: 48px;
+    height: 48px;
+    font-size: 48px;
+    line-height: 40.8px;
+}
 .icon-button__l {
     width: 44px;
     height: 44px;
@@ -14,7 +20,7 @@
     width: 20px;
     height: 20px;
 }
-.icon-button__purple {
+.icon-button__gradient {
     background: $primary-gradient;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

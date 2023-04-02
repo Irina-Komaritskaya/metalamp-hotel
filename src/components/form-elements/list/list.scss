@@ -6,14 +6,6 @@
     align-items: center;
     height: 44px;
 }
-.list__expand-button {
-}
-.list__content {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
 .list__content-item_bullet:before {
     content: "";
     width: 10px;

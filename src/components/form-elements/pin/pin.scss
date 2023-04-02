@@ -1,0 +1,15 @@
+.pin__item {
+    display: flex;
+    padding: 20px 0;
+}
+.pin__item-title {
+    @extend .body-text-bold;
+}
+.pin__item-inner {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+}
+.pin__item {
+    border-bottom: 1px solid $dark10;
+}

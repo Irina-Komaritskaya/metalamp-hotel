@@ -1,9 +1,9 @@
-//- s, l, m
+//-https://fonts.google.com/icons?icon.set=Material+Symbols
 mixin icon-button({symbol, variant, size='l'})
     -
         let iconClass = "icon-button"
-        let variants = ["white","purple","gray","light-gray"]
-        let sizes = ["l", "m", "s"]
+        let variants = ["white","gradient","gray","light-gray"]
+        let sizes = ["xl","l","m","s"]
         if (variants.includes(variant)) { iconClass+=` icon-button__${variant}` }
         if (sizes.includes(size)) { iconClass+=` icon-button__${size}` }
 
