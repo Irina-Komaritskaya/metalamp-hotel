@@ -28,6 +28,7 @@
         "dev": "webpack --watch | webpack serve"
     },
     "dependencies": {
+        "air-datepicker": "^3.3.5",
         "copy-webpack-plugin": "^11.0.0",
         "inputmask": "^5.0.8",
         "node-sass": "^7.0.1"

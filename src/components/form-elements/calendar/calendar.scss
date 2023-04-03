@@ -1,0 +1,84 @@
+.air-datepicker {
+    border-radius: 0;
+    border: $border-gray;
+    width: 320px;
+    padding: 20px;
+    box-sizing: border-box;
+
+    &.-inline- {
+        border-radius: 0;
+        border: $border-gray;
+    }
+    &--navigation {
+        padding: 0;
+        margin: 0;
+        @extend .H2;
+    }
+    &-nav {
+        border: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        justify-content: space-between;
+        box-sizing: border-box;
+        min-height: 24px;
+    }
+    &-nav--action {
+        @extend .icon-button;
+        @extend .icon-button__m;
+        color: $purple;
+    }
+    &-nav--title {
+        border-radius: 0;
+        padding: 0;
+        align-items: flex-start;
+    }
+    &--content {
+        box-sizing: border-box;
+        padding: 0;
+    }
+    &-body--day-names {
+        margin: 30px 0 0 0;
+    }
+    &-body--day-name {
+        @extend .H3;
+        color: $purple;
+        height: 40px;
+    }
+    //days numbers
+    &-body--cells.-days- {
+        @extend .body-text;
+        grid-auto-rows: 40px;
+        font-size: 12px;
+        line-height: 15px;
+    }
+    &-cell {
+        &.-day-.-other-month- {
+            color: $dark25;
+        }
+        &-day- {
+            color: $dark50;
+        }
+        &.-current- {
+            background: $green;
+            border-radius: 22px;
+            color: white;
+        }
+        &.-range-from-,
+        &.-range-to-,
+        &.-selected-,
+        &.-selected-.-current-,
+        &.-in-range-:hover,
+        &.-focus-,
+        &.-selected-.-focus-,
+        &.-current-.-focus- {
+            color: white;
+            background: $primary-gradient;
+            border-radius: 22px;
+        }
+        &.-current-.-in-range- {
+            background: $primary-gradient;
+            opacity: 0.25;
+        }
+    }
+}

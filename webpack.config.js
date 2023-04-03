@@ -28,13 +28,17 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.s[ac]ss$/i,
-                use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"], // isDev ? miniCss : "style-loader",
+                test: /\.(scss|css)$/,
+                use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
             },
-            {
-                test: /\.css$/,
-                use: ["css-loader", MiniCssExtractPlugin.loader],
-            },
+            // {
+            //     test: /\.s[ac]ss$/i,
+            //     use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"], // isDev ? miniCss : "style-loader",
+            // },
+            // {
+            //     test: /\.css$/,
+            //     use: ["css-loader", MiniCssExtractPlugin.loader],
+            // },
             {
                 test: /\.js$/,
                 use: "babel-loader",
@@ -83,9 +87,9 @@ module.exports = {
         }),
         new HtmlWebpackPugPlugin(),
         new webpack.ProvidePlugin({
-            $: "jquery/dist/jquery.min.js",
-            jQuery: "jquery/dist/jquery.min.js",
-            "window.jQuery": "jquery/dist/jquery.min.js",
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery",
         }),
         new CopyWebpackPlugin({
             patterns: [
