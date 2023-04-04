@@ -1,32 +1,25 @@
 import AirDatepicker from "air-datepicker";
 import localeRu from "air-datepicker/locale/ru";
-//import "air-datepicker/air-datepicker.css";
-
+let button = {
+    content: "Применить",
+    onClick: (dp) => {
+        //отправка даты, сброс выделения
+    },
+};
 new AirDatepicker("#datepicker", {
     inline: true,
     locale: localeRu,
     range: true,
-    // minDate:
-    // maxDate:
+    minDate: [new Date()],
+    // maxDate: ?? param
     // dynamicRange: true,
-    classes: "calendar",
+    //showEvent
+    //autoClose
+
     prevHtml: "arrow_back",
     nextHtml: "arrow_forward",
     navTitles: {
         days: "MMMM yyyy",
     },
-    onRenderCell({ date, cellType }) {
-        if (cellType === "day") {
-            if (date.getDate() === 12) {
-                return {
-                    disabled: true,
-                    classes: "cell",
-                    attrs: {
-                        title: "Cell is disabled",
-                    },
-                };
-            }
-        }
-    },
+    buttons: ["clear", button],
 });
-console.log(1);

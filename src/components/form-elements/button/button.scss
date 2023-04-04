@@ -1,7 +1,5 @@
 .button {
-    .button__text {
-        @extend .H3;
-    }
+    @extend .H3;
 }
 
 .button__primary,
@@ -43,9 +41,7 @@
 }
 
 .button__only-text {
-    .button__text {
-        color: $purple;
-    }
+    color: $purple;
 }
 
 .button__icon {

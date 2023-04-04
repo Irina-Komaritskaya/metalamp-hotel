@@ -1,10 +1,10 @@
+// найти обводку у range to
 .air-datepicker {
     border-radius: 0;
     border: $border-gray;
     width: 320px;
     padding: 20px;
     box-sizing: border-box;
-
     &.-inline- {
         border-radius: 0;
         border: $border-gray;
@@ -28,6 +28,10 @@
         @extend .icon-button__m;
         color: $purple;
     }
+    //??????
+    &-nav--action.-disabled- {
+        visibility: visible;
+    }
     &-nav--title {
         border-radius: 0;
         padding: 0;
@@ -42,12 +46,14 @@
     }
     &-body--day-name {
         @extend .H3;
+        text-transform: capitalize;
         color: $purple;
         height: 40px;
     }
     //days numbers
     &-body--cells.-days- {
         @extend .body-text;
+        color: $dark50;
         grid-auto-rows: 40px;
         font-size: 12px;
         line-height: 15px;
@@ -64,11 +70,37 @@
             border-radius: 22px;
             color: white;
         }
+        &.-range-from-:hover:before,
+        &.-range-to-:hover:before {
+            content: "";
+        }
+        &.-range-from-:before,
+        &.-range-to-:before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        &.-range-from-:before {
+            background: linear-gradient(
+                to right,
+                transparent,
+                rgba($purple, 0.25)
+            );
+        }
+        &.-range-to-:before {
+            background: linear-gradient(
+                to left,
+                transparent,
+                rgba($purple, 0.25)
+            );
+        }
         &.-range-from-,
         &.-range-to-,
         &.-selected-,
         &.-selected-.-current-,
         &.-in-range-:hover,
+        &.-current-.-in-range-:hover,
         &.-focus-,
         &.-selected-.-focus-,
         &.-current-.-focus- {
@@ -76,9 +108,35 @@
             background: $primary-gradient;
             border-radius: 22px;
         }
-        &.-current-.-in-range- {
-            background: $primary-gradient;
-            opacity: 0.25;
+        &.-in-range- {
+            background: rgba($purple, 0.25);
         }
+        &.-current-.-in-range- {
+            border-radius: 0;
+            color: $dark50;
+        }
+        &.air-datepicker-cell.-disabled-,
+        &.air-datepicker-cell.-disabled-.-focus- {
+            background: transparent;
+        }
+    }
+    &--buttons {
+        border: none;
+        padding: 0;
+        margin-top: 20px;
+    }
+    &-buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+    &-button {
+        @extend .button;
+        @extend .button__only-text;
+        height: 15px;
+    }
+    &-button:hover,
+    &-button:focus {
+        background-color: transparent;
+        color: $purple;
     }
 }
