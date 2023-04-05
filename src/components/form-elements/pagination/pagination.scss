@@ -1,0 +1,34 @@
+.pagination {
+    display: inline-block;
+}
+.pagination__items {
+    display: inline-flex;
+    height: 40px;
+}
+.pagination__item {
+    width: 40px;
+    font-family: $monsterrat-regular;
+    font-weight: 400;
+    color: $dark50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.pagination__item-active {
+    border-radius: 22px;
+    background: $primary-gradient;
+    @extend .H3;
+    color: white;
+}
+.pagination__item-next-button {
+    background: $secondary-gradient;
+    border-radius: 22px;
+}
+.pagination__title {
+    margin-top: 10.56px;
+    text-align: center;
+}
+.pagination__item-disable {
+    cursor: default;
+}

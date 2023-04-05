@@ -1,13 +1,13 @@
 import * as noUiSlider from "nouislider";
 
 noUiSlider.create(slider, {
-    start: [1000, 2000],
+    start: [0, 2000],
     connect: true,
     range: {
         min: 0,
         max: 10000,
     },
-    step: 1000,
+    step: 200,
     cssClasses: {
         target: "target slider__target",
         base: "base",
