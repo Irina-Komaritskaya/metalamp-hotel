@@ -2,6 +2,7 @@
 //-сделать маску
 //-, onclick=options.fcButton убрать
 //-title, state, type, name, placeholder, variant, Button{ } variantButton, symbolButton, typeButton, fcButton, value
+//- symbol:options.symbolButton, variant:options.variantButton - сделать дефолт
 
 include ../icon-button/icon-button
 mixin text-field (options)
@@ -22,10 +23,10 @@ mixin text-field (options)
                 name=options.name
                 placeholder=options.placeholder
                 value=options.value
-                id=options.variant==="mask" ? "mask" : ""
+                id=options.id
             )
             if options.withButton
-                button.text-field__button(type=options.typeButton, onclick=options.fcButton)
+                button.text-field__button(type=options.typeButton)
                     +icon-button({symbol:options.symbolButton, variant:options.variantButton}) 
 
 

@@ -1,0 +1,9 @@
+//- ...items
+mixin list-counter() 
+    ul.list-counters
+        li.list-counter__item
+            span.list-counter__item-caption Взрослые
+            .list-counter__btn-inner 
+                button(type="button").list-counter__btn.list-counter__btn-disabled="-"  
+                span.list-counter__counter 0 
+                button(type="button").list-counter__btn="+"

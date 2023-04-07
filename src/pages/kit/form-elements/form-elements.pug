@@ -7,44 +7,45 @@ html
             include ../../../icons/logo
 
         .wrap_form_element
-            +text-field({title:"text field", state:"default", type:"email", name:"email", placeholder:"Email"})
-            +text-field({type:"email", name:"email", placeholder:"Email"})
-            +text-field({title:"text field", state:"Hover / Focus", placeholder:"This is pretty awesome", variant:"focused"})
-            +text-field({title:"subscription", placeholder:"Email", withButton:true, variant:"subscription", variantButton:"gradient", symbolButton:"arrow_forward"})
-            +text-field({title:"mask text field", variant:"mask"})
+            .wrap-f
+                +text-field({title:"text field", state:"default", type:"email", name:"email", placeholder:"Email"})
+                +text-field({type:"email", name:"email", placeholder:"Email"})
+                +text-field({title:"text field", state:"Hover / Focus", placeholder:"This is pretty awesome", variant:"focused"})
+                +text-field({title:"subscription", placeholder:"Email", withButton:true, variant:"subscription", variantButton:"gradient", symbolButton:"arrow_forward"})
+                +text-field({title:"mask text field", variant:"mask"})
 
-            +dropdown({title:"dropdown", value: "Сколько гостей"})
+                +button({text: "click me", type:"primary"})
+                +button({text: "click me", type:"secondary"})
+                +button({text:"перейти к оплате", type:"with-arrow"})
+                +button({text: "click me", type:"only-text"})
+                +button({text: "click me", type:"only-text", isDisabled:true})
+                +button({text: "click me", type:"primary", isDisabled:true})
+                +button({text: "click me", type:"secondary", isDisabled:true})
+                +button({text: "click me", type:"secondary", isDisabled:true})
 
-            +button({text: "click me", type:"primary"})
-            +button({text: "click me", type:"secondary"})
-            +button({text:"перейти к оплате", type:"with-arrow"})
-            +button({text: "click me", type:"only-text"})
-            +button({text: "click me", type:"only-text", isDisabled:true})
-            +button({text: "click me", type:"primary", isDisabled:true})
-            +button({text: "click me", type:"secondary", isDisabled:true})
-            +button({text: "click me", type:"secondary", isDisabled:true})
+                +like-button({count:"2"})
+                +like-button({count:"12", isClicked:true})
 
-            +like-button({count:"2"})
-            +like-button({count:"12", isClicked:true})
+                +toggle({text:"Получать специальные предложения"})
 
-            +toggle({text:"Получать специальные предложения"})
+                +checkbox({name:"checkbox", text: "Можно пригласить гостей (до 10 человек)"})
 
-            +checkbox({name:"checkbox", text: "Можно пригласить гостей (до 10 человек)"})
+                +radio-button({name:"radio", id:"radio1", text: "Мужчина"})
+                +radio-button({name:"radio", id:"radio2", text: "Женщина"})
 
-            +radio-button({name:"radio", id:"radio1", text: "Мужчина"})
-            +radio-button({name:"radio", id:"radio2", text: "Женщина"})
+                +list({text:"expandable checkbox list", button:{symbol:"expand_more",variant:"gray"}, type:"checkbox"}) 
+                +list({text:"rich Checkbox Buttons", type:"richCheckbox"})
+                +list({text:"bullet list", type:"bullet"})
 
-            +list({text:"expandable checkbox list", button:{symbol:"expand_more",variant:"gray"}, type:"checkbox"}) 
-            +list({text:"rich Checkbox Buttons", type:"richCheckbox"})
-            +list({text:"bullet list", type:"bullet"})
-
-            +pin
-            +feedback
-            +calendar
-            +slider
-            +pagination
-            +rate-button
-
+                +pin
+                +feedback
+                +calendar
+                +slider
+                +pagination
+                +rate-button
+            .wrap-f 
+                +dropdown({title:"dropdown", value: "Сколько гостей", id:"dropdown-unexpand"})
+                +dropdown({title:"dropdown", value: "Сколько гостей", isOpen:true, id:"dropdown-expand"})
 
 
 

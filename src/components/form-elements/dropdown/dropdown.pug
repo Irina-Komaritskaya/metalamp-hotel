@@ -5,30 +5,29 @@
 //- запретить редактирование - ридонли
 //-ul.dropdown__content - ul__dropdown-content
 //-.dropdown__option_btn - button.
+//- list-counter
 include ../text-field/text-field
+include ../list-counter/list-counter
 
-mixin dropdown({name, id, state, title, value})
+mixin dropdown({name, id, state, title, value, isOpen})
     -
         let textFildOptions={
+            id:id,
             name:name, 
             title:title, 
             value:value,
+            variant: isOpen ? "focused" : " ",
             withButton:true, 
             variantButton: "gray", 
             symbolButton:"expand_more", 
             typeButton:"button",
-            fcButton:`alert(1)`
         }
 
-    .dropdown__inner
-        +text-field(textFildOptions)
-        button.dropdown__button(type="button" id='MYBTN').dropdown__button_icon_expand-more
+        let content = "dropdown__content"
+        if (!!isOpen) {content+=" dropdown__content-unexpand"}
 
-    ul.dropdown__content
-        li.dropdown__option
-            span.dropdown__option_caption Взрослые
-            .dropdown__option_btn_inner
-                .dropdown__option_btn.dropdown__option_btn_disabled.dropdown__option_btn_minus -
-                span.dropdown__option__counter 0 
-                .dropdown__option_btn.dropdown__option_btn_plus +
+    .dropdown
+        +text-field(textFildOptions)
+        div(class=content)
+            +list-counter
 

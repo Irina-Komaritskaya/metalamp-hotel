@@ -1,0 +1,32 @@
+.list-counter__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.list-counter__item-caption {
+    @extend .H3;
+}
+.list-counter__btn-inner {
+    display: flex;
+    align-items: center;
+}
+.list-counter__btn {
+    color: $dark50;
+    border: $border-gray;
+    border-radius: 22px;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 22px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    text-transform: none;
+    padding: 3px;
+}
+.list-counter__btn-disabled {
+    opacity: 0.5;
+}
+.list-counter__counter {
+    padding: 0 15px;
+    @extend .H3;
+}
