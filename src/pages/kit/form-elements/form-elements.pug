@@ -11,7 +11,7 @@ html
                 +text-field({title:"text field", state:"default", type:"email", name:"email", placeholder:"Email"})
                 +text-field({type:"email", name:"email", placeholder:"Email"})
                 +text-field({title:"text field", state:"Hover / Focus", placeholder:"This is pretty awesome", variant:"focused"})
-                +text-field({title:"subscription", placeholder:"Email", withButton:true, variant:"subscription", variantButton:"gradient", symbolButton:"arrow_forward"})
+                +text-field({title:"subscription", placeholder:"Email", withButton:true, variant:"send", variantButton:"gradient", symbolButton:"arrow_forward"})
                 +text-field({title:"mask text field", variant:"mask"})
 
                 +button({text: "click me", type:"primary"})
@@ -44,8 +44,13 @@ html
                 +pagination
                 +rate-button
             .wrap-f 
-                +dropdown({title:"dropdown", value: "Сколько гостей", id:"dropdown-unexpand"})
-                +dropdown({title:"dropdown", value: "Сколько гостей", isOpen:true, id:"dropdown-expand"})
+                //- +dropdown({input:{value: "Сколько гостей", title:"dropdown"}})
+                //- +dropdown({input:{value: "Сколько гостей", title:"dropdown"}, isOpen:true})
+
+                +dropdown({value: "Сколько гостей", title:"dropdown", variant:"counter"})
+                +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter"})
+                +dropdown({value: "Сколько гостей", title:"date dropdown", isOpen:true, content:"calendar", variant:"calendar"})
+                +search
 
 
 

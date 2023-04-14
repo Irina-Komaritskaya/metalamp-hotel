@@ -1,15 +1,14 @@
-//-длинный value
-//-value и текст передавать как объект и циклом добавлять.
+//-длинный value (скрывать за точками)
 //-если открыт - нижний радиус 0
-//- верх input, низ див или календарь  
+//- как нибудь сделать универсальные кнопки сбросить и применить.
+//- сбросить сбрасывает данные
+//- Применить отправляет данные, скрывает контент, сбрасывает данные
 //- запретить редактирование - ридонли
-//-ul.dropdown__content - ul__dropdown-content
-//-.dropdown__option_btn - button.
-//- list-counter
+//-сложить инпут в инпут
 include ../text-field/text-field
 include ../list-counter/list-counter
-
-mixin dropdown({name, id, state, title, value, isOpen})
+include ../calendar/calendar
+mixin dropdown({name, isOpen, content, value, title, variant})
     -
         let textFildOptions={
             id:id,
@@ -21,13 +20,20 @@ mixin dropdown({name, id, state, title, value, isOpen})
             variantButton: "gray", 
             symbolButton:"expand_more", 
             typeButton:"button",
+            readonly:true
         }
 
-        let content = "dropdown__content"
-        if (!!isOpen) {content+=" dropdown__content-unexpand"}
+        let contentClass = "dropdown__content"
+        if (!isOpen) {contentClass+=" dropdown__content-unexpand"}
 
     .dropdown
         +text-field(textFildOptions)
-        div(class=content)
-            +list-counter
+        .dropdown__content-inner
+            div(class=contentClass data-content=content)
+                if(variant==="counter")
+                    +list-counter({forElement:"dropdown"})
+                if(variant==="calendar")  
+                    +calendar
+    script
+        include ../calendar/calendar.js
 

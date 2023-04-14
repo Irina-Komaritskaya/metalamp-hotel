@@ -1,14 +1,12 @@
-//-input subscription name???? send
 //-сделать маску
-//-, onclick=options.fcButton убрать
-//-title, state, type, name, placeholder, variant, Button{ } variantButton, symbolButton, typeButton, fcButton, value
+//-title, state, type, name, placeholder, variant, Button{ } variantButton, symbolButton, typeButton, value
 //- symbol:options.symbolButton, variant:options.variantButton - сделать дефолт
-
+//- options.readonly === true ? "readonly" : 0
 include ../icon-button/icon-button
 mixin text-field (options)
     -
         let inputClass = 'input';
-        let variantInput = ['focused','subscription','mask']
+        let variantInput = ['focused','send','mask']
         if (variantInput.includes(options.variant)) { inputClass+=` input__${options.variant}` }
 
     //- if title
@@ -24,6 +22,7 @@ mixin text-field (options)
                 placeholder=options.placeholder
                 value=options.value
                 id=options.id
+
             )
             if options.withButton
                 button.text-field__button(type=options.typeButton)

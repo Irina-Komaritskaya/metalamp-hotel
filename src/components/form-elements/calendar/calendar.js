@@ -6,7 +6,7 @@ let button = {
         //отправка даты, сброс выделения
     },
 };
-new AirDatepicker("#datepicker", {
+new AirDatepicker(".datepicker", {
     inline: true,
     locale: localeRu,
     range: true,

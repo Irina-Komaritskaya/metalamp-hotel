@@ -1,5 +1,5 @@
 import "../../../../node_modules/paginationjs/dist/pagination";
-
+// свой пагинат
 $("#pagination").pagination({
     dataSource: function (done) {
         var result = [];

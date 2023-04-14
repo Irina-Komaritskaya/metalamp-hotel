@@ -1,0 +1,10 @@
+include ../../form-elements/dropdown/dropdown 
+include ../../form-elements/button/button
+mixin search 
+    .search 
+        .search__title="Найдем номера под ваши пожелания"
+        .search__data-inner
+            +dropdown({name: "dateFinish", title: "выезд"})
+            +dropdown({name: "dateStart", title: "прибытие"})
+        +dropdown({name: "dateFinish", title: "гости"})
+        +button({type:"with-arrow", text:"подобрать номер"})
