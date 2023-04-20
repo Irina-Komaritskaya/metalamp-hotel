@@ -1,21 +1,10 @@
-//-active 
-//-цикл
-//- rate=rate + округлить??
-//- ???
-//- - let n = 0;
-//-   while n < 4
-//-     n = n++
-//-     star = n <= rate ? star : star_border
-//- два состяния нажимаемое и ненажимаемое
 include ../icon-button/icon-button
-mixin rate-button 
-    .rate-button
-        input.rate__radio-input(type="radio" id="star5" name="rate" value="5")
-        label.rate__label-input(for="star5")
-            +icon-button({symbol:"star", variant:"gradient", size:"m"})
-        input.rate__radio-input(type="radio" id="star4" name="rate" value="5")
-        label.rate__label-input(for="star4")
-            +icon-button({symbol:"star", variant:"gradient", size:"m"})    
-        input.rate__radio-input(type="radio" id="star3" name="rate" value="5")
-        label.rate__label-input(for="star3")
-            +icon-button({symbol:"star_border", variant:"gradient", size:"m"})
+mixin rate-button({state, rate}) 
+    .rate-buttons(data-state=state)      
+        each val in [1,2,3,4,5]
+            .rate-button
+                - let star = val <= rate ? "star" : "star_border"
+                - let id = "star"+val
+                input.rate__radio-input(type="radio" id=id name="rate" value=val)
+                label.rate__label-input(for=id)
+                    +icon-button({symbol:star, variant:"gradient", size:"m"})

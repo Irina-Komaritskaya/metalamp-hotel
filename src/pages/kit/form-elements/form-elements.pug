@@ -8,6 +8,10 @@ html
 
         .wrap_form_element
             .wrap-f
+                +rate-button({state:"disabled", rate:5})
+                +rate-button({state:"disabled", rate:4})
+                +rate-button({state:"undisabled", rate:5})
+
                 +text-field({title:"text field", state:"default", type:"email", name:"email", placeholder:"Email"})
                 +text-field({type:"email", name:"email", placeholder:"Email"})
                 +text-field({title:"text field", state:"Hover / Focus", placeholder:"This is pretty awesome", variant:"focused"})
@@ -42,7 +46,7 @@ html
                 +calendar
                 +slider
                 +pagination
-                +rate-button
+
             .wrap-f 
                 //- +dropdown({input:{value: "Сколько гостей", title:"dropdown"}})
                 //- +dropdown({input:{value: "Сколько гостей", title:"dropdown"}, isOpen:true})
@@ -50,7 +54,7 @@ html
                 +dropdown({value: "Сколько гостей", title:"dropdown", variant:"counter"})
                 +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter"})
                 +dropdown({value: "Сколько гостей", title:"date dropdown", isOpen:true, content:"calendar", variant:"calendar"})
-                +search
+                //- +search
 
 
 
