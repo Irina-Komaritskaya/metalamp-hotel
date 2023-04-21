@@ -1,6 +1,6 @@
 include ../icon-button/icon-button
 mixin rate-button({state, rate}) 
-    .rate-buttons(data-state=state)      
+    .rate-buttons(data-state=state, data-rate=rate)      
         each val in [1,2,3,4,5]
             .rate-button
                 - let star = val <= rate ? "star" : "star_border"
