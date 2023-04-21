@@ -21,9 +21,12 @@
     @extend .H3;
     color: white;
 }
-.pagination__item-next-button {
+.pagination__item-button {
     background: $secondary-gradient;
     border-radius: 22px;
+}
+.pagination__item-hide {
+    display: none;
 }
 .pagination__title {
     margin-top: 10.56px;

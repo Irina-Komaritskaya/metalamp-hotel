@@ -4,6 +4,8 @@ $(".rate-button").on("mouseover", (e) => {
     if (state === "undisabled") {
         const icon = $(star).find(".icon-button");
         const text = icon.text() === "star_border" ? "star" : "star_border";
+        const nottext = icon.text() != "star_border" ? "star" : "star_border";
         $(star).nextAll(".rate-button").find(".icon-button").text(text);
+        // $(star).prevAll(".rate-button").find(".icon-button").text(nottext);
     }
 });

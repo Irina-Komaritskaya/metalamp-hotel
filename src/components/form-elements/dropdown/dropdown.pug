@@ -5,12 +5,12 @@
 //- Применить отправляет данные, скрывает контент, сбрасывает данные
 //- запретить редактирование - ридонли
 //-сложить инпут в инпут
-include ../text-field/text-field
+include ../input/input
 include ../list-counter/list-counter
-include ../calendar/calendar
+//- include ../calendar/calendar
 mixin dropdown({name, isOpen, content, value, title, variant})
     -
-        let textFildOptions={
+        let inputOptions={
             id:id,
             name:name, 
             title:title, 
@@ -27,13 +27,13 @@ mixin dropdown({name, isOpen, content, value, title, variant})
         if (!isOpen) {contentClass+=" dropdown__content-unexpand"}
 
     .dropdown
-        +text-field(textFildOptions)
+        +input(inputOptions)
         .dropdown__content-inner
             div(class=contentClass data-content=content)
                 if(variant==="counter")
                     +list-counter({forElement:"dropdown"})
                 if(variant==="calendar")  
-                    +calendar
-    script
-        include ../calendar/calendar.js
+                    //- +calendar
+                    //- script
+                    //-     include ../calendar/calendar.js
 

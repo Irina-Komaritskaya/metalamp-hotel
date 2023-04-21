@@ -1,4 +1,4 @@
-.label-text-field {
+.label-input {
     @extend .H3;
 }
 .label__inner {
@@ -37,7 +37,7 @@
 .input:hover {
     @extend .input__focused;
 }
-.text-field__button {
+.input__button {
     position: absolute;
     right: 0;
     top: 0;

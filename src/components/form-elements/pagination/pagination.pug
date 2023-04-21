@@ -1,8 +1,9 @@
 include ../icon-button/icon-button
-mixin pagination 
-    #pagination
-    .pagination 
-        ul.pagination__items 
+mixin pagination() 
+    .pagination() 
+        ul.pagination__items
+            li.pagination__item.pagination__item-button
+                +icon-button({symbol:"arrow_back", variant:"white", size:"m"})  
             li.pagination__item.pagination__item-active
                 span.pagination__item-link="1"
             li.pagination__item
@@ -13,6 +14,6 @@ mixin pagination
                 span.pagination__item-link="..." 
             li.pagination__item
                 span.pagination__item-link="15" 
-            li.pagination__item.pagination__item-next-button
+            li.pagination__item.pagination__item-button
                 +icon-button({symbol:"arrow_forward", variant:"white", size:"m"}) 
         .pagination__title="1 – 12 из 100+ вариантов аренды"

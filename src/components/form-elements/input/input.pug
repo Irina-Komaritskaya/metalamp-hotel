@@ -3,14 +3,14 @@
 //- symbol:options.symbolButton, variant:options.variantButton - сделать дефолт
 //- options.readonly === true ? "readonly" : 0
 include ../icon-button/icon-button
-mixin text-field (options)
+mixin input (options)
     -
         let inputClass = 'input';
         let variantInput = ['focused','send','mask']
         if (variantInput.includes(options.variant)) { inputClass+=` input__${options.variant}` }
 
     //- if title
-    label.label-text-field
+    label.label-input
         .label__inner
             .label__title=options.title
             .label__state=options.state
@@ -22,10 +22,9 @@ mixin text-field (options)
                 placeholder=options.placeholder
                 value=options.value
                 id=options.id
-
             )
             if options.withButton
-                button.text-field__button(type=options.typeButton)
+                button.input__button(type=options.typeButton)
                     +icon-button({symbol:options.symbolButton, variant:options.variantButton}) 
 
 

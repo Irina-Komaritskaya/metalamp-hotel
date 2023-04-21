@@ -1,6 +1,6 @@
 //- обработка нуля
 
-$(".text-field__button").on("click", (e) => {
+$(".input__button").on("click", (e) => {
     const button = e.currentTarget;
     const input = $(button).prev();
     const content = $(input).closest(".dropdown").find(".dropdown__content");
