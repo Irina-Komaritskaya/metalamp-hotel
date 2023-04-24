@@ -7,7 +7,6 @@
     width: 100%;
 }
 .dropdown__content {
-    padding: 7px 7px 7px 15px;
     border: solid $dark50;
     border-width: 0px 1px 1px 1px;
     border-bottom-left-radius: 4px;
@@ -20,9 +19,7 @@
     width: 100%;
     min-width: 266px;
 }
+
 .dropdown__content-unexpand {
     display: none;
-}
-.dropdown__content + .dropdown__content-unexpand {
-    border: solid $dark25;
 }

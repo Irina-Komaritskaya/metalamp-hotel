@@ -1,10 +1,176 @@
 @import "../../../components/index.scss";
-
-.wrap_form_element {
+.form-elements__content {
     margin-top: 143px;
-    display: flex;
-    gap: 10px;
+    margin-left: 140px;
+    margin-right: 140px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 0px 0px;
+    grid-template-areas:
+        "inputs switchs buttons"
+        "dropdown-defoult dropdown-empty dropdown-fill-up"
+        "checkbox-list rich-checkbox-list bullet-list"
+        "pins feedback feedback";
 }
-.wrap-f {
+.form-elements__inputs {
+    grid-area: inputs;
+}
+.inputs__input-defoult {
     width: 320px;
+}
+.inputs__input-focus {
+    width: 320px;
+    margin-top: 20.44px;
+}
+.inputs__dropdown {
+    width: 320px;
+    margin-top: 20px;
+}
+.inputs__input-mask {
+    width: 320px;
+    margin-top: 22.56px;
+}
+.inputs__dropdowns-date {
+    width: 320px;
+    margin-top: 40px;
+    display: inline-flex;
+    justify-content: space-between;
+}
+.inputs__dropdown-date {
+    width: 150px;
+}
+.inputs__filter-date {
+    width: 266px;
+    margin-top: 40.56px;
+}
+.inputs__input-send {
+    width: 266px;
+    margin-top: 41px;
+}
+.form-elements__switchs {
+    grid-area: switch;
+}
+.switches__chekboxs-title {
+    @extend .H3;
+    margin-bottom: 16.56px;
+}
+.switches__radio-buttons-inner {
+    margin-top: 40.88px;
+}
+.switches__radio-buttons-title {
+    @extend .H3;
+}
+.swiches__radio-buttons {
+    display: inline-flex;
+    margin-top: 16px;
+}
+.switches__radio-button_active {
+    margin-right: 20px;
+}
+.switches__toggles-inner {
+    margin-top: 40.56px;
+}
+.switches__toggles-title {
+    @extend .H3;
+}
+.switches__toggle_active {
+    margin-top: 16px;
+}
+.switches__toggle {
+    margin-top: 14px;
+}
+.switches__like-buttons-inner {
+    margin-top: 44.44px;
+}
+.switches__like-buttons-title {
+    @extend .H3;
+}
+.switches__like-buttons {
+    display: inline-flex;
+    margin-top: 16px;
+}
+.switches__like-button_active {
+    margin-left: 10px;
+}
+.switches__rate-buttons-inner {
+    margin-top: 40px;
+}
+.switches__rate-buttons-title {
+    @extend .H3;
+}
+.switches__rate-buttons {
+    margin-top: 16px;
+    display: inline-flex;
+}
+.switches__rate-button-disabled {
+    margin-right: 20px;
+}
+.form-elements__buttons {
+    grid-area: buttons;
+    width: 320px;
+}
+.buttons__slider {
+    width: 266px;
+}
+.buttons__buttons-inner {
+    margin-top: 43.56px;
+}
+.buttons__buttons-title {
+    @extend .H3;
+}
+.buttons__buttons-primary-inner {
+    margin-top: 16px;
+    display: inline-flex;
+}
+.buttons__button-primary {
+    margin-right: 19px;
+}
+.buttons__buttons-secondary-inner {
+    margin-top: 30px;
+    display: inline-flex;
+}
+.buttons__button-secondary {
+    margin-right: 20px;
+}
+.buttons__buttons-only-text-inner {
+    margin-top: 31px;
+    display: inline-flex;
+}
+.buttons__button-only-text {
+    margin-right: 20px;
+}
+.buttons__button-with-arrow {
+    margin-top: 30px;
+}
+.buttons__pagination {
+    margin-top: 40px;
+}
+.buttons__pagination-title {
+    @extend .H3;
+    margin-bottom: 16.44px;
+}
+.form-elements__dropdown-defoult {
+    grid-area: dropdown-defoult;
+}
+.form-elements__dropdown-empty {
+    grid-area: dropdown-empty;
+}
+.form-elements__fill-up {
+    grid-area: dropdown-fill-up;
+}
+.form-elements__checkbox-list {
+    grid-area: checkbox-list;
+}
+.form-elements__rich-checkbox-list {
+    grid-area: rich-checkbox-list;
+}
+.form-elements__bullet-list {
+    grid-area: bullet-list;
+}
+.form-elements__pins {
+    grid-area: pins;
+}
+.form-elements__feedback {
+    grid-area: feedback;
 }

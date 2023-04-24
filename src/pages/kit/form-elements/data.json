@@ -1,5 +1,12 @@
 [
-    { "id": 1, "name": "abc" },
-    { "id": 2, "name": "xyz" },
-    { "id": 2, "name": "xyz" }
+    {
+        "buttons": {},
+        "text field": {},
+        "dropdown": {},
+        "checkboxs": {},
+        "rate button": {},
+        "list": {},
+        "pin": {},
+        "feedback": {}
+    }
 ]

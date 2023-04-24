@@ -7,61 +7,101 @@ html
         .logo
             include ../../../icons/logo
 
-        .main
         - var myData = require('./data.json')
-        div=myData.length
-        ul
-            each item in myData
-                li=item.id
-            .wrap_form_element
-                .wrap-f
-                    +rate-button({state:"disabled", rate:5})
-                    +rate-button({state:"disabled", rate:4})
-                    +rate-button({state:"undisabled", rate:3})
-
+        .form-elements__content
+            .form-elements__inputs
+                .inputs__input-defoult
                     +input({title:"text field", state:"default", type:"email", name:"email", placeholder:"Email"})
-                    +input({type:"email", name:"email", placeholder:"Email"})
+                .inputs__input-focus
                     +input({title:"text field", state:"Hover / Focus", placeholder:"This is pretty awesome", variant:"focused"})
-                    +input({title:"subscription", placeholder:"Email", withButton:true, variant:"send", variantButton:"gradient", symbolButton:"arrow_forward"})
-                    +input({title:"mask text field", variant:"mask"})
-
-                    +button({text: "click me", type:"primary"})
-                    +button({text: "click me", type:"secondary"})
-                    +button({text:"перейти к оплате", type:"with-arrow"})
-                    +button({text: "click me", type:"only-text"})
-                    +button({text: "click me", type:"only-text", isDisabled:true})
-                    +button({text: "click me", type:"primary", isDisabled:true})
-                    +button({text: "click me", type:"secondary", isDisabled:true})
-                    +button({text: "click me", type:"secondary", isDisabled:true})
-
-                    +like-button({count:"2"})
-                    +like-button({count:"12", isClicked:true})
-
-                    +toggle({text:"Получать специальные предложения"})
-
-                    +checkbox({name:"checkbox", text: "Можно пригласить гостей (до 10 человек)"})
-
-                    +radio-button({name:"radio", id:"radio1", text: "Мужчина"})
-                    +radio-button({name:"radio", id:"radio2", text: "Женщина"})
-
-                    +list({text:"expandable checkbox list", button:{symbol:"expand_more",variant:"gray"}, type:"checkbox"}) 
-                    +list({text:"rich Checkbox Buttons", type:"richCheckbox"})
-                    +list({text:"bullet list", type:"bullet"})
-
-                    +pin
-                    +feedback
-                    +calendar
-                    +slider
-                    +pagination(items)
-
-                .wrap-f 
-                    //- +dropdown({input:{value: "Сколько гостей", title:"dropdown"}})
-                    //- +dropdown({input:{value: "Сколько гостей", title:"dropdown"}, isOpen:true})
-
+                .inputs__dropdown
                     +dropdown({value: "Сколько гостей", title:"dropdown", variant:"counter"})
-                    +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter"})
+                .inputs__input-mask
+                    +input({title:"mask text field", variant:"mask"})
+                .inputs__dropdowns-date
+                    .inputs__dropdown-date
+                        +dropdown({value: "Сколько гостей", title:"date dropdown", content:"calendar", variant:"calendar"})
+                    .inputs__dropdown-date
+                        +dropdown({value: "Сколько гостей", title:"date dropdown", content:"calendar", variant:"calendar"})
+                .inputs__filter-date
                     +dropdown({value: "Сколько гостей", title:"date dropdown", isOpen:true, content:"calendar", variant:"calendar"})
-                    //- +search
+                .inputs__input-send    
+                    +input({title:"subscription", placeholder:"Email", withButton:true, variant:"send", variantButton:"gradient", symbolButton:"arrow_forward"})
+            .form-elements__switches
+                .switches__chekboxs-inner
+                    .switches__chekboxs-title="checkbox buttons"
+                    +checkbox({name:"checkbox", text: "Можно пригласить гостей (до 10 человек)"})
+                .switches__radio-buttons-inner
+                    .switches__radio-buttons-title="radio buttons"
+                    .swiches__radio-buttons 
+                        .switches__radio-button_active
+                            +radio-button({name:"radio", id:"radio1", text: "Мужчина"})
+                        .switches__radio-button    
+                            +radio-button({name:"radio", id:"radio2", text: "Женщина"})
+                .switches__toggles-inner
+                    .switches__toggles-title="toggle"
+                    .switches__toggle_active     
+                        +toggle({text:"Получать специальные предложения"})
+                    .switches__toggle     
+                        +toggle({text:"Получать специальные предложения"})
+                .switches__like-buttons-inner
+                    .switches__like-buttons-title="like buttons"
+                    .switches__like-buttons
+                        .switches__like-button 
+                            +like-button({count:"2"})
+                        .switches__like-button_active    
+                            +like-button({count:"12", isClicked:true})
+                .switches__rate-buttons-inner
+                    .switches__rate-buttons-title="rate buttons"
+                    .switches__rate-buttons
+                        .switches__rate-button-disabled  
+                            +rate-button({state:"disabled", rate:4})
+                        .switches__rate-button    
+                            +rate-button({state:"undisabled", rate:5})
+            .form-elements__buttons
+                .buttons__slider
+                    +slider
+                .buttons__buttons-inner    
+                    .buttons__buttons-title="buttons"    
+                    .buttons__buttons-primary-inner 
+                        .buttons__button-primary
+                            +button({text: "click me", type:"primary"})
+                        .buttons__button-primary_disabled    
+                            +button({text: "click me", type:"primary", isDisabled:true})
+                    .buttons__buttons-secondary-inner 
+                        .buttons__button-secondary    
+                            +button({text: "click me", type:"secondary"})
+                        .buttons__button-secondary_disabled    
+                            +button({text: "click me", type:"secondary", isDisabled:true})
+                    .buttons__buttons-only-text-inner 
+                        .buttons__button-only-text
+                            +button({text: "click me", type:"only-text"})
+                        .buttons__button-only-text_disabled    
+                            +button({text: "click me", type:"only-text", isDisabled:true})
+                    .buttons__button-with-arrow        
+                        +button({text:"перейти к оплате", type:"with-arrow"})
+                    .buttons__pagination
+                        .buttons__pagination-inner 
+                            .buttons__pagination-title="pagination"    
+                            +pagination(items)
+            .form-elements__dropdown-defoult 
+                +dropdown({value: "Сколько гостей", title:"dropdown", content:"guests", variant:"counter"}) 
+                +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter"})
+            .form-elements__dropdown-empty
+                +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter"}) 
+            .form-elements__fill-up
+                +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter"}) 
+            .form-elements__checkbox-list 
+                +list({text:"expandable checkbox list", button:{symbol:"expand_more",variant:"gray"}, type:"checkbox"}) 
+            .form-elements__rich-checkbox-list
+                +list({text:"rich Checkbox Buttons", type:"richCheckbox"}) 
+            .form-elements__bullet-list
+                +list({text:"bullet list", type:"bullet"}) 
+            .form-elements__pins
+                +pin
+            .form-elements__feedback  
+                +feedback
+
 
 
 
