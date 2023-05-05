@@ -1,7 +1,10 @@
 .dropdown {
     width: 100%;
 }
-.dropdown__content-inner {
+.dropdown__content-inner-closed {
+    display: none;
+}
+.dropdown__content-inner-opened {
     position: relative;
     z-index: 10;
     width: 100%;
@@ -12,14 +15,17 @@
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
     background: white;
+}
+.dropdown__content-unexpand {
     display: block;
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
-    min-width: 266px;
+    min-width: 320px;
 }
 
-.dropdown__content-unexpand {
-    display: none;
+.dropdown__input_border-radius-none {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }

@@ -1,13 +1,13 @@
 // найти обводку у range to
 .air-datepicker {
     border-radius: 0;
-    border: $border-gray;
-    width: 320px;
+    border: none;
+    width: 100%;
+    max-width: 320px;
     padding: 20px;
     box-sizing: border-box;
     &.-inline- {
         border-radius: 0;
-        border: $border-gray;
     }
     &--navigation {
         padding: 0;
@@ -107,6 +107,7 @@
             color: white;
             background: $primary-gradient;
             border-radius: 22px;
+            border: none;
         }
         &.-in-range- {
             background: rgba($purple, 0.25);

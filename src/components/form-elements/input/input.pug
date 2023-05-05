@@ -1,6 +1,7 @@
 //-сделать маску
 //-title, state, type, name, placeholder, variant, Button{ } variantButton, symbolButton, typeButton, value
 //- symbol:options.symbolButton, variant:options.variantButton - сделать дефолт
+//- mask: date, data-mask(data-for=mask)
 //- options.readonly === true ? "readonly" : 0
 include ../icon-button/icon-button
 mixin input (options)
@@ -22,6 +23,7 @@ mixin input (options)
                 placeholder=options.placeholder
                 value=options.value
                 id=options.id
+                readonly= options.readonly === true 
             )
             if options.withButton
                 button.input__button(type=options.typeButton)

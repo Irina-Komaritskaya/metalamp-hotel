@@ -29,5 +29,8 @@ $(".list-counter__btn").on("click", (e) => {
         }
         counterEl.text(counter);
     }
-    $(parentEl).trigger("test", { target: e.currentTarget, count: counter });
+    $(parentEl).trigger("changeCount", {
+        target: e.currentTarget,
+        count: counter,
+    });
 });

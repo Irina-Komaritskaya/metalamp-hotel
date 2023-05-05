@@ -1,17 +1,32 @@
 //- обработка нуля
-
+$(function () {
+    const expand = $(".dropdown").find(".dropdown__content-expand");
+    console.log(expand);
+    if (expand) {
+        const input = $(expand).closest(".dropdown").find(".input");
+        input.addClass("dropdown__input_border-radius-none");
+    }
+});
 $(".input__button").on("click", (e) => {
     const button = e.currentTarget;
     const input = $(button).prev();
-    const content = $(input).closest(".dropdown").find(".dropdown__content");
+    const defaultVal = $(input).val();
+    const content = $(input)
+        .closest(".dropdown")
+        .find(".dropdown__content-inner");
+    const unexpand = $(input)
+        .closest(".dropdown")
+        .find(".dropdown__content-unexpand");
+    if (unexpand) {
+        content.toggleClass("dropdown__content-inner-closed");
+        content.toggleClass("dropdown__content-inner-opened");
+    }
 
-    content.toggleClass("dropdown__content-unexpand");
     input.toggleClass("input__focused");
-    input.css("border-bottom-left-radius", 0);
-    input.css("border-bottom-right-radius", 0);
+    input.toggleClass("dropdown__input_border-radius-none");
 });
-$(".dropdown").off("test");
-$(".dropdown").on("test", function (e, data) {
+$(".dropdown").off("changeCount");
+$(".dropdown").on("changeCount", function (e, data) {
     const input = $(data.target).closest(".dropdown").find(".input");
     input.val(data.count);
 });

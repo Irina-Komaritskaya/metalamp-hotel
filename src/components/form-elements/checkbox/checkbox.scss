@@ -21,6 +21,7 @@
 .checkbox__text {
     line-height: 18px;
     color: $dark50;
+    max-width: 192px;
 }
 
 .checkbox__input + .checkbox__inner {

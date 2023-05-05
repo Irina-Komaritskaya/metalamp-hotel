@@ -11,18 +11,19 @@ html
         .form-elements__content
             .form-elements__inputs
                 .inputs__input-defoult
-                    +input({title:"text field", state:"default", type:"email", name:"email", placeholder:"Email"})
+                    +input({title:"text field", state:"default", type:"email", name:"email", placeholder:"Email", readonly:true})
                 .inputs__input-focus
                     +input({title:"text field", state:"Hover / Focus", placeholder:"This is pretty awesome", variant:"focused"})
                 .inputs__dropdown
-                    +dropdown({value: "Сколько гостей", title:"dropdown", variant:"counter"})
+                    +dropdown({value: "Сколько гостей", title:"dropdown", variant:"counter", input:{id: "id"}})
+                    +dropdown({value: "Сколько гостей", title:"date dropdown", content:"calendar", variant:"calendar"})
                 .inputs__input-mask
-                    +input({title:"mask text field", variant:"mask"})
+                    +input({title:"mask text field", variant:"mask",placeholder:"ДД.ММ.ГГГГ" })
                 .inputs__dropdowns-date
                     .inputs__dropdown-date
-                        +dropdown({value: "Сколько гостей", title:"date dropdown", content:"calendar", variant:"calendar"})
+                        +dropdown({value: "Сколько гостей", title:"date dropdown", content:"calendar", variant:"calendar", dateFor:"start"})
                     .inputs__dropdown-date
-                        +dropdown({value: "Сколько гостей", title:"date dropdown", content:"calendar", variant:"calendar"})
+                        +dropdown({value: "Сколько гостей", title:"date dropdown", content:"calendar", variant:"calendar", dateFor:"finish"})
                 .inputs__filter-date
                     +dropdown({value: "Сколько гостей", title:"date dropdown", isOpen:true, content:"calendar", variant:"calendar"})
                 .inputs__input-send    
