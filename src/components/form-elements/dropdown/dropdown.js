@@ -1,7 +1,6 @@
 //- обработка нуля
 $(function () {
     const expand = $(".dropdown").find(".dropdown__content-expand");
-    console.log(expand);
     if (expand) {
         const input = $(expand).closest(".dropdown").find(".input");
         input.addClass("dropdown__input_border-radius-none");

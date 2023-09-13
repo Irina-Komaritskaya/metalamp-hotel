@@ -106,13 +106,14 @@ html
                 +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter", items:["взрослые", "дети", "младенцы"]}) 
 
             .form-elements__checkbox-list 
-                +list({text:"expandable checkbox list", button:{symbol:"expand_more",variant:"gray"}, type:"checkbox"}) 
+                +list({text:"expandable checkbox list", isExpand:true, type:"checkbox", items:["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]}) 
+                +list({text:"expandable checkbox list", isExpand:true, isOpen: true, type:"checkbox", items:["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]}) 
 
             .form-elements__rich-checkbox-list
                 +list({text:"rich Checkbox Buttons", type:"richCheckbox"}) 
 
             .form-elements__bullet-list
-                +list({text:"bullet list", type:"bullet"}) 
+                +list({text:"bullet list", type:"bullet", items:["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]}) 
 
             .form-elements__pins
                 +pin
