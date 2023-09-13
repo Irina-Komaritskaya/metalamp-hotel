@@ -1,9 +1,9 @@
-//- ...items
-mixin list-counter({forElement}) 
+mixin list-counter({forElement, items=[]}) 
     ul.list-counters(data-for=forElement)
-        li.list-counter__item
-            span.list-counter__item-caption Взрослые
-            .list-counter__btn-inner 
-                button(type="button").list-counter__btn.list-counter__btn-disabled="-"  
-                span.list-counter__counter 0 
-                button(type="button").list-counter__btn="+"
+        each item in items
+            li.list-counter__item
+                span.list-counter__item-caption=item
+                .list-counter__btn-inner 
+                    button(type="button").list-counter__btn.list-counter__btn-disabled="-"  
+                    span.list-counter__counter 0 
+                    button(type="button").list-counter__btn="+"

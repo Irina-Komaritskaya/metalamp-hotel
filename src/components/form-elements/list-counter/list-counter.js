@@ -24,6 +24,7 @@ $(".list-counter__btn").on("click", (e) => {
     if (action === "-") {
         if (counter === 0) {
             $(button).addClass("list-counter__btn-disabled");
+            input.val("");
         } else {
             counter = counter - 1;
         }

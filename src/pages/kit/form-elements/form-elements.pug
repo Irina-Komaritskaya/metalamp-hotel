@@ -16,7 +16,6 @@ html
                     +input({title:"text field", state:"Hover / Focus", placeholder:"This is pretty awesome", variant:"focused"})
                 .inputs__dropdown
                     +dropdown({value: "Сколько гостей", title:"dropdown", variant:"counter", input:{id: "id"}})
-                    +dropdown({value: "Сколько гостей", title:"date dropdown", content:"calendar", variant:"calendar"})
                 .inputs__input-mask
                     +input({title:"mask text field", variant:"mask",placeholder:"ДД.ММ.ГГГГ" })
                 .inputs__dropdowns-date
@@ -25,13 +24,19 @@ html
                     .inputs__dropdown-date
                         +dropdown({value: "Сколько гостей", title:"date dropdown", content:"calendar", variant:"calendar", dateFor:"finish"})
                 .inputs__filter-date
-                    +dropdown({value: "Сколько гостей", title:"date dropdown", isOpen:true, content:"calendar", variant:"calendar"})
+                    +dropdown({value: "Сколько гостей", title:"filter date dropdown", content:"calendar", variant:"calendar"})
                 .inputs__input-send    
                     +input({title:"subscription", placeholder:"Email", withButton:true, variant:"send", variantButton:"gradient", symbolButton:"arrow_forward"})
+
+
+
             .form-elements__switches
                 .switches__chekboxs-inner
                     .switches__chekboxs-title="checkbox buttons"
+                    +checkbox({name:"checkbox", text: "Можно курить"})
+                    +checkbox({name:"checkbox", text: "Можно с питомцами"})
                     +checkbox({name:"checkbox", text: "Можно пригласить гостей (до 10 человек)"})
+
                 .switches__radio-buttons-inner
                     .switches__radio-buttons-title="radio buttons"
                     .swiches__radio-buttons 
@@ -43,7 +48,7 @@ html
                     .switches__toggles-title="toggle"
                     .switches__toggle_active     
                         +toggle({text:"Получать специальные предложения"})
-                    .switches__toggle     
+                    .switches__toggle   
                         +toggle({text:"Получать специальные предложения"})
                 .switches__like-buttons-inner
                     .switches__like-buttons-title="like buttons"
@@ -59,6 +64,7 @@ html
                             +rate-button({state:"disabled", rate:4})
                         .switches__rate-button    
                             +rate-button({state:"undisabled", rate:5})
+
             .form-elements__buttons
                 .buttons__slider
                     +slider
@@ -85,21 +91,32 @@ html
                         .buttons__pagination-inner 
                             .buttons__pagination-title="pagination"    
                             +pagination(items)
-            .form-elements__dropdown-defoult 
-                +dropdown({value: "Сколько гостей", title:"dropdown", content:"guests", variant:"counter"}) 
-                +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter"})
+
+
+            .form-elements__dropdown-defoult
+                .dropdown-defoult 
+                    +dropdown({value: "Сколько гостей", title:"dropdown", content:"guests", variant:"counter", items:["спальни", "кровати", "ванные комнаты"]}) 
+                .dropdown-defoult__opened
+                    +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter", items:["спальни", "кровати", "ванные комнаты"]})
+
             .form-elements__dropdown-empty
-                +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter"}) 
-            .form-elements__fill-up
-                +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter"}) 
+                +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter", items:["взрослые", "дети", "младенцы"]}) 
+
+            .form-elements__dropdown-fill-up
+                +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter", items:["взрослые", "дети", "младенцы"]}) 
+
             .form-elements__checkbox-list 
                 +list({text:"expandable checkbox list", button:{symbol:"expand_more",variant:"gray"}, type:"checkbox"}) 
+
             .form-elements__rich-checkbox-list
                 +list({text:"rich Checkbox Buttons", type:"richCheckbox"}) 
+
             .form-elements__bullet-list
                 +list({text:"bullet list", type:"bullet"}) 
+
             .form-elements__pins
                 +pin
+
             .form-elements__feedback  
                 +feedback
 

@@ -1,4 +1,10 @@
 // найти обводку у range to
+.datepicker {
+    position: absolute;
+    border: $border-gray;
+    z-index: 10;
+    width: 320px;
+}
 .air-datepicker {
     border-radius: 0;
     border: none;

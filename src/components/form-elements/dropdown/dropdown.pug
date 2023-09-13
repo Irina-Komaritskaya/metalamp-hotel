@@ -11,8 +11,8 @@
 include ../input/input
 include ../list-counter/list-counter
 include ../calendar/calendar
-//- include ../calendar/calendar
-mixin dropdown({name, isOpen, content, value, title, variant, input})
+
+mixin dropdown({name, isOpen, content, value, title, variant, input, items})
     -
         input=input || {}
         let inputOptions={
@@ -33,14 +33,14 @@ mixin dropdown({name, isOpen, content, value, title, variant, input})
         if (!isOpen) {contentClass+=" dropdown__content-unexpand"}
         if(isOpen){contentClass+=" dropdown__content-expand"}
         if(!isOpen){contentInnerClass+=" dropdown__content-inner-closed"}
+
     .dropdown
         +input(inputOptions)
         div(class=contentInnerClass )
             div(class=contentClass data-content=content)
                 if(variant==="counter")
-                    +list-counter({forElement:"dropdown"})
+                    +list-counter({forElement:"dropdown", items})
                 if(variant==="calendar")  
                     +calendar
-                    //- script
-                    //-     include ../calendar/calendar.js
+
 

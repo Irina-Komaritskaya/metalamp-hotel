@@ -1,6 +1,9 @@
 .list-counters {
     padding: 7px 7px 7px 15px;
 }
+.list-counters li:not(:first-child) {
+    margin-top: 7px;
+}
 .list-counter__item {
     display: flex;
     align-items: center;
