@@ -105,18 +105,21 @@ html
             .form-elements__dropdown-fill-up
                 +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter", items:["взрослые", "дети", "младенцы"]}) 
 
-            .form-elements__checkbox-list 
-                +list({text:"expandable checkbox list", isExpand:true, type:"checkbox", items:["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]}) 
-                +list({text:"expandable checkbox list", isExpand:true, isOpen: true, type:"checkbox", items:["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]}) 
+            .form-elements__checkbox-lists 
+                .checkbox-lists__checkbox-list
+                    +list({text:"expandable checkbox list", isExpand:true, type:"checkbox", items:["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]}) 
+                .checkbox-lists__checkbox-list__opened
+                    +list({text:"expandable checkbox list", isExpand:true, isOpen: true, type:"checkbox", items:["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]}) 
 
             .form-elements__rich-checkbox-list
-                +list({text:"rich Checkbox Buttons", type:"richCheckbox"}) 
+                +list({text:"rich Checkbox Buttons", type:"richCheckbox", items:[{title:"Широкий коридор", text:"Ширина коридора в номере не менее 91 см"}, {title:"Помошник для ивалидов", text:"На первом этаже вас встретит специалист и проводит до номера"}]}) 
 
             .form-elements__bullet-list
-                +list({text:"bullet list", type:"bullet", items:["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]}) 
+                +list({text:"bullet list", type:"bullet", items:["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд в 12:00"]}) 
 
             .form-elements__pins
-                +pin
+                +pin({symbol:"insert_emoticon", title:"Комфорт", text:"Шумоподавляющие стены"})
+                +pin({symbol:"location_city", title:"Удобство", text:"Окна в каждой спальне"})
 
             .form-elements__feedback  
                 +feedback

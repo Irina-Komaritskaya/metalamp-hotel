@@ -3,6 +3,7 @@
     margin-top: 143px;
     margin-left: 140px;
     margin-right: 140px;
+    margin-bottom: 131px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto auto auto auto;
@@ -171,19 +172,28 @@
     grid-area: dropdown-fill-up;
     width: 320px;
 }
-.form-elements__checkbox-list {
+.form-elements__checkbox-lists {
     grid-area: checkbox-list;
     width: 266px;
     margin-top: 40.44px;
 }
+.checkbox-lists__checkbox-list__opened {
+    margin-top: 20px;
+}
 .form-elements__rich-checkbox-list {
     grid-area: rich-checkbox-list;
+    width: 320px;
+    margin-top: 40.44px;
 }
 .form-elements__bullet-list {
     grid-area: bullet-list;
+    width: 320px;
+    margin-top: 40.44px;
 }
 .form-elements__pins {
     grid-area: pins;
+    width: 320px;
+    margin-top: 105px;
 }
 .form-elements__feedback {
     grid-area: feedback;

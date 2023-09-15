@@ -1,11 +1,11 @@
 //- pin__ul??
 //-цикл
 include ../icon-button/icon-button
-mixin pin
+mixin pin({symbol, title, text})
     ul.pin 
         li.pin__item
-            +icon-button({symbol:"insert_emoticon", variant:"gradient", size:"xl"})
+            +icon-button({symbol:symbol, variant:"gradient", size:"xl"})
             .pin__item-inner
-                span.pin__item-title="Комфорт" 
-                span.pin__item-text="Шумоподавляющие стены"
+                span.pin__item-title=title
+                span.pin__item-text=text
 

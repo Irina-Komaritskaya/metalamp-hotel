@@ -22,3 +22,5 @@ mixin list({text, isExpand, type, items=[], isOpen})
                         +checkbox({name:"checkbox", text: item})
                     if (type==="richCheckbox")
                         +checkbox({name:"checkbox", text: item.text, title: item.title})    
+                    if (type==="bullet")
+                        span=item    
