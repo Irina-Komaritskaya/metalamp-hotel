@@ -46,9 +46,9 @@ html
                 .switches__toggles-inner
                     .switches__toggles-title="toggle"
                     .switches__toggle_active     
-                        +toggle({text:"Получать специальные предложения"})
+                        +toggle({text:"Получать спецпредложения"})
                     .switches__toggle   
-                        +toggle({text:"Получать специальные предложения"})
+                        +toggle({text:"Получать спецпредложения"})
                 .switches__like-buttons-inner
                     .switches__like-buttons-title="like buttons"
                     .switches__like-buttons
@@ -92,16 +92,16 @@ html
                             +pagination(items)
 
 
-            .form-elements__dropdown-defoult
-                .dropdown-defoult 
+            .form-elements__dropdowns-rooms-parameters
+                .dropdowns-rooms-parameters__dropdown-room-parameters_closed
                     +dropdown({value: "Сколько гостей", title:"dropdown", content:"guests", variant:"counter", items:["спальни", "кровати", "ванные комнаты"]}) 
-                .dropdown-defoult__opened
+                .dropdowns-rooms-parameters__dropdown-room-parameters_opened
                     +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter", items:["спальни", "кровати", "ванные комнаты"]})
 
-            .form-elements__dropdown-empty
+            .form-elements__dropdown-guests_empty
                 +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter", items:["взрослые", "дети", "младенцы"]}) 
 
-            .form-elements__dropdown-fill-up
+            .form-elements__dropdown-guests_fill-up
                 +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter", items:["взрослые", "дети", "младенцы"]}) 
 
             .form-elements__checkbox-lists 
@@ -122,6 +122,10 @@ html
 
             .form-elements__feedback  
                 +feedback({src:"imgs/avatar.png", name:"Мурад Сафронов", date:"5 дней назад", text:"Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."})
+
+
+
+
 
 
 

@@ -1,24 +1,40 @@
 @import "../../../components/index.scss";
+// .form-elements__content {
+//     margin-top: 143px;
+//     margin-left: 140px;
+//     margin-right: 140px;
+//     margin-bottom: 131px;
+//     display: grid;
+//     grid-template-columns: 1fr 1fr 1fr;
+//     grid-template-rows: auto auto auto auto;
+//     gap: 0px 0px;
+//     grid-template-areas:
+//         "inputs switchs buttons"
+//         "dropdown-defoult dropdown-empty dropdown-fill-up"
+//         "checkbox-list rich-checkbox-list bullet-list"
+//         "pins feedback feedback";
+// }
+
 .form-elements__content {
+    display: flex;
     margin-top: 143px;
     margin-left: 140px;
     margin-right: 140px;
     margin-bottom: 131px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto auto;
-    gap: 0px 0px;
-    grid-template-areas:
-        "inputs switchs buttons"
-        "dropdown-defoult dropdown-empty dropdown-fill-up"
-        "checkbox-list rich-checkbox-list bullet-list"
-        "pins feedback feedback";
+    flex-wrap: wrap;
 }
+
 .form-elements__inputs {
-    grid-area: inputs;
     width: 320px;
     margin-bottom: 100px;
+    margin-right: 126px;
 }
+
+// .form-elements__inputs {
+//     grid-area: inputs;
+//     width: 320px;
+//     margin-bottom: 100px;
+// }
 .inputs__input-focus {
     margin-top: 20.44px;
 }
@@ -45,9 +61,9 @@
     margin-top: 41px;
 }
 
-.form-elements__switchs {
-    grid-area: switch;
-    width: 320px;
+.form-elements__switches {
+    margin-right: 133px;
+    width: 260px;
 }
 .switches__chekboxs-inner {
     display: flex;
@@ -58,7 +74,6 @@
     @extend .H3;
     margin-bottom: 6.56px;
 }
-
 .switches__radio-buttons-inner {
     margin-top: 40.88px;
 }
@@ -112,9 +127,13 @@
 }
 
 .form-elements__buttons {
-    grid-area: buttons;
     width: 320px;
 }
+
+// .form-elements__buttons {
+//     grid-area: buttons;
+//     width: 320px;
+// }
 .buttons__slider {
     width: 266px;
 }
@@ -156,46 +175,44 @@
     margin-bottom: 16.44px;
 }
 
-.form-elements__dropdown-defoult {
-    grid-area: dropdown-defoult;
+.form-elements__dropdowns-rooms-parameters {
     width: 266px;
+    margin-right: 180px;
 }
 
-.dropdown-defoult {
+.dropdowns-rooms-parameters__dropdown-room-parameters_closed {
     margin-bottom: 20px;
 }
-.form-elements__dropdown-empty {
-    grid-area: dropdown-empty;
+.form-elements__dropdown-guests_empty {
     width: 320px;
+    margin-right: 72px;
 }
-.form-elements__dropdown-fill-up {
-    grid-area: dropdown-fill-up;
+.form-elements__dropdown-guests_fill-up {
     width: 320px;
 }
 .form-elements__checkbox-lists {
-    grid-area: checkbox-list;
     width: 266px;
     margin-top: 40.44px;
+    margin-right: 180px;
 }
 .checkbox-lists__checkbox-list__opened {
     margin-top: 20px;
 }
 .form-elements__rich-checkbox-list {
-    grid-area: rich-checkbox-list;
     width: 320px;
     margin-top: 40.44px;
+    margin-right: 72px;
 }
 .form-elements__bullet-list {
-    grid-area: bullet-list;
     width: 320px;
     margin-top: 40.44px;
 }
 .form-elements__pins {
-    grid-area: pins;
     width: 291px;
     margin-top: 105px;
+    margin-right: 156px;
 }
 .form-elements__feedback {
-    grid-area: feedback;
     margin-top: 105px;
+    width: 711px;
 }
