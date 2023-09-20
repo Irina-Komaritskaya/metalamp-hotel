@@ -1,20 +1,4 @@
 @import "../../../components/index.scss";
-// .form-elements__content {
-//     margin-top: 143px;
-//     margin-left: 140px;
-//     margin-right: 140px;
-//     margin-bottom: 131px;
-//     display: grid;
-//     grid-template-columns: 1fr 1fr 1fr;
-//     grid-template-rows: auto auto auto auto;
-//     gap: 0px 0px;
-//     grid-template-areas:
-//         "inputs switchs buttons"
-//         "dropdown-defoult dropdown-empty dropdown-fill-up"
-//         "checkbox-list rich-checkbox-list bullet-list"
-//         "pins feedback feedback";
-// }
-
 .form-elements__content {
     display: flex;
     margin-top: 143px;
@@ -22,6 +6,7 @@
     margin-right: 140px;
     margin-bottom: 131px;
     flex-wrap: wrap;
+    max-width: 1160px;
 }
 
 .form-elements__inputs {
@@ -30,11 +15,6 @@
     margin-right: 126px;
 }
 
-// .form-elements__inputs {
-//     grid-area: inputs;
-//     width: 320px;
-//     margin-bottom: 100px;
-// }
 .inputs__input-focus {
     margin-top: 20.44px;
 }
@@ -130,10 +110,6 @@
     width: 320px;
 }
 
-// .form-elements__buttons {
-//     grid-area: buttons;
-//     width: 320px;
-// }
 .buttons__slider {
     width: 266px;
 }

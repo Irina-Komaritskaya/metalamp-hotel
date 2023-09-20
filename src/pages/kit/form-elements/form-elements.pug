@@ -1,12 +1,21 @@
-//- страсть эту длинную убрать куда-нибудь
 include ../../../components/index 
+
 html
     head 
     body 
         .logo
             include ../../../icons/logo
 
-        - var myData = require('./data.json')
+        - var json = require('./data.json')
+        - const checkboxs = json.checkboxs
+        - const toggle = json.toggle 
+        - const radioButtons = json.radioButtons
+        -const dropdowns = json.dropdowns
+        -const listCheckboxs = json.listCheckboxs
+        -const richCheckboxs = json.richCheckboxs
+        -const bulletList = json.bulletList
+        -const feedback = json.feedback
+
         .form-elements__content
             .form-elements__inputs
                 .inputs__input-defoult
@@ -32,23 +41,24 @@ html
             .form-elements__switches
                 .switches__chekboxs-inner
                     .switches__chekboxs-title="checkbox buttons"
-                    +checkbox({name:"checkbox", text: "Можно курить"})
-                    +checkbox({name:"checkbox", text: "Можно с питомцами"})
-                    +checkbox({name:"checkbox", text: "Можно пригласить гостей (до 10 человек)"})
+                    each checkbox in checkboxs
+                        +checkbox({name:checkbox.name, text: checkbox.text})
 
                 .switches__radio-buttons-inner
                     .switches__radio-buttons-title="radio buttons"
                     .swiches__radio-buttons 
                         .switches__radio-button_active
-                            +radio-button({name:"radio", id:"radio1", text: "Мужчина"})
+                            +radio-button({name:radioButtons.radio1.name, text: radioButtons.radio1.text})
                         .switches__radio-button    
-                            +radio-button({name:"radio", id:"radio2", text: "Женщина"})
+                            +radio-button({name:radioButtons.radio2.name, text: radioButtons.radio2.text})
+
                 .switches__toggles-inner
                     .switches__toggles-title="toggle"
                     .switches__toggle_active     
-                        +toggle({text:"Получать спецпредложения"})
+                        +toggle({text:toggle.text})
                     .switches__toggle   
-                        +toggle({text:"Получать спецпредложения"})
+                        +toggle({text:toggle.text})
+
                 .switches__like-buttons-inner
                     .switches__like-buttons-title="like buttons"
                     .switches__like-buttons
@@ -56,6 +66,7 @@ html
                             +like-button({count:"2"})
                         .switches__like-button_active    
                             +like-button({count:"12", isClicked:true})
+
                 .switches__rate-buttons-inner
                     .switches__rate-buttons-title="rate buttons"
                     .switches__rate-buttons
@@ -94,34 +105,34 @@ html
 
             .form-elements__dropdowns-rooms-parameters
                 .dropdowns-rooms-parameters__dropdown-room-parameters_closed
-                    +dropdown({value: "Сколько гостей", title:"dropdown", content:"guests", variant:"counter", items:["спальни", "кровати", "ванные комнаты"]}) 
+                    +dropdown({value: "Сколько гостей", title:"dropdown", content:"roomsParam", variant:"counter", items:dropdowns.roomsParam}) 
                 .dropdowns-rooms-parameters__dropdown-room-parameters_opened
-                    +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter", items:["спальни", "кровати", "ванные комнаты"]})
+                    +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"roomsParam", variant:"counter", items:dropdowns.roomsParam})
 
             .form-elements__dropdown-guests_empty
-                +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter", items:["взрослые", "дети", "младенцы"]}) 
+                +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter", items:dropdowns.guests}) 
 
             .form-elements__dropdown-guests_fill-up
-                +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter", items:["взрослые", "дети", "младенцы"]}) 
+                +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter", items:dropdowns.guests}) 
 
             .form-elements__checkbox-lists 
                 .checkbox-lists__checkbox-list
-                    +list({text:"expandable checkbox list", isExpand:true, type:"checkbox", items:["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]}) 
+                    +list({text:"expandable checkbox list", isExpand:true, type:"checkbox", items:listCheckboxs.items}) 
                 .checkbox-lists__checkbox-list__opened
-                    +list({text:"expandable checkbox list", isExpand:true, isOpen: true, type:"checkbox", items:["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]}) 
+                    +list({text:"expandable checkbox list", isExpand:true, isOpen: true, type:"checkbox", items:listCheckboxs.items}) 
 
             .form-elements__rich-checkbox-list
-                +list({text:"rich Checkbox Buttons", type:"richCheckbox", items:[{title:"Широкий коридор", text:"Ширина коридора в номере не менее 91 см"}, {title:"Помошник для ивалидов", text:"На первом этаже вас встретит специалист и проводит до номера"}]}) 
+                +list({text:"rich Checkbox Buttons", type:"richCheckbox", items:richCheckboxs.items}) 
 
             .form-elements__bullet-list
-                +list({text:"bullet list", type:"bullet", items:["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд в 12:00"]}) 
+                +list({text:"bullet list", type:"bullet", items:bulletList.items}) 
 
             .form-elements__pins
                 +pin({symbol:"insert_emoticon", title:"Комфорт", text:"Шумоподавляющие стены"})
                 +pin({symbol:"location_city", title:"Удобство", text:"Окна в каждой спальне"})
 
             .form-elements__feedback  
-                +feedback({src:"imgs/avatar.png", name:"Мурад Сафронов", date:"5 дней назад", text:"Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."})
+                +feedback({src:feedback.src, name:feedback.name, date:feedback.date, text:feedback.date})
 
 
 

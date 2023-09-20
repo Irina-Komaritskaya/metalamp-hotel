@@ -5,6 +5,6 @@ mixin rate-button({state, rate})
             .rate-button
                 - let star = val <= rate ? "star" : "star_border"
                 - let id = "star"+val
-                input.rate__radio-input(type="radio" id=id name="rate" value=val)
+                input.rate__radio-input(type="radio" name="rate" value=val)
                 label.rate__label-input(for=id)
                     +icon-button({symbol:star, variant:"gradient", size:"m"})
