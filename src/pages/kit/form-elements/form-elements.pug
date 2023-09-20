@@ -10,33 +10,31 @@ html
         - const checkboxs = json.checkboxs
         - const toggle = json.toggle 
         - const radioButtons = json.radioButtons
-        -const dropdowns = json.dropdowns
-        -const listCheckboxs = json.listCheckboxs
-        -const richCheckboxs = json.richCheckboxs
-        -const bulletList = json.bulletList
-        -const feedback = json.feedback
+        - const dropdowns = json.dropdowns
+        - const listCheckboxs = json.listCheckboxs
+        - const richCheckboxs = json.richCheckboxs
+        - const bulletList = json.bulletList
+        - const feedback = json.feedback
 
         .form-elements__content
             .form-elements__inputs
                 .inputs__input-defoult
-                    +input({title:"text field", state:"default", type:"email", name:"email", placeholder:"Email", readonly:true})
+                    +input({title:"text field", state:"default", type:"email", name:"email", placeholder:"Email"})
                 .inputs__input-focus
                     +input({title:"text field", state:"Hover / Focus", placeholder:"This is pretty awesome", variant:"focused"})
                 .inputs__dropdown
-                    +dropdown({value: "Сколько гостей", title:"dropdown", variant:"counter", input:{id: "id"}})
+                    +dropdown({value: "Сколько гостей", title:"dropdown", content:"guests", variant:"counter", items:dropdowns.guests})
                 .inputs__input-mask
                     +input({title:"mask text field", variant:"mask",placeholder:"ДД.ММ.ГГГГ" })
                 .inputs__dropdowns-date
                     .inputs__dropdown-date
-                        +dropdown({value: "Сколько гостей", title:"date dropdown", content:"calendar", variant:"calendar", dateFor:"start"})
+                        +dropdown({value: "Сколько гостей", title:"date dropdown", dateTwoInputs:"true", content:"calendar", variant:"calendar", dateFor:"start"})
                     .inputs__dropdown-date
-                        +dropdown({value: "Сколько гостей", title:"date dropdown", content:"calendar", variant:"calendar", dateFor:"finish"})
+                        +dropdown({value: "Сколько гостей", title:"date dropdown", dateTwoInputs:"true", content:"calendar", variant:"calendar", dateFor:"finish"})
                 .inputs__filter-date
                     +dropdown({value: "Сколько гостей", title:"filter date dropdown", content:"calendar", variant:"calendar"})
                 .inputs__input-send    
                     +input({title:"subscription", placeholder:"Email", withButton:true, variant:"send", variantButton:"gradient", symbolButton:"arrow_forward"})
-
-
 
             .form-elements__switches
                 .switches__chekboxs-inner
@@ -132,7 +130,7 @@ html
                 +pin({symbol:"location_city", title:"Удобство", text:"Окна в каждой спальне"})
 
             .form-elements__feedback  
-                +feedback({src:feedback.src, name:feedback.name, date:feedback.date, text:feedback.date})
+                +feedback({src:feedback.src, name:feedback.name, date:feedback.date, text:feedback.text})
 
 
 

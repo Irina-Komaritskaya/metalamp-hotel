@@ -1,7 +1,7 @@
 {
     "dropdowns": {
-        "guests": ["спальни", "кровати", "ванные комнаты"],
-        "roomsParam": ["взрослые", "дети", "младенцы"]
+        "roomsParam": ["спальни", "кровати", "ванные комнаты"],
+        "guests": ["взрослые", "дети", "младенцы"]
     },
     "toggle": { "text": "Получать спецпредложения" },
     "radioButtons": {
@@ -9,9 +9,9 @@
         "radio2": { "name": "woman", "text": "Женщина" }
     },
     "checkboxs": {
-        "checkbox1": { "name": "checkbox1", "text": "Можно курить" },
-        "checkbox2": { "name": "checkbox2", "text": "Можно с питомцами" },
-        "checkbox3": { "name": "checkbox3", "text": "Можно пригласить гостей" }
+        "checkbox1": { "name": "smoke", "text": "Можно курить" },
+        "checkbox2": { "name": "pet", "text": "Можно с питомцами" },
+        "checkbox3": { "name": "guests", "text": "Можно пригласить гостей" }
     },
     "rate button": {},
     "listCheckboxs": {

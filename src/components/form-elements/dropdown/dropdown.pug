@@ -12,7 +12,7 @@ include ../input/input
 include ../list-counter/list-counter
 include ../calendar/calendar
 
-mixin dropdown({name, isOpen, content, value, title, variant, input, items})
+mixin dropdown({name, isOpen, content, value, title, variant, input, items, dateTwoInputs})
     -
         input=input || {}
         let inputOptions={
@@ -41,6 +41,6 @@ mixin dropdown({name, isOpen, content, value, title, variant, input, items})
                 if(variant==="counter")
                     +list-counter({forElement:"dropdown", items})
                 if(variant==="calendar")  
-                    +calendar
+                    +calendar(dateTwoInputs)
 
 

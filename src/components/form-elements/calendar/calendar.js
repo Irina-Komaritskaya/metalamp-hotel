@@ -18,15 +18,19 @@ let button = {
     },
 };
 $.each($(".datepicker"), function () {
+    const dateTwoInputs = $(".datepicker").filter(
+        "[data-dateTwoInputs='true']"
+    );
+    console.log(dateTwoInputs);
     new AirDatepicker(this, {
         inline: true,
         locale: localeRu,
-        range: true,
+        range: dateTwoInputs ? "false" : "true",
         minDate: [new Date()],
         // maxDate: ?? param
         // dynamicRange: true,
         //showEvent
-        //autoClose
+        autoClose: "true",
         altField: "",
         prevHtml: "arrow_back",
         nextHtml: "arrow_forward",
