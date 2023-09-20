@@ -1,4 +1,3 @@
-//- обработка нуля
 $(function () {
     const expand = $(".dropdown").find(".dropdown__content-expand");
     if (expand) {
@@ -24,8 +23,14 @@ $(".input__button").on("click", (e) => {
     input.toggleClass("input__focused");
     input.toggleClass("dropdown__input_border-radius-none");
 });
+
 $(".dropdown").off("changeCount");
 $(".dropdown").on("changeCount", function (e, data) {
     const input = $(data.target).closest(".dropdown").find(".input");
+
     input.val(data.count);
+    if (data.count === 0) {
+        input.val("");
+        console.log(input.val());
+    }
 });

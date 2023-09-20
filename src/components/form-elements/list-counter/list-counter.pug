@@ -1,8 +1,10 @@
-mixin list-counter({forElement, items=[]}) 
-    ul.list-counters(data-for=forElement)
+//- кнопочки+ - двигаются
+mixin list-counter({forElement, items=[], content}) 
+    - 
+    ul.list-counters(data-for=forElement data-content=content)
         each item in items
             li.list-counter__item
-                span.list-counter__item-caption=item
+                span.list-counter__item-title=item
                 .list-counter__btn-inner 
                     button(type="button").list-counter__btn.list-counter__btn-disabled="-"  
                     span.list-counter__counter 0 

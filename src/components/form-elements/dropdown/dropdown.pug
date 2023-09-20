@@ -30,16 +30,16 @@ mixin dropdown({name, isOpen, content, value, title, variant, input, items, date
 
         let contentClass = "dropdown__content"
         let contentInnerClass = "dropdown__content-inner"
-        if (!isOpen) {contentClass+=" dropdown__content-unexpand"}
+        if(!isOpen) {contentClass+=" dropdown__content-unexpand"}
         if(isOpen){contentClass+=" dropdown__content-expand"}
         if(!isOpen){contentInnerClass+=" dropdown__content-inner-closed"}
 
     .dropdown
         +input(inputOptions)
         div(class=contentInnerClass )
-            div(class=contentClass data-content=content)
+            div(class=contentClass )
                 if(variant==="counter")
-                    +list-counter({forElement:"dropdown", items})
+                    +list-counter({forElement:"dropdown", items, content})
                 if(variant==="calendar")  
                     +calendar(dateTwoInputs)
 
