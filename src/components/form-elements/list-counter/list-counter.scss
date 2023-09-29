@@ -33,6 +33,10 @@
     opacity: 0.5;
 }
 .list-counter__counter {
-    padding: 0 15px;
     @extend .H3;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

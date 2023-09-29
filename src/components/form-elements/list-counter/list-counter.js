@@ -24,6 +24,7 @@ $(".list-counter__btn").on("click", (e) => {
         .text();
     let counter = parseInt(counterVal);
     const contentValues = values[content];
+
     if (action === "+") {
         contentValues[title] = contentValues[title]
             ? contentValues[title] + 1
