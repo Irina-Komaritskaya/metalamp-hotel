@@ -1,23 +1,19 @@
-// подумать как сделать максимум
-// поведение при нуле при минусе
-// если младенец без взрослых  - не давать применить.
-const values = {};
-const getNameForGuests = (guests) => {
-    guests = guests % 10;
-    if (guests === 1) {
-        return "гость";
-    }
-    if (guests < 5) {
-        return "гостя";
-    }
-    if (guests >= 5) {
-        return "гостей";
-    }
-    return "";
+const values = {
+    guests: {},
+    roomsParam: {},
+};
+const getNameForNumbers = (value, words) => {
+    value = Math.abs(value) % 100;
+    let num = value % 10;
+    if (value > 10 && value < 20) return words[2];
+    if (num > 1 && num < 5) return words[1];
+    if (num == 1) return words[0];
+    return words[2];
 };
 $(".list-counter__btn").on("click", (e) => {
     const button = e.currentTarget;
     const action = e.currentTarget.innerHTML;
+    const content = $(button).closest("ul").attr("data-content");
     const siblingsBtn = $(button).siblings(".list-counter__btn");
     const counterEl = $(button).siblings(".list-counter__counter");
     const counterVal = counterEl.text();
@@ -26,12 +22,12 @@ $(".list-counter__btn").on("click", (e) => {
         .closest(".list-counter__item")
         .children(".list-counter__item-title")
         .text();
-    const input = $(button).closest(parentEl).find(".input");
     let counter = parseInt(counterVal);
-
+    const contentValues = values[content];
     if (action === "+") {
-        values[title] = values[title] ? values[title] + 1 : 1;
-        console.log(values);
+        contentValues[title] = contentValues[title]
+            ? contentValues[title] + 1
+            : 1;
         counter += 1;
         counterEl.text(counter);
         siblingsBtn.removeClass("list-counter__btn-disabled");
@@ -40,20 +36,35 @@ $(".list-counter__btn").on("click", (e) => {
         if (counter === 0) {
             $(button).addClass("list-counter__btn-disabled");
         } else {
-            values[title] = values[title] ? values[title] - 1 : 0;
+            contentValues[title] = contentValues[title]
+                ? contentValues[title] - 1
+                : 0;
             counter = counter - 1;
         }
         counterEl.text(counter);
     }
 
-    const content = $(button).closest("ul").attr("data-content");
     let contentValue = "";
     if (content === "guests") {
+        const names = ["гость", "гостя", "гостей"];
         let sumGuests = 0;
-        for (const [key, value] of Object.entries(values)) {
+        for (const [key, value] of Object.entries(contentValues)) {
             sumGuests += value;
         }
-        contentValue = `${sumGuests} ${getNameForGuests(sumGuests)}`;
+        contentValue = `${sumGuests} ${getNameForNumbers(sumGuests, names)}`;
+    }
+    if (content === "roomsParam") {
+        const names = {
+            спальни: ["кровать", "кровати", "кроватей"],
+            кровати: ["спальня", "спальни", "eспален"],
+            "ванные комнаты": ["ванная", "ванны", "ванн"],
+        };
+        let roomsParam = [];
+        for (const [key, value] of Object.entries(contentValues)) {
+            roomsParam.push(`${value} ${getNameForNumbers(value, names[key])}`);
+        }
+        console.log(contentValues);
+        contentValue = roomsParam.join(", ");
     }
     $(parentEl).trigger("changeCount", {
         target: e.currentTarget,
