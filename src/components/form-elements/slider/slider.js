@@ -1,7 +1,7 @@
 import * as noUiSlider from "nouislider";
 
 noUiSlider.create(slider, {
-    start: [0, 2000],
+    start: [3000, 7000],
     connect: true,
     range: {
         min: 0,
