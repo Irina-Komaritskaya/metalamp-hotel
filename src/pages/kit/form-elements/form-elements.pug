@@ -80,21 +80,21 @@ html
                     .buttons__buttons-title="buttons"    
                     .buttons__buttons-primary-inner 
                         .buttons__button-primary
-                            +button({text: "click me", type:"primary"})
+                            +button({text: "click me", variant:"primary"})
                         .buttons__button-primary_disabled    
-                            +button({text: "click me", type:"primary", isDisabled:true})
+                            +button({text: "click me", variant:"primary", isDisabled:true})
                     .buttons__buttons-secondary-inner 
                         .buttons__button-secondary    
-                            +button({text: "click me", type:"secondary"})
+                            +button({text: "click me", variant:"secondary"})
                         .buttons__button-secondary_disabled    
-                            +button({text: "click me", type:"secondary", isDisabled:true})
+                            +button({text: "click me", variant:"secondary", isDisabled:true})
                     .buttons__buttons-only-text-inner 
                         .buttons__button-only-text
-                            +button({text: "click me", type:"only-text"})
+                            +button({text: "click me", variant:"only-text"})
                         .buttons__button-only-text_disabled    
-                            +button({text: "click me", type:"only-text", isDisabled:true})
+                            +button({text: "click me", variant:"only-text", isDisabled:true})
                     .buttons__button-with-arrow        
-                        +button({text:"перейти к оплате", type:"with-arrow"})
+                        +button({text:"перейти к оплате", variant:"with-arrow"})
                     .buttons__pagination
                         .buttons__pagination-inner 
                             .buttons__pagination-title="pagination"    
@@ -108,10 +108,10 @@ html
                     +dropdown({value: "параметры номера", title:"dropdown", isOpen:true, content:"roomsParam", variant:"counter", items:dropdowns.roomsParam})
 
             .form-elements__dropdown-guests_empty
-                +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter", items:dropdowns.guests}) 
+                +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter", items:dropdowns.guests, confirmButtons: true}) 
 
             .form-elements__dropdown-guests_fill-up
-                +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter", items:dropdowns.guests}) 
+                +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter", items:dropdowns.guests, confirmButtons: true}) 
 
             .form-elements__checkbox-lists 
                 .checkbox-lists__checkbox-list

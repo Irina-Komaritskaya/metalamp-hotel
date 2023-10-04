@@ -1,4 +1,4 @@
-const values = {
+let values = {
     guests: {},
     roomsParam: {},
 };
@@ -10,6 +10,7 @@ const getNameForNumbers = (value, words) => {
     if (num == 1) return words[0];
     return words[2];
 };
+
 $(".list-counter__btn").on("click", (e) => {
     const button = e.currentTarget;
     const action = e.currentTarget.innerHTML;
@@ -70,5 +71,28 @@ $(".list-counter__btn").on("click", (e) => {
     $(parentEl).trigger("changeCount", {
         target: e.currentTarget,
         count: contentValue,
+    });
+});
+
+$(".list-counter__confirmButtons-btnClear").on("click", (e) => {
+    const button = e.currentTarget;
+    const parentEl =
+        "." + $(button).closest(".list-counter").find("ul").attr("data-for");
+    values = {
+        guests: {},
+        roomsParam: {},
+    };
+    $(parentEl).trigger("clear", {
+        target: e.currentTarget,
+        value: values,
+    });
+});
+
+$(".list-counter__confirmButtons-btnApply").on("click", (e) => {
+    const button = e.currentTarget;
+    const parentEl =
+        "." + $(button).closest(".list-counter").find("ul").attr("data-for");
+    $(parentEl).trigger("apply", {
+        target: e.currentTarget,
     });
 });

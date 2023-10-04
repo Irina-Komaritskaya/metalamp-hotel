@@ -1,14 +1,14 @@
 include ../icon-button/icon-button
-mixin button({type, text, isDisabled})
+mixin button({variant, text, isDisabled, type="submit"})
     -
         let buttonClass = 'button'
-        let typeButton = ['primary','secondary','with-arrow','only-text']
+        let variantButton = ['primary','secondary','with-arrow','only-text']
 
-        if (typeButton.includes(type)) { buttonClass+= ` button__${type}` }
+        if (variantButton.includes(variant)) { buttonClass+= ` button__${variant}` }
         if(isDisabled){buttonClass+=' button_disabled'}
 
-    button(class=buttonClass type="submit")
+    button(class=buttonClass type=type)
         span.button__text=text
-        if(type ==='with-arrow')
+        if(variant ==='with-arrow')
             .button__icon
                 +icon-button({symbol:"arrow_forward", variant:"white"})

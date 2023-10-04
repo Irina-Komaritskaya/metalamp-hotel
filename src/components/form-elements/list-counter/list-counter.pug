@@ -1,10 +1,18 @@
-mixin list-counter({forElement, items=[], content}) 
+include ../button/button
+mixin list-counter({forElement, items=[], content, confirmButtons}) 
     - 
-    ul.list-counters(data-for=forElement data-content=content)
-        each item in items
-            li.list-counter__item
-                span.list-counter__item-title=item
-                .list-counter__btn-inner 
-                    button(type="button").list-counter__btn.list-counter__btn-disabled="-"  
-                    .list-counter__counter 0 
-                    button(type="button").list-counter__btn="+"
+    .list-counter
+        ul.list-counter__items(data-for=forElement data-content=content)
+            each item in items
+                li.list-counter__item
+                    span.list-counter__item-title=item
+                    .list-counter__btn-inner 
+                        button(type="button").list-counter__btn.list-counter__btn-disabled="-"  
+                        .list-counter__counter 0 
+                        button(type="button").list-counter__btn="+"
+        if(confirmButtons)
+            .list-counter__confirmButtons
+                .list-counter__confirmButtons-btnClear 
+                    +button({text: "Очистить", variant:"only-text"})  
+                .list-counter__confirmButtons-btnApply 
+                    +button({text: "Применить", variant:"only-text"})         

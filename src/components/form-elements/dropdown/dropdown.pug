@@ -1,18 +1,15 @@
 //-длинный value (скрывать за точками)
-//-если открыт - нижний радиус 0
-//- как нибудь сделать универсальные кнопки сбросить и применить.
+
 //- сбросить сбрасывает данные
 //- Применить отправляет данные, скрывает контент, сбрасывает данные
 //- запретить редактирование - ридонли
-//-сложить инпут в инпут
 //-dropdown
     если номер - то нижний бордер без скругления. 
-    если открытый - выпадашка не поверх других блоков
 include ../input/input
 include ../list-counter/list-counter
 include ../calendar/calendar
 
-mixin dropdown({name, isOpen, content, value, title, variant, input, items, dateTwoInputs})
+mixin dropdown({name, isOpen, content, value, title, variant, input, items, dateTwoInputs, confirmButtons})
     -
         input=input || {}
         let inputOptions={
@@ -39,7 +36,7 @@ mixin dropdown({name, isOpen, content, value, title, variant, input, items, date
         div(class=contentInnerClass )
             div(class=contentClass )
                 if(variant==="counter")
-                    +list-counter({forElement:"dropdown", items, content})
+                    +list-counter({forElement:"dropdown", items, content, confirmButtons})
                 if(variant==="calendar")  
                     +calendar(dateTwoInputs)
 

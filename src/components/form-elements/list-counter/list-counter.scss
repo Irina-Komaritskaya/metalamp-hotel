@@ -1,7 +1,7 @@
-.list-counters {
-    padding: 7px 7px 7px 15px;
+.list-counter {
+    padding: 7px 7px 13px 15px;
 }
-.list-counters li:not(:first-child) {
+.list-counter__items li:not(:first-child) {
     margin-top: 7px;
 }
 .list-counter__item {
@@ -39,4 +39,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.list-counter__confirmButtons {
+    display: flex;
+    margin-top: 19px;
+    justify-content: space-between;
 }

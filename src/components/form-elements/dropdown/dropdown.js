@@ -5,6 +5,7 @@ $(function () {
         input.addClass("dropdown__input_border-radius-none");
     }
 });
+
 $(".input__button").on("click", (e) => {
     const button = e.currentTarget;
     const input = $(button).prev();
@@ -33,4 +34,17 @@ $(".dropdown").on("changeCount", function (e, data) {
         input.val("");
         console.log(input.val());
     }
+});
+
+$(".dropdown").off("clear");
+$(".dropdown").on("clear", function (e, data) {
+    const input = $(data.target).closest(".dropdown").find(".input");
+    input.val("");
+});
+// - ???
+$(".dropdown").off("apply");
+$(".dropdown").on("apply", function (e, data) {
+    const inputBtn = $(data.target).closest(".dropdown").find(".input__button");
+    console.log(inputBtn);
+    $(inputBtn)[0].click();
 });
