@@ -1,6 +1,9 @@
-mixin checkbox({name, text, title})
+mixin checkbox({name, text, title, checked=false})
+    -
+
+        const active = checked.toString()
     label.checkbox__label
-        input.checkbox__input(type="checkbox" name=name)
+        input.checkbox__input(type="checkbox" name=name checked=checked)
         .checkbox__inner
             .checkbox-text__inner
                 if title

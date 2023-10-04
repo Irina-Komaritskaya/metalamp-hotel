@@ -1,8 +1,4 @@
-//-сделать маску
-//-title, state, type, name, placeholder, variant, Button{ } variantButton, symbolButton, typeButton, value
 //- symbol:options.symbolButton, variant:options.variantButton - сделать дефолт
-//- mask: date, data-mask(data-for=mask)
-//- options.readonly === true ? "readonly" : 0
 include ../icon-button/icon-button
 mixin input (options)
     -
@@ -10,7 +6,6 @@ mixin input (options)
         let variantInput = ['focused','send','mask']
         if (variantInput.includes(options.variant)) { inputClass+=` input__${options.variant}` }
 
-    //- if title
     label.label-input
         .label__inner
             .label__title=options.title

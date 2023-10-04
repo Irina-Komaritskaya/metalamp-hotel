@@ -1,8 +1,7 @@
-//-кнопке сделать кнопку
-//-придумать че нить с ифами
+//- open, expand
 include ../icon-button/icon-button
 include ../checkbox/checkbox
-mixin list({text, isExpand, type, items=[], isOpen}) 
+mixin list({text, isExpand, type, items, isOpen}) 
     -
         let dataExpand = isExpand ? "true" : ""
         let dataOpen = isOpen ? "true" : "false"

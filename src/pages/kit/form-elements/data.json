@@ -10,8 +10,16 @@
     },
     "checkboxs": {
         "checkbox1": { "name": "smoke", "text": "Можно курить" },
-        "checkbox2": { "name": "pet", "text": "Можно с питомцами" },
-        "checkbox3": { "name": "guests", "text": "Можно пригласить гостей" }
+        "checkbox2": {
+            "name": "pet",
+            "text": "Можно с питомцами",
+            "checked": true
+        },
+        "checkbox3": {
+            "name": "guests",
+            "text": "Можно пригласить гостей",
+            "checked": true
+        }
     },
     "rate button": {},
     "listCheckboxs": {
