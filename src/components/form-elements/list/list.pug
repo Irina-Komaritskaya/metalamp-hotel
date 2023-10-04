@@ -18,8 +18,8 @@ mixin list({text, isExpand, type, items, isOpen})
             each item in items
                 li(class=itemClass)
                     if (type==="checkbox")
-                        +checkbox({name:"checkbox", text: item})
+                        +checkbox({name:"checkbox", text: item.text, checked: item.checked})
                     if (type==="richCheckbox")
-                        +checkbox({name:"checkbox", text: item.text, title: item.title})    
+                        +checkbox({name:"checkbox", text: item.text, title: item.title, checked: item.checked})    
                     if (type==="bullet")
                         span=item    

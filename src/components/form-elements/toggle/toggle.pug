@@ -1,6 +1,6 @@
-mixin toggle ({text})
+mixin toggle ({text, checked=false})
     label.toggle_label
-        input(type="checkbox")
+        input(type="checkbox" checked=checked)
         .toggle_slider 
         span.toggle_text=text
 
