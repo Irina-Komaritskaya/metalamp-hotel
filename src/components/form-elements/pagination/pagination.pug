@@ -1,9 +1,13 @@
 include ../icon-button/icon-button
-mixin pagination() 
-    .pagination() 
+mixin pagination({countItems}) 
+    -
+        const countItemOnPage = 12
+        const countPages = Math.ceil(countItems / countItemOnPage);
+        const totalCountItems = Math.floor(countItems / Math.pow(10, String(countItems).length - 1)) * Math.pow(10, String(countItems).length - 1);
+    .pagination 
         ul.pagination__items
-            li.pagination__item.pagination__item-button
-                +icon-button({symbol:"arrow_back", variant:"white", size:"m"})  
+            li.pagination__item.pagination__arrow-button
+                +icon-button({symbol:"arrow_back", variant:"white", size:"m"}) 
             li.pagination__item.pagination__item-active
                 span.pagination__item-link="1"
             li.pagination__item
@@ -13,7 +17,7 @@ mixin pagination()
             li.pagination__item.pagination__item-disable
                 span.pagination__item-link="..." 
             li.pagination__item
-                span.pagination__item-link="15" 
-            li.pagination__item.pagination__item-button
+                span.pagination__item-link=`${countPages}` 
+            li.pagination__item.pagination__arrow-button
                 +icon-button({symbol:"arrow_forward", variant:"white", size:"m"}) 
-        .pagination__title="1 – 12 из 100+ вариантов аренды"
+        .pagination__title=`1 – ${countItemOnPage} из ${totalCountItems}+ вариантов аренды`
