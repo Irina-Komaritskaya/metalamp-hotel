@@ -1,0 +1,8 @@
+include ../input/input
+include ../dropdown/dropdown
+mixin calendar-range({dateFinish, dateStart})  
+    .dateRange
+        .dateRange__dateStart
+            +dropdown({title:dateStart.title, variant:"calendar", placeholder: "ДД.ММ.ГГГГ"})
+        .dateRange__dateFinish    
+            +input({title:dateFinish.title, withButton:true, variantButton: "gray", symbolButton:"expand_more", typeButton:"button", readonly:true, placeholder: "ДД.ММ.ГГГГ", readonly:true })

@@ -17,6 +17,7 @@ html
         - const feedback = json.feedback
 
         .form-elements__content
+
             .form-elements__inputs
                 .inputs__input-defoult
                     +input({title:"text field", state:"default", type:"email", name:"email", placeholder:"Email"})
@@ -26,11 +27,8 @@ html
                     +dropdown({value: "Сколько гостей", title:"dropdown", content:"guests", variant:"counter", items:dropdowns.guests})
                 .inputs__input-mask
                     +input({title:"mask text field", variant:"mask",placeholder:"ДД.ММ.ГГГГ" })
-                .inputs__dropdowns-date
-                    .inputs__dropdown-date
-                        +dropdown({value: "Сколько гостей", title:"date dropdown", dateTwoInputs:"true", variant:"calendar", dateFor:"start"})
-                    .inputs__dropdown-date
-                        +dropdown({value: "Сколько гостей", title:"date dropdown", dateTwoInputs:"true", variant:"calendar", dateFor:"finish"})
+                .inputs__calendar-range
+                    +calendar-range({dateFinish:{title: "date dropdown"}, dateStart:{title:"date dropdown"}})
                 .inputs__filter-date
                     +dropdown({value: "Сколько гостей", title:"filter date dropdown", variant:"calendar"})
                 .inputs__input-send    
@@ -46,9 +44,9 @@ html
                     .switches__radio-buttons-title="radio buttons"
                     .swiches__radio-buttons 
                         .switches__radio-button_active
-                            +radio-button({name:radioButtons.radio1.name, text: radioButtons.radio1.text})
+                            +radio-button({name:radioButtons.radio1.name, text: radioButtons.radio1.text, id: radioButtons.radio1.text})
                         .switches__radio-button    
-                            +radio-button({name:radioButtons.radio2.name, text: radioButtons.radio2.text})
+                            +radio-button({name:radioButtons.radio2.name, text: radioButtons.radio2.text, id: radioButtons.radio2.text})
 
                 .switches__toggles-inner
                     .switches__toggles-title="toggle"
@@ -106,7 +104,6 @@ html
                     +dropdown({value: "параметры номера", title:"dropdown", content:"roomsParam", variant:"counter", items:dropdowns.roomsParam}) 
                 .dropdowns-rooms-parameters__dropdown-room-parameters_opened
                     +dropdown({value: "параметры номера", title:"dropdown", isOpen:true, content:"roomsParam", variant:"counter", items:dropdowns.roomsParam})
-
             .form-elements__dropdown-guests_empty
                 +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter", items:dropdowns.guests, confirmButtons: true}) 
 

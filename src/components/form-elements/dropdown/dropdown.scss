@@ -22,10 +22,16 @@
     left: 0;
     top: 0;
     width: 100%;
-    min-width: 320px;
 }
 
 .dropdown__input_border-radius-none {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+}
+
+.dropdown__input_border-bottom-none {
+    border-bottom: none;
+}
+.dropdown__content_border-none {
+    border: none;
 }

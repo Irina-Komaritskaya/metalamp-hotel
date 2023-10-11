@@ -1,16 +1,16 @@
 //-длинный value (скрывать за точками)
+//- плейсхолдер отдельно
 //-dropdown
     если номер - то нижний бордер без скругления. 
+//- isConfirmButton    
 include ../input/input
 include ../list-counter/list-counter
 include ../calendar/calendar
 
-mixin dropdown({name, isOpen, content, value, title, variant, input, items, dateTwoInputs, confirmButtons})
+mixin dropdown({name, isOpen, content, value, title, variant, items,  dateRange, confirmButtons, placeholder})
     -
         input=input || {}
         let inputOptions={
-            id:input.id,
-            name:name, 
             title:title, 
             value:value,
             variant: isOpen ? "focused" : " ",
@@ -18,7 +18,9 @@ mixin dropdown({name, isOpen, content, value, title, variant, input, items, date
             variantButton: "gray", 
             symbolButton:"expand_more", 
             typeButton:"button",
-            readonly:true
+            readonly:true,
+            placeholder: placeholder
+
         }
 
         let contentClass = "dropdown__content"
@@ -29,11 +31,11 @@ mixin dropdown({name, isOpen, content, value, title, variant, input, items, date
 
     .dropdown
         +input(inputOptions)
-        div(class=contentInnerClass )
+        div(class=contentInnerClass)
             div(class=contentClass )
                 if(variant==="counter")
                     +list-counter({forElement:"dropdown", items, content, confirmButtons})
                 if(variant==="calendar")  
-                    +calendar(dateTwoInputs)
+                    +calendar()
 
 

@@ -11,27 +11,36 @@ let button = {
     content: "Применить",
     onClick: (dp) => {
         formatDate(dp.selectedDates);
+
         const input = $(dp["$el"]).closest(".dropdown").find(".input");
         const dates = dp.selectedDates.map((x) => formatDate(x));
-        input.val(dates.join(" - "));
+
+        if (dp["$altField"].length > 0) {
+            input.val(dates[0]);
+            $(dp["$altField"][0]).val(dates[1]);
+        } else {
+            input.val(dates.join(" - "));
+        }
         $(input).closest(".input__inner").find(".input__button").click();
     },
 };
 $.each($(".datepicker"), function () {
-    const dateTwoInputs = $(".datepicker").filter(
-        "[data-dateTwoInputs='true']"
-    );
-    console.log(dateTwoInputs);
+    const dateRange = $(this).closest(".dateRange");
+    const dateStart = $(dateRange).find(".dateRange__dateStart").find(".input");
+    const dateFinish = $(dateRange)
+        .find(".dateRange__dateFinish")
+        .find(".input");
+
     new AirDatepicker(this, {
         inline: true,
         locale: localeRu,
-        range: dateTwoInputs ? "false" : "true",
+        range: "true",
         minDate: [new Date()],
         // maxDate: ?? param
         // dynamicRange: true,
         //showEvent
         autoClose: "true",
-        altField: "",
+        altField: dateFinish ? dateFinish : "",
         prevHtml: "arrow_back",
         nextHtml: "arrow_forward",
         navTitles: {

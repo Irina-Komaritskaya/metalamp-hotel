@@ -1,6 +1,8 @@
 $(function () {
     const listExpand = $(".list").filter("[data-expand='true']");
-    const openedList = listExpand.find("[data-open='false']");
+    const openedList = listExpand
+        .find("[data-open='false']")
+        .find(".list__content-item");
     openedList.hide();
 
     $(".list__expand-button").on("click", (e) => {
@@ -11,7 +13,6 @@ $(function () {
 
         if ($(contentItems).is(":hidden")) {
             console.log(contentItems);
-            console.log($(contentItems).is(":hidden"));
             $(contentItems).slideDown();
         } else {
             $(contentItems).slideUp();

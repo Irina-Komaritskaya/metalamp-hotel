@@ -6,3 +6,4 @@ import "./form-elements/list-counter/list-counter.js";
 import "./form-elements/rate-button/rate-button.js";
 import "./form-elements/pagination/pagination.js";
 import "./form-elements/list/list.js";
+import "./form-elements/calendar-range/calendar-range.js";
