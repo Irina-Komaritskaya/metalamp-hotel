@@ -10,9 +10,18 @@
 }
 
 .like-button__count {
-    align-self: center;
+    margin-top: 3px;
 }
-
+.like-button__symbol {
+    @extend .material-icons;
+    font-size: 10px;
+    line-height: 8.5px;
+    width: 20px;
+    height: 19px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .like-button_clicked {
     color: $purple;
     border: $border-purple;

@@ -1,9 +1,7 @@
 mixin like-button({count, isClicked})
     -
-        let symbol = isClicked ? "favorite" : "favorite_border"
-        let symbolColor = isClicked ? "gradient" : "light-gray"
         let buttonClass = isClicked ? "like-button like-button_clicked" : "like-button"
 
     button(class=buttonClass type="submit")
-        +icon-button({symbol:symbol, variant:symbolColor, size:"s"}) 
+        .like-button__symbol=symbol
         span.like-button__count=count
