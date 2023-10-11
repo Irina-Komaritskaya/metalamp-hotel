@@ -1,133 +1,130 @@
+extends ../layout/layout.pug
 include ../../../components/index 
 
-html
-    head 
-    body 
-        .logo
-            include ../../../icons/logo
+block content
 
-        - var json = require('./data.json')
-        - const checkboxs = json.checkboxs
-        - const toggle = json.toggle 
-        - const radioButtons = json.radioButtons
-        - const dropdowns = json.dropdowns
-        - const listCheckboxs = json.listCheckboxs
-        - const richCheckboxs = json.richCheckboxs
-        - const bulletList = json.bulletList
-        - const feedback = json.feedback
+    - var json = require('./data.json')
+    - const checkboxs = json.checkboxs
+    - const toggle = json.toggle 
+    - const radioButtons = json.radioButtons
+    - const dropdowns = json.dropdowns
+    - const listCheckboxs = json.listCheckboxs
+    - const richCheckboxs = json.richCheckboxs
+    - const bulletList = json.bulletList
+    - const feedback = json.feedback
 
-        .form-elements__content
+    .form-elements__content
 
-            .form-elements__inputs
-                .inputs__input-defoult
-                    +input({title:"text field", state:"default", type:"email", name:"email", placeholder:"Email"})
-                .inputs__input-focus
-                    +input({title:"text field", state:"Hover / Focus", placeholder:"This is pretty awesome", variant:"focused"})
-                .inputs__dropdown
-                    +dropdown({value: "Сколько гостей", title:"dropdown", content:"guests", variant:"counter", items:dropdowns.guests})
-                .inputs__input-mask
-                    +input({title:"mask text field", variant:"mask",placeholder:"ДД.ММ.ГГГГ" })
-                .inputs__calendar-range
-                    +calendar-range({dateFinish:{title: "date dropdown"}, dateStart:{title:"date dropdown"}})
-                .inputs__filter-date
-                    +dropdown({value: "Сколько гостей", title:"filter date dropdown", variant:"calendar"})
-                .inputs__input-send    
-                    +input({title:"subscription", placeholder:"Email", withButton:true, variant:"send", variantButton:"gradient", symbolButton:"arrow_forward"})
+        .form-elements__inputs
+            .inputs__input-defoult
+                +input({title:"text field", state:"default", type:"email", name:"email", placeholder:"Email"})
+            .inputs__input-focus
+                +input({title:"text field", state:"Hover / Focus", placeholder:"This is pretty awesome", variant:"focused"})
+            .inputs__dropdown
+                +dropdown({value: "Сколько гостей", title:"dropdown", content:"guests", variant:"counter", items:dropdowns.guests})
+            .inputs__input-mask
+                +input({title:"mask text field", variant:"mask",placeholder:"ДД.ММ.ГГГГ" })
+            .inputs__calendar-range
+                +calendar-range({dateFinish:{title: "date dropdown"}, dateStart:{title:"date dropdown"}})
+            .inputs__filter-date
+                +dropdown({value: "Сколько гостей", title:"filter date dropdown", variant:"calendar"})
+            .inputs__input-send    
+                +input({title:"subscription", placeholder:"Email", withButton:true, variant:"send", variantButton:"gradient", symbolButton:"arrow_forward"})
 
-            .form-elements__switches
-                .switches__chekboxs-inner
-                    .switches__chekboxs-title="checkbox buttons"
-                    each checkbox in checkboxs
-                        +checkbox({name:checkbox.name, text: checkbox.text, checked:checkbox.checked})
+        .form-elements__switches
+            .switches__chekboxs-inner
+                .switches__chekboxs-title="checkbox buttons"
+                each checkbox in checkboxs
+                    +checkbox({name:checkbox.name, text: checkbox.text, checked:checkbox.checked})
 
-                .switches__radio-buttons-inner
-                    .switches__radio-buttons-title="radio buttons"
-                    .swiches__radio-buttons 
-                        .switches__radio-button_active
-                            +radio-button({name:radioButtons.radio1.name, text: radioButtons.radio1.text, id: radioButtons.radio1.text})
-                        .switches__radio-button    
-                            +radio-button({name:radioButtons.radio2.name, text: radioButtons.radio2.text, id: radioButtons.radio2.text})
+            .switches__radio-buttons-inner
+                .switches__radio-buttons-title="radio buttons"
+                .swiches__radio-buttons 
+                    .switches__radio-button_active
+                        +radio-button({name:radioButtons.radio1.name, text: radioButtons.radio1.text, id: radioButtons.radio1.text})
+                    .switches__radio-button    
+                        +radio-button({name:radioButtons.radio2.name, text: radioButtons.radio2.text, id: radioButtons.radio2.text})
 
-                .switches__toggles-inner
-                    .switches__toggles-title="toggle"
-                    .switches__toggle_active     
-                        +toggle({text:toggle.text, checked:true})
-                    .switches__toggle   
-                        +toggle({text:toggle.text})
+            .switches__toggles-inner
+                .switches__toggles-title="toggle"
+                .switches__toggle_active     
+                    +toggle({text:toggle.text, checked:true})
+                .switches__toggle   
+                    +toggle({text:toggle.text})
 
-                .switches__like-buttons-inner
-                    .switches__like-buttons-title="like buttons"
-                    .switches__like-buttons
-                        .switches__like-button 
-                            +like-button({count:"2"})
-                        .switches__like-button_active    
-                            +like-button({count:"12", isClicked:true})
+            .switches__like-buttons-inner
+                .switches__like-buttons-title="like buttons"
+                .switches__like-buttons
+                    .switches__like-button 
+                        +like-button({count:"2"})
+                    .switches__like-button_active    
+                        +like-button({count:"12", isClicked:true})
 
-                .switches__rate-buttons-inner
-                    .switches__rate-buttons-title="rate buttons"
-                    .switches__rate-buttons
-                        .switches__rate-button-disabled  
-                            +rate-button({state:"disabled", rate:4})
-                        .switches__rate-button    
-                            +rate-button({state:"undisabled", rate:5})
+            .switches__rate-buttons-inner
+                .switches__rate-buttons-title="rate buttons"
+                .switches__rate-buttons
+                    .switches__rate-button-disabled  
+                        +rate-button({state:"disabled", rate:4})
+                    .switches__rate-button    
+                        +rate-button({state:"undisabled", rate:5})
 
-            .form-elements__buttons
-                .buttons__slider
-                    +slider({min:"5000", max:"10000"})
-                .buttons__buttons-inner    
-                    .buttons__buttons-title="buttons"    
-                    .buttons__buttons-primary-inner 
-                        .buttons__button-primary
-                            +button({text: "click me", variant:"primary"})
-                        .buttons__button-primary_disabled    
-                            +button({text: "click me", variant:"primary", isDisabled:true})
-                    .buttons__buttons-secondary-inner 
-                        .buttons__button-secondary    
-                            +button({text: "click me", variant:"secondary"})
-                        .buttons__button-secondary_disabled    
-                            +button({text: "click me", variant:"secondary", isDisabled:true})
-                    .buttons__buttons-only-text-inner 
-                        .buttons__button-only-text
-                            +button({text: "click me", variant:"only-text"})
-                        .buttons__button-only-text_disabled    
-                            +button({text: "click me", variant:"only-text", isDisabled:true})
-                    .buttons__button-with-arrow        
-                        +button({text:"перейти к оплате", variant:"with-arrow"})
-                    .buttons__pagination
-                        .buttons__pagination-inner 
-                            .buttons__pagination-title="pagination"    
-                            +pagination({countItems: 180})
+        .form-elements__buttons
+            .buttons__slider
+                +slider({min:"5000", max:"10000"})
+            .buttons__buttons-inner    
+                .buttons__buttons-title="buttons"    
+                .buttons__buttons-primary-inner 
+                    .buttons__button-primary
+                        +button({text: "click me", variant:"primary"})
+                    .buttons__button-primary_disabled    
+                        +button({text: "click me", variant:"primary", isDisabled:true})
+                .buttons__buttons-secondary-inner 
+                    .buttons__button-secondary    
+                        +button({text: "click me", variant:"secondary"})
+                    .buttons__button-secondary_disabled    
+                        +button({text: "click me", variant:"secondary", isDisabled:true})
+                .buttons__buttons-only-text-inner 
+                    .buttons__button-only-text
+                        +button({text: "click me", variant:"only-text"})
+                    .buttons__button-only-text_disabled    
+                        +button({text: "click me", variant:"only-text", isDisabled:true})
+                .buttons__button-with-arrow        
+                    +button({text:"перейти к оплате", variant:"with-arrow"})
+                .buttons__pagination
+                    .buttons__pagination-inner 
+                        .buttons__pagination-title="pagination"    
+                        +pagination({countItems: 180})
 
 
-            .form-elements__dropdowns-rooms-parameters
-                .dropdowns-rooms-parameters__dropdown-room-parameters_closed
-                    +dropdown({value: "параметры номера", title:"dropdown", content:"roomsParam", variant:"counter", items:dropdowns.roomsParam}) 
-                .dropdowns-rooms-parameters__dropdown-room-parameters_opened
-                    +dropdown({value: "параметры номера", title:"dropdown", isOpen:true, content:"roomsParam", variant:"counter", items:dropdowns.roomsParam})
-            .form-elements__dropdown-guests_empty
-                +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter", items:dropdowns.guests, confirmButtons: true}) 
+        .form-elements__dropdowns-rooms-parameters
+            .dropdowns-rooms-parameters__dropdown-room-parameters_closed
+                +dropdown({value: "параметры номера", title:"dropdown", content:"roomsParam", variant:"counter", items:dropdowns.roomsParam}) 
+            .dropdowns-rooms-parameters__dropdown-room-parameters_opened
+                +dropdown({value: "параметры номера", title:"dropdown", isOpen:true, content:"roomsParam", variant:"counter", items:dropdowns.roomsParam})
+        .form-elements__dropdown-guests_empty
+            +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter", items:dropdowns.guests, confirmButtons: true}) 
 
-            .form-elements__dropdown-guests_fill-up
-                +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter", items:dropdowns.guests, confirmButtons: true}) 
+        .form-elements__dropdown-guests_fill-up
+            +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true, content:"guests", variant:"counter", items:dropdowns.guests, confirmButtons: true}) 
 
-            .form-elements__checkbox-lists 
-                .checkbox-lists__checkbox-list
-                    +list({text:"expandable checkbox list", isExpand:true, type:"checkbox", items:listCheckboxs.items}) 
-                .checkbox-lists__checkbox-list__opened
-                    +list({text:"expandable checkbox list", isExpand:true, isOpen: true, type:"checkbox", items:listCheckboxs.items}) 
+        .form-elements__checkbox-lists 
+            .checkbox-lists__checkbox-list
+                +list({text:"expandable checkbox list", isExpand:true, type:"checkbox", items:listCheckboxs.items}) 
+            .checkbox-lists__checkbox-list__opened
+                +list({text:"expandable checkbox list", isExpand:true, isOpen: true, type:"checkbox", items:listCheckboxs.items}) 
 
-            .form-elements__rich-checkbox-list
-                +list({text:"rich Checkbox Buttons", type:"richCheckbox", items:richCheckboxs.items}) 
+        .form-elements__rich-checkbox-list
+            +list({text:"rich Checkbox Buttons", type:"richCheckbox", items:richCheckboxs.items}) 
 
-            .form-elements__bullet-list
-                +list({text:"bullet list", type:"bullet", items:bulletList.items}) 
+        .form-elements__bullet-list
+            +list({text:"bullet list", type:"bullet", items:bulletList.items}) 
 
-            .form-elements__pins
-                +pin({symbol:"insert_emoticon", title:"Комфорт", text:"Шумоподавляющие стены"})
-                +pin({symbol:"location_city", title:"Удобство", text:"Окна в каждой спальне"})
+        .form-elements__pins
+            +pin({symbol:"insert_emoticon", title:"Комфорт", text:"Шумоподавляющие стены"})
+            +pin({symbol:"location_city", title:"Удобство", text:"Окна в каждой спальне"})
 
-            .form-elements__feedback  
-                +feedback({src:feedback.src, name:feedback.name, date:feedback.date, text:feedback.text})
+        .form-elements__feedback  
+            +feedback({src:feedback.src, name:feedback.name, date:feedback.date, text:feedback.text})
 
 
 

@@ -1,12 +1,13 @@
 @import "../../../components/index.scss";
 .form-elements__content {
     display: flex;
-    margin-top: 143px;
+    margin-top: 65px;
     margin-left: 140px;
     margin-right: 140px;
     margin-bottom: 131px;
     flex-wrap: wrap;
     max-width: 1160px;
+    justify-content: center;
 }
 
 .form-elements__inputs {

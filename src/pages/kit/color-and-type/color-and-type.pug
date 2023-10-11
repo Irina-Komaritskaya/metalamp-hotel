@@ -1,20 +1,17 @@
+extends ../layout/layout.pug
 include ../../../components/index
-html
-  head 
-  body 
-    .logo
-      include ../../../icons/logo
-    .wrap
-      .color-palette
-        +swatch({name:"Dark Shade 100%", value:"#1F2041", variant:'dark100'})
-        +swatch({name:"Dark Shade 75%", value:"#1F2041", variant:'dark75'})
-        +swatch({name:"Dark Shade 50%", value:"#1F2041", variant:'dark50'})
-        +swatch({name:"Dark Shade 25%", value:"#1F2041", variant:'dark25'})
-        +swatch({name:"Dark Shade 5%", value:"#1F2041", variant:'dark5'})
-        +swatch({name:"Purple", value:"#BC9CFF", variant:'purple'})
-        +swatch({name:"Green", value:"#6FCF97", variant:'green'})
-      .typography
-        +type-title({tag: 'H1', variant: "H1", text: "This one is the sub-section <br> or widget title"})
-        +type-title({tag: 'H2', variant: "H2", text: "Next one is the item title inside widgets"})
-        +type-title({tag: 'H3', variant: "H3", text: "This is a label or CTA text"})
-        +type-title({tag: 'Body', text: "This is the body text which is used for most of the design, like paragraphs, lists, etc."})
+block content
+  .wrap
+    .color-palette
+      +swatch({name:"Dark Shade 100%", value:"#1F2041", variant:'dark100'})
+      +swatch({name:"Dark Shade 75%", value:"#1F2041", variant:'dark75'})
+      +swatch({name:"Dark Shade 50%", value:"#1F2041", variant:'dark50'})
+      +swatch({name:"Dark Shade 25%", value:"#1F2041", variant:'dark25'})
+      +swatch({name:"Dark Shade 5%", value:"#1F2041", variant:'dark5'})
+      +swatch({name:"Purple", value:"#BC9CFF", variant:'purple'})
+      +swatch({name:"Green", value:"#6FCF97", variant:'green'})
+    .typography
+      +type-title({tag: 'H1', variant: "H1", text: "This one is the sub-section <br> or widget title"})
+      +type-title({tag: 'H2', variant: "H2", text: "Next one is the item title inside widgets"})
+      +type-title({tag: 'H3', variant: "H3", text: "This is a label or CTA text"})
+      +type-title({tag: 'Body', text: "This is the body text which is used for most of the design, like paragraphs, lists, etc."})
