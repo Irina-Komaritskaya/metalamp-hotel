@@ -1,6 +1,9 @@
-mixin slider({min, max}) 
+
+mixin slider({min, max, start}) 
     .slider__inner
         .slider__label
             .slider-label__title="range slider"
             .slider-label__value=`${min}₽ - ${max}₽`
-        #slider
+        .slider(data-start=start data-min=min data-max=max)
+
+

@@ -12,6 +12,7 @@ $(function () {
         const firstItem = parent.find(".pagination__item").first();
         const lastItem = parent.find(".pagination__item").last();
         const number = $(item).text();
+        const title = $(item).closest(".pagination").find(".pagination__title");
         parent
             .find(".pagination__item-active")
             .removeClass("pagination__item-active");
