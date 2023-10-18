@@ -1,5 +1,5 @@
 include ../button/button
-mixin list-counter({forElement, items=[], content, confirmButtons}) 
+mixin list-counter({forElement="dropdown", items=[], content, confirmButtons}) 
     - 
     .list-counter
         ul.list-counter__items(data-for=forElement data-content=content)

@@ -7,9 +7,8 @@ include ../input/input
 include ../list-counter/list-counter
 include ../calendar/calendar
 
-mixin dropdown({name, isOpen, content, value, title, variant, items,  dateRange, confirmButtons, placeholder})
+mixin dropdown({name, isOpen, content, value, title, variant, dateRange, placeholder})
     -
-        input=input || {}
         let inputOptions={
             title:title, 
             value:value,
@@ -33,9 +32,6 @@ mixin dropdown({name, isOpen, content, value, title, variant, items,  dateRange,
         +input(inputOptions)
         div(class=contentInnerClass)
             div(class=contentClass )
-                if(variant==="counter")
-                    +list-counter({forElement:"dropdown", items, content, confirmButtons})
-                if(variant==="calendar")  
-                    +calendar()
+                block
 
 
