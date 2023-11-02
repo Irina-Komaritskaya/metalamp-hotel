@@ -21,14 +21,14 @@ block content
             .inputs__input-focus
                 +input({title:"text field", state:"Hover / Focus", placeholder:"This is pretty awesome", variant:"focused"})
             .inputs__dropdown
-                +dropdown({value: "Сколько гостей", title:"dropdown", variant:"counter"})
+                +dropdown({placeholder: "Сколько гостей", title:"dropdown"})
                     +list-counter({items:dropdowns.guests, content:"guests"})
             .inputs__input-mask
                 +input({title:"mask text field", variant:"mask",placeholder:"ДД.ММ.ГГГГ" })
             .inputs__calendar-range
                 +calendar-range({dateFinish:{title: "date dropdown"}, dateStart:{title:"date dropdown"}})
             .inputs__filter-date
-                +dropdown({value: "--", title:"filter date dropdown"})
+                +dropdown({placeholder: "--", title:"filter date dropdown"})
                     +calendar
             .inputs__input-send    
                 +input({title:"subscription", placeholder:"Email", withButton:true, variant:"send", variantButton:"gradient", symbolButton:"arrow_forward"})
@@ -100,16 +100,16 @@ block content
 
         .form-elements__dropdowns-rooms-parameters
             .dropdowns-rooms-parameters__dropdown-room-parameters_closed
-                +dropdown({value: "параметры номера", title:"dropdown" }) 
+                +dropdown({placeholder: "параметры номера", title:"dropdown" }) 
                     +list-counter({items:dropdowns.roomsParam, content:"roomsParam"})
             .dropdowns-rooms-parameters__dropdown-room-parameters_opened
-                +dropdown({value: "параметры номера", title:"dropdown", isOpen:true})
+                +dropdown({placeholder: "параметры номера", title:"dropdown", isOpen:true})
                     +list-counter({items:dropdowns.roomsParam, content:"roomsParam"})
         .form-elements__dropdown-guests_empty
-            +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true }) 
+            +dropdown({placeholder: "Сколько гостей", title:"dropdown", isOpen:true }) 
                 +list-counter({content:"guests", items:dropdowns.guests, confirmButtons: true})
         .form-elements__dropdown-guests_fill-up
-            +dropdown({value: "Сколько гостей", title:"dropdown", isOpen:true}) 
+            +dropdown({placeholder: "Сколько гостей", title:"dropdown", isOpen:true}) 
                 +list-counter({content:"guests", items:dropdowns.guests, confirmButtons: true})
         .form-elements__checkbox-lists 
             .checkbox-lists__checkbox-list

@@ -3,35 +3,39 @@
 //-dropdown
     если номер - то нижний бордер без скругления. 
 //- isConfirmButton    
+//- let contentInnerClass = "dropdown__content-inner"
+//- if(!isOpen) {contentClass+=" dropdown__content-unexpand"}
+//- if(isOpen){contentClass+=" dropdown__content-expand"}
+//- if(!isOpen){contentInnerClass+=" dropdown__content-inner-closed"}
+//- div(class=contentInnerClass)
 include ../input/input
 include ../list-counter/list-counter
 include ../calendar/calendar
 
-mixin dropdown({name, isOpen, content, value, title, variant, dateRange, placeholder})
+mixin dropdown({name, isOpen, title, placeholder})
     -
         let inputOptions={
             title:title, 
-            value:value,
             variant: isOpen ? "focused" : " ",
             withButton:true, 
             variantButton: "gray", 
             symbolButton:"expand_more", 
             typeButton:"button",
             readonly:true,
-            placeholder: placeholder
-
+            placeholder: placeholder,
+            colorPlaceholder:"dark"
         }
 
         let contentClass = "dropdown__content"
-        let contentInnerClass = "dropdown__content-inner"
-        if(!isOpen) {contentClass+=" dropdown__content-unexpand"}
-        if(isOpen){contentClass+=" dropdown__content-expand"}
-        if(!isOpen){contentInnerClass+=" dropdown__content-inner-closed"}
+
+        if(isOpen){contentClass+=" dropdown__content_opened"}
+        if(!isOpen){contentClass+=" dropdown__content_closed"}
 
     .dropdown
-        +input(inputOptions)
-        div(class=contentInnerClass)
-            div(class=contentClass )
-                block
+        .dropdown__input
+            +input(inputOptions)
+        div(class=contentClass)
+            block
+
 
 

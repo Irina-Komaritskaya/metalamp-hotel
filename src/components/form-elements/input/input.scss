@@ -23,17 +23,23 @@
     height: 44px;
     @extend .body-text;
 }
-::placeholder {
-    color: $dark25;
+.input__placeholder_light {
+    &::placeholder {
+        color: $dark25;
+    }
 }
-.input__focused {
-    border: 1px solid $dark50;
-    outline: none;
+.input__placeholder_dark {
     &::placeholder {
         color: $dark75;
     }
 }
-.input:focus,
+
+.input__focused {
+    border: 1px solid $dark50;
+    outline: none;
+    @extend .input__placeholder_dark;
+}
+.input__focused .input:focus,
 .input:hover {
     @extend .input__focused;
 }

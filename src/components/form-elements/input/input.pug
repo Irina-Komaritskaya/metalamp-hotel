@@ -1,28 +1,32 @@
-//- symbol:options.symbolButton, variant:options.variantButton - сделать дефолт
+
 include ../icon-button/icon-button
-mixin input (options)
+mixin input ({variant, title, state, type, name, placeholder, value, id, readonly, symbolButton, variantButton, typeButton, withButton, colorPlaceholder="light"} )
     -
         let inputClass = 'input';
         let variantInput = ['focused','send','mask']
-        if (variantInput.includes(options.variant)) { inputClass+=` input__${options.variant}` }
+        let variantPlaceholder = ["dark", "light"]
+        if (variantPlaceholder.includes(colorPlaceholder)) { 
+            variant === "focused" ? inputClass+= "" : inputClass+=` input__placeholder_${colorPlaceholder}` 
+        }
+        if (variantInput.includes(variant)) { inputClass+=` input__${variant}` }
 
     label.label-input
         .label__inner
-            .label__title=options.title
-            .label__state=options.state
+            .label__title=title
+            .label__state=state
         .input__inner    
             input(
                 class=inputClass
-                type=options.type
-                name=options.name
-                placeholder=options.placeholder
-                value=options.value
-                id=options.id
-                readonly= options.readonly === true 
+                type=type
+                name=name
+                placeholder=placeholder
+                value=value
+                id=id
+                readonly= readonly === true 
             )
-            if options.withButton
-                button.input__button(type=options.typeButton)
-                    +icon-button({symbol:options.symbolButton, variant:options.variantButton}) 
+            if withButton
+                button.input__button(type=typeButton)
+                    +icon-button({symbol:symbolButton, variant:variantButton}) 
 
 
 

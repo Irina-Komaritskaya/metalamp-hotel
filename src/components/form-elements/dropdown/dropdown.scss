@@ -1,14 +1,8 @@
 .dropdown {
     width: 100%;
-}
-.dropdown__content-inner-closed {
-    display: none;
-}
-.dropdown__content-inner-opened {
     position: relative;
-    z-index: 10;
-    width: 100%;
 }
+
 .dropdown__content {
     border: solid $dark50;
     border-width: 0px 1px 1px 1px;
@@ -16,12 +10,12 @@
     border-bottom-right-radius: 4px;
     background: white;
 }
-.dropdown__content-unexpand {
-    display: block;
+.dropdown__content_closed {
     position: absolute;
     left: 0;
-    top: 0;
+    top: 64px;
     width: 100%;
+    z-index: 10;
 }
 
 .dropdown__input_border-radius-none {
