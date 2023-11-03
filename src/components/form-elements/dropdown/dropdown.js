@@ -6,49 +6,16 @@ $(function () {
         .find(".input")
         .addClass("dropdown__input_border-radius-none");
 
-    // const expand = $(".dropdown").find(".dropdown__content-expand");
-    // const content = $(".dropdown").find(".dropdown__content");
-    // const input = $(expand).closest(".dropdown").find(".input");
-    // if (expand) {
-    //     input.addClass("dropdown__input_border-radius-none");
-    // }
-    // const contentCalendar = $(".dropdown").find(".datepicker");
-    // if (contentCalendar) {
-    //     contentCalendar.css({ "border-width": "0px 1px 1px 1px" });
-    //     input.addClass("dropdown__input_border-bottom-none");
-    // }
     const input = $(".dropdown").find(".dropdown__input");
-    console.log(input);
+
     $(input).on("click", (e) => {
-        console.log(1);
         const content = $(e.currentTarget)
             .closest(".dropdown")
             .find(".dropdown__content");
         const input = $(content).closest(".dropdown").find(".input");
-        console.log(content);
         $(content).toggle();
         input.toggleClass("input__focused");
         input.toggleClass("dropdown__input_border-radius-none");
-
-        // if ($(content).is(":hidden")) {
-        //     $(content).show();
-        // } else {
-        //     $(content).hide();
-        // }
-        // const button = e.currentTarget;
-        // const input = $(button).prev();
-        // const content = $(input)
-        //     .closest(".dropdown")
-        //     .find(".dropdown__content-inner");
-        // const unexpand = $(input)
-        //     .closest(".dropdown")
-        //     .find(".dropdown__content-unexpand");
-        // if (unexpand) {
-        //     content.toggleClass("dropdown__content-inner-closed");
-        //     content.toggleClass("dropdown__content-inner-opened");
-        // }
-        // input.toggleClass("input__focused");
-        // input.toggleClass("dropdown__input_border-radius-none");
     });
 
     $(".dropdown").off("changeCount");

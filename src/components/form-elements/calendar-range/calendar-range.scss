@@ -1,5 +1,21 @@
-.dateRange {
+.date-range {
+    position: relative;
+}
+.date-range__inputs {
     display: flex;
     justify-content: space-between;
     column-gap: 20px;
+}
+.date-range__calendar {
+    border: 1px solid $dark50;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.date-range__input_bottom-border-none {
+    border-width: 1px 1px 0px 1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }

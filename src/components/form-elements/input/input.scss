@@ -35,7 +35,7 @@
 }
 
 .input__focused {
-    border: 1px solid $dark50;
+    border-color: $dark50;
     outline: none;
     @extend .input__placeholder_dark;
 }

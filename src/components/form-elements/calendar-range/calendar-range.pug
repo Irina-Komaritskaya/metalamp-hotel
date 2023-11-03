@@ -1,8 +1,12 @@
 include ../input/input
 include ../dropdown/dropdown
+include ../calendar/calendar
 mixin calendar-range({dateFinish, dateStart})  
-    .dateRange
-        .dateRange__dateStart
-            +dropdown({title:dateStart.title, variant:"calendar", placeholder: "ДД.ММ.ГГГГ"})
-        .dateRange__dateFinish    
-            +input({title:dateFinish.title, withButton:true, variantButton: "gray", symbolButton:"expand_more", typeButton:"button", readonly:true, placeholder: "ДД.ММ.ГГГГ", readonly:true })
+    .date-range
+        .date-range__inputs
+            .date-range__date-start
+                +input({title:dateStart.title,  withButton: true,variantButton: "gray",symbolButton: "expand_more",typeButton: "button",readonly: true, placeholder: "ДД.ММ.ГГГГ", colorPlaceholder:"dark"})
+            .date-range__date-finish    
+                +input({title:dateFinish.title,  withButton: true,variantButton: "gray",symbolButton: "expand_more",typeButton: "button",readonly: true, placeholder: "ДД.ММ.ГГГГ", colorPlaceholder:"dark"})
+        .date-range__calendar
+            +calendar

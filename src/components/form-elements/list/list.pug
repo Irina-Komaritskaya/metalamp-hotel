@@ -7,6 +7,7 @@ mixin list({text, isExpand, type, items, isOpen})
         let dataOpen = isOpen ? "true" : "false"
         let itemClass="list__content-item"
         if (type===("bullet")) { itemClass+= ` list__content-item_bullet` }
+        if (type===("richCheckbox")) {itemClass+=" list__content-item_richCheckbox"}
 
     .list(data-expand = dataExpand)
         .list__label 
