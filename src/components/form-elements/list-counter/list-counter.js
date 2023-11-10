@@ -107,5 +107,6 @@ $(function () {
         $(parentEl).trigger("apply", {
             target: e.currentTarget,
         });
+        console.log(parentEl);
     });
 });

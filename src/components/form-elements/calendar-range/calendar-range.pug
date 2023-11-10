@@ -1,5 +1,4 @@
 include ../input/input
-include ../dropdown/dropdown
 include ../calendar/calendar
 mixin calendar-range({dateFinish, dateStart})  
     .date-range
@@ -9,4 +8,4 @@ mixin calendar-range({dateFinish, dateStart})
             .date-range__date-finish    
                 +input({title:dateFinish.title,  withButton: true,variantButton: "gray",symbolButton: "expand_more",typeButton: "button",readonly: true, placeholder: "ДД.ММ.ГГГГ", colorPlaceholder:"dark"})
         .date-range__calendar
-            +calendar
+            +calendar({parentEl:"date-range", altInput:"date-range__date-finish"})

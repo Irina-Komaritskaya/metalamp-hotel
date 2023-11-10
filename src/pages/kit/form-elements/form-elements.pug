@@ -29,7 +29,7 @@ block content
                 +calendar-range({dateFinish:{title: "date dropdown"}, dateStart:{title:"date dropdown"}})
             .inputs__filter-date
                 +dropdown({placeholder: "--", title:"filter date dropdown"})
-                    +calendar
+                    +calendar({parentEl:"dropdown"})
             .inputs__input-send    
                 +input({title:"subscription", placeholder:"Email", withButton:true, variant:"send", variantButton:"gradient", symbolButton:"arrow_forward"})
 

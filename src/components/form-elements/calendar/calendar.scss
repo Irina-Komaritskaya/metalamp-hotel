@@ -1,4 +1,3 @@
-// найти обводку у range to
 .datepicker {
 }
 .air-datepicker {
@@ -30,7 +29,6 @@
         @extend .icon-button__m;
         color: $purple;
     }
-    //??????
     &-nav--action.-disabled- {
         visibility: visible;
     }
