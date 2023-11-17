@@ -12,7 +12,7 @@ include ../input/input
 include ../list-counter/list-counter
 include ../calendar/calendar
 
-mixin dropdown({name, isOpen, title, placeholder})
+mixin dropdown({name, isOpen, title, placeholder, style})
     -
         let inputOptions={
             title:title, 
@@ -27,12 +27,12 @@ mixin dropdown({name, isOpen, title, placeholder})
         }
 
         let contentClass = "dropdown__content"
-
         if(isOpen){contentClass+=" dropdown__content_opened"}
         if(!isOpen){contentClass+=" dropdown__content_closed"}
 
+
     .dropdown
-        .dropdown__input
+        .dropdown__input(data-style = style)
             +input(inputOptions)
         div(class=contentClass)
             block

@@ -1,12 +1,13 @@
-//- if list-counter && data === roomsParam - border none
 $(function () {
+    const style = $(".dropdown__input").filter("[data-style]");
+    const input = $(".dropdown").find(".dropdown__input");
+
     $(".dropdown__content").not(".dropdown__content_opened").hide();
     $(".dropdown__content.dropdown__content_opened")
         .closest(".dropdown")
         .find(".input")
         .addClass("dropdown__input_border-radius-none");
-
-    const input = $(".dropdown").find(".dropdown__input");
+    $(style).find(".input").addClass("dropdown__input_border-radius-none");
 
     const toggleDropdown = (el) => {
         const content = $(el).closest(".dropdown").find(".dropdown__content");
@@ -50,7 +51,6 @@ $(function () {
     });
     $(".dropdown").off("close");
     $(".dropdown").on("close", function (e, data) {
-        console.log(1);
         const el = $(data.target).closest(e.currentTarget);
         toggleDropdown(el);
     });
