@@ -1,6 +1,5 @@
-
 include ../icon-button/icon-button
-mixin input ({variant, title, state, type, name, placeholder, value, id, readonly, symbolButton, variantButton, typeButton, withButton, colorPlaceholder="light"} )
+mixin input ({variant, title, altTitle, type, name, placeholder, value, id, readonly, button, colorPlaceholder="light"})
     -
         let inputClass = 'input';
         let variantInput = ['focused','send','mask']
@@ -13,7 +12,7 @@ mixin input ({variant, title, state, type, name, placeholder, value, id, readonl
     label.label-input
         .label__inner
             .label__title=title
-            .label__state=state
+            .label__alt-title=altTitle
         .input__inner    
             input(
                 class=inputClass
@@ -24,9 +23,9 @@ mixin input ({variant, title, state, type, name, placeholder, value, id, readonl
                 id=id
                 readonly= readonly === true 
             )
-            if withButton
-                button.input__button(type=typeButton)
-                    +icon-button({symbol:symbolButton, variant:variantButton}) 
+            if button
+                button.input__button(type=button.typeButton)
+                    +icon-button({symbol:button.symbolButton, variant:button.variantButton}) 
 
 
 

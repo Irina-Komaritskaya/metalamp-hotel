@@ -1,13 +1,3 @@
-//-длинный value (скрывать за точками)
-//- плейсхолдер отдельно
-//-dropdown
-    если номер - то нижний бордер без скругления. 
-//- isConfirmButton    
-//- let contentInnerClass = "dropdown__content-inner"
-//- if(!isOpen) {contentClass+=" dropdown__content-unexpand"}
-//- if(isOpen){contentClass+=" dropdown__content-expand"}
-//- if(!isOpen){contentInnerClass+=" dropdown__content-inner-closed"}
-//- div(class=contentInnerClass)
 include ../input/input
 include ../list-counter/list-counter
 include ../calendar/calendar
@@ -18,9 +8,12 @@ mixin dropdown({name, isOpen, title, placeholder, style})
             title:title, 
             variant: isOpen ? "focused" : " ",
             withButton:true, 
-            variantButton: "gray", 
-            symbolButton:"expand_more", 
-            typeButton:"button",
+            button: {
+                variantButton: "gray", 
+                symbolButton:"expand_more", 
+                typeButton:"button",
+            },
+
             readonly:true,
             placeholder: placeholder,
             colorPlaceholder:"dark"

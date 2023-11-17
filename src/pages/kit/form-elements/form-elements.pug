@@ -17,9 +17,9 @@ block content
 
         .form-elements__inputs
             .inputs__input-defoult
-                +input({title:"text field", state:"default", type:"email", name:"email", placeholder:"Email"})
+                +input({title:"text field", altTitle:"default", type:"email", name:"email", placeholder:"Email"})
             .inputs__input-focus
-                +input({title:"text field", state:"Hover / Focus", placeholder:"This is pretty awesome", variant:"focused"})
+                +input({title:"text field", altTitle:"Hover / Focus", placeholder:"This is pretty awesome", variant:"focused"})
             .inputs__dropdown
                 +dropdown({placeholder: "Сколько гостей", title:"dropdown"})
                     +list-counter({items:dropdowns.guests, content:"guests"})
@@ -31,7 +31,7 @@ block content
                 +dropdown({placeholder: "--", title:"filter date dropdown"})
                     +calendar({parentEl:"dropdown"})
             .inputs__input-send    
-                +input({title:"subscription", placeholder:"Email", withButton:true, variant:"send", variantButton:"gradient", symbolButton:"arrow_forward"})
+                +input({title:"subscription", placeholder:"Email", button:{variantButton:"gradient", symbolButton:"arrow_forward"}, variant:"send", })
 
         .form-elements__switches
             .switches__chekboxs-inner
