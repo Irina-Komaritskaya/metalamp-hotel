@@ -1,7 +1,6 @@
 $(function () {
     const style = $(".dropdown__input").filter("[data-style]");
     const input = $(".dropdown").find(".dropdown__input");
-    $(".dropdown__content").not(".dropdown__content_opened").hide();
     $(".dropdown__content.dropdown__content_opened")
         .closest(".dropdown")
         .find(".input")
@@ -36,8 +35,12 @@ $(function () {
     $(".dropdown").off("changeCount");
     $(".dropdown").on("changeCount", function (e, data) {
         const input = $(data.target).closest(".dropdown").find(".input");
-
-        input.val(data.count);
+        cutValue =
+            data.count.length >= 20
+                ? data.count.substring(0, 20) + "..."
+                : data.count;
+        console.log(data.count.length);
+        input.val(cutValue);
         if (data.count === 0) {
             input.val("");
             console.log(input.val());
@@ -53,9 +56,6 @@ $(function () {
     $(".dropdown").off("apply");
     $(".dropdown").on("apply", function (e, data) {
         const input = $(data.target).closest(".dropdown").find(".input");
-        const inputVal = input.val();
-        console.log(inputVal);
-        console.log(2);
         input.val("");
         $(data.target)
             .closest(".dropdown__content")
