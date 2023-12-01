@@ -12,10 +12,11 @@ $(function () {
             .find(".list__content-item");
 
         if ($(contentItems).is(":hidden")) {
-            console.log(contentItems);
             $(contentItems).slideDown();
+            $(button).css({ transform: "rotate(180deg)" });
         } else {
             $(contentItems).slideUp();
+            $(button).css({ transform: "rotate(0deg)" });
         }
     });
 });
