@@ -4,8 +4,8 @@ mixin calendar-range({dateFinish, dateStart})
     .date-range
         .date-range__inputs
             .date-range__date-start
-                +input({title:dateStart.title,  withButton: true,variantButton: "gray",symbolButton: "expand_more",typeButton: "button",readonly: true, placeholder: "ДД.ММ.ГГГГ", colorPlaceholder:"dark"})
+                +input({title:dateStart.title, button:{variantButton:"gray", symbolButton:"expand_more", typeButton: "button"},readonly: true, placeholder: "ДД.ММ.ГГГГ", colorPlaceholder:"dark"})
             .date-range__date-finish    
-                +input({title:dateFinish.title,  withButton: true,variantButton: "gray",symbolButton: "expand_more",typeButton: "button",readonly: true, placeholder: "ДД.ММ.ГГГГ", colorPlaceholder:"dark"})
-        .date-range__calendar
+                +input({title:dateFinish.title,  button:{variantButton:"gray", symbolButton:"expand_more", typeButton: "button"},readonly: true, placeholder: "ДД.ММ.ГГГГ", colorPlaceholder:"dark"})
+        .date-range__calendar.date-range__calendar_hidden
             +calendar({parentEl:"date-range", altInput:"date-range__date-finish"})

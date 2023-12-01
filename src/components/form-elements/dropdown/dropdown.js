@@ -32,8 +32,8 @@ $(function () {
         toggleDropdown(e.currentTarget);
     });
 
-    $(".dropdown").off("changeCount");
-    $(".dropdown").on("changeCount", function (e, data) {
+    $(".dropdown").off("changeCountListCounter");
+    $(".dropdown").on("changeCountListCounter", function (e, data) {
         const input = $(data.target).closest(".dropdown").find(".input");
         cutValue =
             data.count.length >= 20
@@ -47,14 +47,14 @@ $(function () {
         }
     });
 
-    $(".dropdown").off("clear");
-    $(".dropdown").on("clear", function (e, data) {
+    $(".dropdown").off("clearListCounter");
+    $(".dropdown").on("clearListCounter", function (e, data) {
         const input = $(data.target).closest(".dropdown").find(".input");
         input.val("");
     });
     // - ???
-    $(".dropdown").off("apply");
-    $(".dropdown").on("apply", function (e, data) {
+    $(".dropdown").off("applyListCounter");
+    $(".dropdown").on("applyListCounter", function (e, data) {
         const input = $(data.target).closest(".dropdown").find(".input");
         input.val("");
         $(data.target)

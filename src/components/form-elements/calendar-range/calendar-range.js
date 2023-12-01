@@ -1,5 +1,4 @@
 $(function () {
-    $(".date-range__calendar").hide();
     const inputButton = $(".date-range").find(".input__button");
 
     const toggleCalendar = (el) => {

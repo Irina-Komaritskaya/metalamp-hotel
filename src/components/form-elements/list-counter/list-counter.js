@@ -74,7 +74,7 @@ $(function () {
             console.log(contentValues);
             contentValue = roomsParam.join(", ");
         }
-        $(parentEl).trigger("changeCount", {
+        $(parentEl).trigger("changeCountListCounter", {
             target: e.currentTarget,
             count: contentValue,
         });
@@ -93,7 +93,7 @@ $(function () {
             .closest(".list-counter")
             .find(".list-counter__counter")
             .text(0);
-        $(parentEl).trigger("clear", {
+        $(parentEl).trigger("clearListCounter", {
             target: e.currentTarget,
             value: values,
         });
@@ -104,7 +104,7 @@ $(function () {
         const parentEl =
             "." +
             $(button).closest(".list-counter").find("ul").attr("data-for");
-        $(parentEl).trigger("apply", {
+        $(parentEl).trigger("applyListCounter", {
             target: e.currentTarget,
         });
         console.log(parentEl);
