@@ -59,11 +59,36 @@ $(function () {
         const parentEl = $(this).closest("." + $(this).attr("data-for"));
         const btnApply = $(this).find(".list-counter__confirmButtons-btnApply");
         const btnClear = $(this).find(".list-counter__confirmButtons-btnClear");
+        const startValue = $(this).attr("data-start-value");
 
         const functionForContent = {
             guests: sumValues,
             roomsParam: sumEachItemValue,
         };
+
+        if (startValue) {
+            values[content] = JSON.parse(startValue);
+            $(this)
+                .find(".list-counter__item-title")
+                .map(function () {
+                    const title = $(this).text();
+
+                    const counterEl = $(this)
+                        .closest(".list-counter__item")
+                        .find(".list-counter__counter");
+                    console.log(counterEl);
+                    counterEl.text(values[content][title]);
+                });
+            btnClear.show();
+            const valueForDisplay = functionForContent[content](
+                values[content],
+                countableNames[content]
+            );
+            $(parentEl).trigger("changeCountListCounter", {
+                target: $(this).closest(parentEl),
+                count: valueForDisplay,
+            });
+        }
 
         $(btnPlus).on("click", (e) => {
             let { title, counter, counterEl } = getBtnElements(e.currentTarget);
