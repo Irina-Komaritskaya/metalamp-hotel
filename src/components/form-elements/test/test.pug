@@ -1,0 +1,20 @@
+include ../input/input
+mixin test({parentEl, altInput, date, formatDate="long"}={})
+    -
+        let inputOptions={
+            title:title, 
+            variant: isOpen ? "focused" : " ",
+            withButton:true, 
+            button: {
+                variantButton: "gray", 
+                symbolButton:"expand_more", 
+                typeButton:"button",
+            },
+
+            readonly:true,
+            placeholder: placeholder,
+            colorPlaceholder:"dark"
+        }
+    .test
+        +input(inputOptions)
+        .picker(data-parent=parentEl data-alt-input=altInput data-date=date data-format-date=formatDate)

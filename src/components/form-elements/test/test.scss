@@ -1,17 +1,23 @@
-.datepicker {
-}
+// .datepicker {
+//     box-shadow: none;
+//     border-radius: 0;
+//     border: solid $dark50;
+//     border-width: 0px 1px 1px 1px;
+//     width: 100%;
+//     max-width: 320px;
+//     padding: 20px;
+//     box-sizing: border-box;
+// }
+// .air-datepicker {
+//     border-radius: 0;
+//     width: 100%;
+//     max-width: 320px;
+//     padding: 20px;
+//     box-sizing: border-box;
+//     &.-inline- {
+//         border-radius: 0;
+//     }
 .air-datepicker {
-    border-radius: 0;
-    border: none;
-    width: 100%;
-    max-width: 320px;
-    padding: 20px;
-    box-sizing: border-box;
-    position: relative;
-    box-shadow: none;
-    &.-inline- {
-        border-radius: 0;
-    }
     &--navigation {
         padding: 0;
         margin: 0;

@@ -8,3 +8,4 @@ import "./form-elements/pagination/pagination.js";
 import "./form-elements/list/list.js";
 import "./form-elements/calendar-range/calendar-range.js";
 import "./form-elements/like-button/like-button.js";
+import "./form-elements/test/test";
