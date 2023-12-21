@@ -5,8 +5,13 @@
     },
     "toggle": { "text": "Получать спецпредложения" },
     "radioButtons": {
-        "radio1": { "name": "man", "text": "Мужчина" },
-        "radio2": { "name": "woman", "text": "Женщина" }
+        "radio1": {
+            "id": "male",
+            "name": "gender",
+            "text": "Мужчина",
+            "checked": true
+        },
+        "radio2": { "id": "female", "name": "gender", "text": "Женщина" }
     },
     "checkboxs": {
         "checkbox1": { "name": "smoke", "text": "Можно курить" },
