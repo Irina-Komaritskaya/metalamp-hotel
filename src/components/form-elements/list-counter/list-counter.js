@@ -115,6 +115,7 @@ $(function () {
                 target: e.currentTarget,
                 count: valueForDisplay,
             });
+            console.log(valueForDisplay);
         });
 
         $(btnMinus).on("click", (e) => {
@@ -147,6 +148,7 @@ $(function () {
                 target: e.currentTarget,
                 count: valueForDisplay,
             });
+            console.log(valueForDisplay);
         });
 
         $(btnClear).on("click", (e) => {
