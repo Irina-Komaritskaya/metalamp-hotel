@@ -5,7 +5,6 @@ $(function () {
         const start = $(this).attr("data-start").split(",").map(Number);
         const min = parseInt($(this).attr("data-min"));
         const max = parseInt($(this).attr("data-max"));
-        console.log(start);
         noUiSlider.create(this, {
             start: start,
             connect: true,

@@ -39,11 +39,9 @@ $(function () {
             data.count.length >= 20
                 ? data.count.substring(0, 20) + "..."
                 : data.count;
-        console.log(data.count.length);
         input.val(cutValue);
         if (data.count === 0) {
             input.val("");
-            console.log(input.val());
         }
     });
 

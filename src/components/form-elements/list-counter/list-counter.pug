@@ -1,15 +1,15 @@
 include ../button/button
-mixin list-counter({forElement="dropdown", items=[], content, confirmButtons}) 
-    - 
-    .list-counter
-        ul.list-counter__items(data-for=forElement data-content=content)
+mixin list-counter({forElement="dropdown", items=[], content, confirmButtons, startValue}) 
+
+    .list-counter(data-for=forElement data-content=content data-start-value=startValue)
+        ul.list-counter__items
             each item in items
                 li.list-counter__item
                     span.list-counter__item-title=item
                     .list-counter__btn-inner 
-                        button(type="button").list-counter__btn.list-counter__btn-disabled="-"  
+                        button(type="button").list-counter__btn.list-counter__btn_minus.list-counter__btn-disabled="-"  
                         .list-counter__counter 0 
-                        button(type="button").list-counter__btn="+"
+                        button(type="button").list-counter__btn.list-counter__btn_plus="+"
         if(confirmButtons)
             .list-counter__confirmButtons
                 .list-counter__confirmButtons-btnClear 

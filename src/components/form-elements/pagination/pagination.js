@@ -26,17 +26,14 @@ $(function () {
                 .hide({ direction: "left" }, 500);
         }
         if (number != "1") {
-            console.log(countPage);
             firstItem.show({ direction: "left" }, 500);
         }
 
         if (number === countPage.toString()) {
-            console.log(lastItem);
             lastItem.hide({ direction: "right" }, 500);
         }
 
         if (number != countPage.toString()) {
-            console.log(lastItem);
             lastItem.show({ direction: "right" }, 500);
         }
     });

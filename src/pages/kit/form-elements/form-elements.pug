@@ -29,7 +29,7 @@ block content
                 +calendar-range({dateFinish:{title: "date dropdown"}, dateStart:{title:"date dropdown"}})
             .inputs__filter-date
                 +dropdown({placeholder: "--", title:"filter date dropdown"})
-                    +calendar({parentEl:"dropdown", date:"19.08.2019-23.08.2019"})
+                    +calendar({parentEl:"dropdown", date:"19.08.2019-23.08.2019", formatDate:"short"})
             .inputs__input-send    
                 +input({title:"subscription", placeholder:"Email", button:{variantButton:"gradient", symbolButton:"arrow_forward"}, variant:"send", })
 
@@ -110,7 +110,7 @@ block content
                 +list-counter({content:"guests", items:dropdowns.guests, confirmButtons: true})
         .form-elements__dropdown-guests_fill-up
             +dropdown({placeholder: "Сколько гостей", title:"dropdown", isOpen:true}) 
-                +list-counter({content:"guests", items:dropdowns.guests, confirmButtons: true})
+                +list-counter({content:"guests", items:dropdowns.guests, confirmButtons: true, startValue:{"взрослые":2, "дети":1}})
         .form-elements__checkbox-lists 
             .checkbox-lists__checkbox-list
                 +list({text:"expandable checkbox list", isExpand:true, type:"checkbox", items:listCheckboxs.items}) 
