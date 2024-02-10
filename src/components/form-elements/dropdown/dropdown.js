@@ -40,6 +40,7 @@ $(function () {
                 ? data.count.substring(0, 20) + "..."
                 : data.count;
         input.val(cutValue);
+        console.log(data.count);
         if (data.count === 0) {
             input.val("");
         }

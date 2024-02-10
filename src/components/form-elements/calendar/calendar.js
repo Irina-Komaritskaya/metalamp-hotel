@@ -2,27 +2,27 @@ import AirDatepicker from "air-datepicker";
 import localeRu from "air-datepicker/locale/ru";
 import moment from "moment";
 
-const formatDate = (date) => {
-    return date.toLocaleString("ru", {
-        year: "numeric",
-        day: "2-digit",
-        month: "2-digit",
-    });
-};
-
-const dateFormatShort = (date) => {
-    return date.toLocaleString("ru", {
-        day: "2-digit",
-        month: "short",
-    });
+const formatDate = (date, format) => {
+    const formats = {
+        short: {
+            day: "2-digit",
+            month: "short",
+        },
+        standart: {
+            year: "numeric",
+            day: "2-digit",
+            month: "2-digit",
+        },
+    };
+    return date.toLocaleString("ru", formats[format]);
 };
 
 $(function () {
     let button = {
         content: "Применить",
         onClick: (dp) => {
-            formatDate(dp.selectedDates);
-
+            dp.selectedDates;
+            console.log(dp.selectedDates);
             const parent = "." + $(dp["$el"]).attr("data-parent");
             const input = $(dp["$el"]).closest(parent).find("input");
 
@@ -42,18 +42,17 @@ $(function () {
     $.each($(".datepicker"), function () {
         const parent = "." + $(this).attr("data-parent");
         const altField = $(parent).find("[data-alt-input]");
-
+        const formatDates = $(this).attr("data-format-date");
         const startDates = $(this).attr("data-date");
         let selectedDates = [];
+
         if (startDates) {
-            selectedDates = startDates.split("-").map((x) => {
+            selectedDates = startDates.split(",").map((x) => {
                 return new Date(moment(x, "DD-MM-YYYY").format("YYYY-MM-DD"));
             });
-
             const input = $(this).closest(parent).find("input");
-            const formatDate = dateFormatShort(selectedDates);
-            const val = formatDate.replaceAll(".", "").replace(",", " - ");
-
+            const formattedDates = formatDate(selectedDates, "formatDates");
+            const val = formattedDates.replaceAll(".", "").replace(",", " - ");
             input.val(val);
         }
 

@@ -30,7 +30,9 @@ $(function () {
     const sumEachItemValue = (contentValues, names) => {
         const arr = [];
         for (const [key, value] of Object.entries(contentValues)) {
-            arr.push(`${value} ${getCountableNames(value, names[key])}`);
+            if (value > 0) {
+                arr.push(`${value} ${getCountableNames(value, names[key])}`);
+            }
         }
         const content = arr.join(", ");
         return content;
@@ -68,16 +70,24 @@ $(function () {
 
         if (startValue) {
             values[content] = JSON.parse(startValue);
+            contentValues = values[content];
             $(this)
                 .find(".list-counter__item-title")
                 .map(function () {
                     const title = $(this).text();
-
                     const counterEl = $(this)
                         .closest(".list-counter__item")
                         .find(".list-counter__counter");
-                    console.log(counterEl);
+                    const minusBtn = $(counterEl).siblings(
+                        ".list-counter__btn_minus"
+                    )[0];
+                    console.log(minusBtn);
+
                     counterEl.text(values[content][title]);
+                    console.log(values[content][title]);
+                    if (values[content][title]) {
+                        $(minusBtn).removeClass("list-counter__btn-disabled");
+                    }
                 });
             btnClear.show();
             const valueForDisplay = functionForContent[content](
@@ -126,6 +136,7 @@ $(function () {
                     : 0;
                 counter = counter - 1;
                 counterEl.text(counter);
+                console.log(contentValues);
             }
             if (counter === 0) {
                 $(e.currentTarget).addClass("list-counter__btn-disabled");
@@ -139,6 +150,7 @@ $(function () {
                     $(btnClear).hide();
                 }
             }
+
             const valueForDisplay = functionForContent[content](
                 contentValues,
                 countableNames[content]
@@ -148,7 +160,6 @@ $(function () {
                 target: e.currentTarget,
                 count: valueForDisplay,
             });
-            console.log(valueForDisplay);
         });
 
         $(btnClear).on("click", (e) => {
@@ -159,6 +170,7 @@ $(function () {
             };
             contentValues = {};
             counterEl.text("0");
+
             $(parentEl).trigger("clearListCounter", {
                 target: e.currentTarget,
             });
@@ -166,6 +178,7 @@ $(function () {
         });
 
         $(btnApply).on("click", (e) => {
+            console.log(1);
             const counterEl = $(this).find(".list-counter__counter");
             values = {
                 guests: {},

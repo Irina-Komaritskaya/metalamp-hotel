@@ -1,6 +1,17 @@
 include ../input/input
 include ../calendar/calendar
 mixin calendar-range({dateFinish, dateStart})  
+    -
+        let inputOptions={
+            button: {
+                variantButton: "gray", 
+                symbolButton:"expand_more", 
+                typeButton:"button",
+            },
+                readonly:true,
+            placeholder: "ДД.ММ.ГГГГ",
+            colorPlaceholder:"dark"
+        }
     .date-range
         .date-range__inputs
             .date-range__date-start
